@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Anushka | Cute Colorful Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Pacifico&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #ffb3ec, #b3f0ff, #fff3b3);
+      color: #333;
+      overflow-x: hidden;
+    }
+
+    section { padding: 90px 10%; }
+
+    /* SECTION LAYOUT */
+    .split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 50px;
+      align-items: center;
+    }
+
+    .reverse { direction: rtl; }
+    .reverse > * { direction: ltr; }
+
+    h1, h2 {
+      font-family: 'Pacifico', cursive;
+      color: #ff4da6;
+    }
+
+    h1 { font-size: 3.8rem; margin-bottom: 20px; }
+    h2 { font-size: 3rem; margin-bottom: 30px; }
+
+    p {
+      font-size: 1.1rem;
+      line-height: 1.9;
+      background: rgba(255,255,255,0.65);
+      padding: 25px;
+      border-radius: 25px;
+      box-shadow: 0 12px 25px rgba(0,0,0,0.12);
+    }
+
+    span { color: #6a5cff; font-weight: 600; }
+
+    img.gif {
+      width: 100%;
+      max-width: 380px;
+      border-radius: 30px;
+      box-shadow: 0 18px 45px rgba(0,0,0,0.25);
+      animation: float 3s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0% { transform: translateY(0); }
+      50% { transform: translateY(-18px); }
+      100% { transform: translateY(0); }
+    }
+
+    /* PROJECTS */
+    .projects { background: linear-gradient(135deg, #ffe0f0, #e0f7ff); border-radius: 70px 70px 0 0; }
+
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 35px;
+    }
+
+    .project-card {
+      background: white;
+      padding: 35px;
+      border-radius: 28px;
+      text-align: center;
+      box-shadow: 0 18px 35px rgba(0,0,0,0.18);
+      transition: all 0.3s ease;
+    }
+
+    .project-card:hover { transform: translateY(-12px) rotate(-1deg); }
+
+    .project-card h3 { color: #6a5cff; margin-bottom: 15px; }
+
+    .github-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 22px;
+      border-radius: 50px;
+      background: linear-gradient(135deg, #ff4da6, #6a5cff);
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      margin-top: 15px;
+    }
+
+    .github-btn img { width: 22px; filter: invert(1); }
+
+    /* END */
+    footer {
+      text-align: center;
+      padding: 30px;
+      background: #ff4da6;
+      color: white;
+    }
+
+    @media (max-width: 900px) {
+      .split { grid-template-columns: 1fr; text-align: center; }
+      .reverse { direction: ltr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- INTRO LEFT -->
+  <section class="split">
+    <div>
+      <h1>Hello, I'm Anushka 🌸</h1>
+      <p>
+        A <span>third-year BTech undergraduate</span>,
+        <span>girls basketball team captain</span> 🏀,
+        tech enthusiast 💻 and someone who lives for
+        <span>outdoor adventures</span>.
+        <br><br>
+        I love balancing discipline from sports with creativity in tech —
+        always curious, always learning, always ready for something new ✨
+      </p>
+    </div>
+    <div>
+      <img class="gif" src="https://media.giphy.com/media/l0MYt5jPR6QX5pnqM/giphy.gif" alt="Basketball girl" />
+    </div>
+  </section>
+
+  <!-- INTRO RIGHT -->
+  <section class="split reverse">
+    <div>
+      <h2>Who I Am 💕</h2>
+      <p>
+        Equal parts <span>coder</span>, <span>athlete</span>, and <span>dreamer</span> 🌈
+        I believe growth happens when you step outside your comfort zone —
+        on the court, in code, and in life.
+        <br><br>
+        I’m always chasing progress, not perfection 🌱
+      </p>
+    </div>
+    <div>
+      <img class="gif" src="https://media.giphy.com/media/26ufdipQqU2lhNA4g/giphy.gif" alt="Happy coding" />
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section class="projects">
+    <h2 style="text-align:center">My Projects ✨</h2>
+    <div class="project-grid">
+
+      <div class="project-card">
+        <h3>Custom Bootloader and Kernel Operating System</h3>
+        <p>Built with curiosity, learning, and lots of late-night debugging ✨</p>
+        <a class="github-btn" href="https://github.com/clickatanushka/Coustum-bootloader-and-kernel-development">
+          <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/github/github-original.svg" />GitHub
+        </a>
+      </div>
+
+      <div class="project-card">
+        <h3>XAI-Powered Lung X-ray Diagnosis</h3>
+        <p>Where creativity met problem-solving and fun 💖</p>
+        <a class="github-btn" href="https://github.com/clickatanushka/XAI">
+          <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/github/github-original.svg" />GitHub
+        </a>
+      </div>
+
+      <div class="project-card">
+        <h3>User Behaviour Analytics</h3>
+        <p>A project that challenged me and helped me grow technically 🌸</p>
+        <a class="github-btn" href="https://github.com/clickatanushka/User-behavior-Analytics">
+          <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/github/github-original.svg" />GitHub
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- END -->
+  <section class="split reverse">
+    <div>
+      <h2>One Last Thing 💗</h2>
+      <p>
+        Thanks for stopping by 🫶 This site is a tiny reflection of my journey —
+        learning loudly, dreaming boldly, and enjoying the ride.
+        <br><br>
+        If you’re here to collaborate, connect, or just vibe — welcome 🌸
+      </p>
+    </div>
+    <div>
+      <img class="gif" src="https://media.giphy.com/media/3oriO0OEd9QIDdllqo/giphy.gif" alt="Celebration" />
+    </div>
+  </section>
+
+  <footer>
+    Made with 💖, hustle energy, and bright dreams by Anushka
+  </footer>
+
+</body>
+</html>
