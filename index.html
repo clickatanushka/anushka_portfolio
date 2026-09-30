@@ -1,161 +1,175 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Anushka | Cute Tech Portfolio</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Pacifico&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/styles.css">
-</head>
-<body>
-  <div class="bg-decor" aria-hidden="true">
-    <span class="blob blob-1"></span>
-    <span class="blob blob-2"></span>
-    <span class="blob blob-3"></span>
-  </div>
-<header class="site-header">
-    <nav class="navbar container" aria-label="Primary navigation">
-      <a href="#home" class="brand">Anushka</a>
-      <ul class="nav-links">
-        <li><a href="#home" class="nav-link active">Home</a></li>
-        <li><a href="#about" class="nav-link">About</a></li>
-        <li><a href="#projects" class="nav-link">Projects</a></li>
-        <li><a href="#games" class="nav-link">Mini Games</a></li>
-        <li><a href="#contact" class="nav-link">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="theme-color" content="#fff8f4">
+      <meta name="description" content="Anushka is a BTech student, basketball captain, and curious builder. Explore her projects in systems, explainable AI, and data.">
+      <title>Anushka | Curious builder, joyful debugger</title>
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&display=swap" rel="stylesheet">
+      <link rel="stylesheet" href="css/styles.css">
+    </head>
+    <body>
+      <header class="topbar">
+        <nav class="topbar-inner" aria-label="Primary navigation">
+          <a class="wordmark" href="#home" aria-label="Anushka, home">a<span>.</span></a>
+          <ul class="nav-links">
+            <li><a href="#about" class="nav-link">A little about me</a></li>
+            <li><a href="#projects" class="nav-link">Things I've made</a></li>
+            <li><a href="#play" class="nav-link">Play</a></li>
+          </ul>
+          <a class="topbar-cta" href="https://github.com/clickatanushka" target="_blank" rel="noopener noreferrer">Find me on GitHub <span aria-hidden="true">↗</span></a>
+        </nav>
+      </header>
 
-  <main>
-    <section id="home" class="section hero reveal">
-      <div class="container split">
-        <div>
-          <p class="eyebrow">Cute + curious + coding</p>
-          <h1>Hello, I'm Anushka <span class="emoji">🌸</span></h1>
-          <p class="card-text">
-            A <span>third-year BTech undergraduate</span>, <span>girls basketball team captain</span> 🏀,
-            tech enthusiast 💻 and someone who lives for <span>outdoor adventures</span>.
-            I love balancing discipline from sports with creativity in tech.
-          </p>
-          <p class="intro-note">I build with heart, hustle, and a lot of joyful debugging ✨</p>
-          <a class="btn gradient-btn" href="#projects">See my work</a>
-        </div>
-        <div class="profile-wrapper">
-          <figure class="profile-card">
-            <img class="profile-image" src="https://media.giphy.com/media/l0MYt5jPR6QX5pnqM/giphy.gif" alt="An animated profile visual">
-          </figure>
-        </div>
-      </div>
-    </section><section id="about" class="section reveal">
-      <div class="container split reverse">
-        <div>
-          <h2>Who I Am 💕</h2>
-          <p class="card-text">
-            Equal parts <span>coder</span>, <span>athlete</span>, and <span>dreamer</span> 🌈.
-            I believe growth happens when you step outside your comfort zone
-            on the court, in code, and in life. I am always chasing progress, not perfection 🌱
-          </p>
-        </div>
-        <div>
-          <img class="rounded-media" src="https://media.giphy.com/media/26ufdipQqU2lhNA4g/giphy.gif" alt="Happy coding visual">
-        </div>
-      </div>
-    </section><section id="projects" class="section projects reveal">
-      <div class="container">
-        <h2>My Projects ✨</h2>
-        <p class="section-subtitle">Each card follows the same structure so you can duplicate and add new projects quickly.</p><div class="card-grid">
-          <article class="project-card">
-            <h3>Custom Bootloader and Kernel Operating System</h3>
-            <p class="project-summary">Built with curiosity, learning, and lots of late-night debugging.</p>
-            <p class="tech-stack"><strong>Tech:</strong> C, Assembly, GCC, QEMU</p>
-            <div class="project-links">
-              <a class="btn gradient-btn" href="https://github.com/clickatanushka/Coustum-bootloader-and-kernel-development" target="_blank" rel="noopener noreferrer">GitHub</a>
-              <a class="btn ghost-btn" href="#" aria-disabled="true">Live Demo</a>
+      <main>
+        <section class="hero" id="home" aria-labelledby="hero-title">
+          <div class="hero-inner">
+            <div class="hero-copy">
+              <p class="eyebrow"><span class="status-dot"></span> BTech student & curious builder</p>
+              <h1 id="hero-title">Soft heart.<br>Sharp <span class="hero-accent">ideas.</span></h1>
+              <p class="hero-intro">I'm Anushka: part-time basketball captain, full-time question asker. I like getting close to the way things work, then making something useful (and a little delightful) out of it.</p>
+              <div class="hero-actions">
+                <a class="button button-dark" href="#projects">Come see what I've made <span aria-hidden="true">↓</span></a>
+                <span class="hero-aside">Currently collecting<br>new things to learn <span aria-hidden="true">♡</span></span>
+              </div>
             </div>
-            <p class="extra-info">Explored memory, interrupts, and low-level architecture fundamentals.</p>
-          </article><article class="project-card">
-            <h3>XAI-Powered Lung X-ray Diagnosis</h3>
-            <p class="project-summary">Where machine learning met medical impact with explainable AI.</p>
-            <p class="tech-stack"><strong>Tech:</strong> Python, TensorFlow, Grad-CAM, Jupyter</p>
-            <div class="project-links">
-              <a class="btn gradient-btn" href="https://github.com/clickatanushka/XAI" target="_blank" rel="noopener noreferrer">GitHub</a>
-              <a class="btn ghost-btn" href="#" aria-disabled="true">Live Demo</a>
+            <div class="hero-art" aria-label="Decorative code editor illustration">
+              <div class="orbit orbit-one" aria-hidden="true">✳</div>
+              <div class="orbit orbit-two" aria-hidden="true">♡</div>
+              <div class="editor-card">
+                <div class="editor-top"><span></span><span></span><span></span><i>little-things.js</i></div>
+                <div class="editor-code" aria-hidden="true">
+                  <p><b>const</b> anushka = {</p>
+                  <p class="indent"><em>curiosity</em>: <strong>"always on"</strong>,</p>
+                  <p class="indent"><em>currently</em>: <strong>"building"</strong>,</p>
+                  <p class="indent"><em>debugFuel</em>: <strong>"chai + joy"</strong>,</p>
+                  <p class="indent"><em>superpower</em>: <strong>"keep going"</strong></p>
+                  <p>}; <span class="cursor">▍</span></p>
+                </div>
+                <div class="editor-sticker">made with curiosity <span aria-hidden="true">✿</span></div>
+              </div>
+              <span class="hero-sparkle sparkle-one" aria-hidden="true">✳</span>
+              <span class="hero-sparkle sparkle-two" aria-hidden="true">✦</span>
             </div>
-            <p class="extra-info">Focused on model trust and visual explanations for better interpretation.</p>
-          </article><article class="project-card">
-            <h3>User Behaviour Analytics</h3>
-            <p class="project-summary">A project that helped me grow through data exploration and insights.</p>
-            <p class="tech-stack"><strong>Tech:</strong> Python, Pandas, Visualization, Statistics</p>
-            <div class="project-links">
-              <a class="btn gradient-btn" href="https://github.com/clickatanushka/User-behavior-Analytics" target="_blank" rel="noopener noreferrer">GitHub</a>
-              <a class="btn ghost-btn" href="#" aria-disabled="true">Live Demo</a>
+          </div>
+          <div class="hero-bottom"><span>SCROLL A LITTLE</span><span class="hero-line"></span><span>PROJECTS, PEOPLE & PLAY</span></div>
+        </section>
+
+        <section id="about" class="about-section" aria-labelledby="about-title">
+          <div class="content-width about-inner">
+            <p class="section-kicker">01 / THE HUMAN BEHIND THE KEYBOARD</p>
+            <div class="about-copy">
+              <h2 id="about-title">I like my problems <span>interesting</span><br>and my playlists eclectic.</h2>
+              <div class="about-detail">
+                <p>I'm a third-year BTech undergraduate and captain of my girls' basketball team. Tech gives me the satisfying puzzle; sport gives me the team, the energy, and the reminder that the best things happen when you keep showing up.</p>
+                <div class="interest-list" aria-label="Interests"><span>systems</span><span>machine learning</span><span>good questions</span><span>outside time</span><span>teamwork</span></div>
+              </div>
             </div>
-            <p class="extra-info">Turned raw behavior data into meaningful engagement patterns.</p>
-          </article>
+          </div>
+        </section>
+
+        <section id="projects" class="projects-section" aria-labelledby="projects-title">
+          <div class="content-width">
+            <div class="projects-heading">
+              <div>
+                <p class="section-kicker">02 / THE THINGS I'VE MADE</p>
+                <h2 id="projects-title">Curiosity, <span>shipped.</span></h2>
+              </div>
+              <p class="projects-note">Three projects, three rabbit holes.<br>Pick one and have a peek.</p>
+            </div>
+
+            <div class="project-tools">
+              <div class="filter-list" role="group" aria-label="Filter projects by topic">
+                <button class="filter-button is-selected" type="button" data-filter="all" aria-pressed="true">Everything <span>03</span></button>
+                <button class="filter-button" type="button" data-filter="systems" aria-pressed="false">Systems</button>
+                <button class="filter-button" type="button" data-filter="ai" aria-pressed="false">AI & health</button>
+                <button class="filter-button" type="button" data-filter="data" aria-pressed="false">Data</button>
+              </div>
+              <label class="search-box"><span aria-hidden="true">⌕</span><span class="sr-only">Search projects</span><input id="project-search" type="search" placeholder="Find a project..." autocomplete="off"></label>
+            </div>
+
+            <div class="project-grid" id="project-grid" aria-live="polite">
+              <article class="project-card" data-category="systems" data-search="custom bootloader kernel operating system c assembly gcc qemu systems">
+                <div class="project-art art-kernel" aria-hidden="true">
+                  <span class="art-index">01 / SYSTEMS</span>
+                  <div class="kernel-screen"><span class="kernel-prompt">$</span><span>booting curiosity<span class="kernel-cursor">_</span></span><span class="kernel-rule"></span><span class="kernel-ok">[ OK ] kernel loaded</span><span class="kernel-coords">0x7C00 &nbsp; 16-bit</span></div>
+                  <span class="art-stamp">low<br>level<br>love</span>
+                </div>
+                <div class="project-card-body">
+                  <div class="project-meta"><span>Systems programming</span><span>01</span></div>
+                  <h3>Starting from the very first byte</h3>
+                  <p>A custom bootloader and kernel: a hands-on trip through assembly, memory, and what happens before an operating system says hello.</p>
+                  <div class="tag-list"><span>C</span><span>Assembly</span><span>QEMU</span></div>
+                  <div class="project-actions"><button class="notes-button" type="button" data-project="kernel">A closer look <span aria-hidden="true">↗</span></button><a class="repo-link" href="https://github.com/clickatanushka/Coustum-bootloader-and-kernel-development" target="_blank" rel="noopener noreferrer" aria-label="View bootloader and kernel project on GitHub">GitHub <span aria-hidden="true">↗</span></a></div>
+                </div>
+              </article>
+
+              <article class="project-card" data-category="ai" data-search="xai explainable artificial intelligence lung x-ray diagnosis tensorflow grad-cam machine learning health">
+                <div class="project-art art-xai" aria-hidden="true">
+                  <span class="art-index">02 / EXPLAINABLE AI</span>
+                  <div class="xray-frame"><span class="xray-label">model attention</span><div class="lung-shape lung-left"></div><div class="lung-shape lung-right"></div><div class="xray-spine"></div><div class="xray-glow"></div><span class="xray-scale">0.92 confidence</span></div>
+                  <span class="art-stamp stamp-xai">look<br>closer<br>✳</span>
+                </div>
+                <div class="project-card-body">
+                  <div class="project-meta"><span>Machine learning</span><span>02</span></div>
+                  <h3>When the model shows its work</h3>
+                  <p>An X-ray diagnosis project exploring explainable AI, with visual attention maps to make model predictions easier to inspect.</p>
+                  <div class="tag-list"><span>Python</span><span>TensorFlow</span><span>Grad-CAM</span></div>
+                  <div class="project-actions"><button class="notes-button" type="button" data-project="xai">A closer look <span aria-hidden="true">↗</span></button><a class="repo-link" href="https://github.com/clickatanushka/XAI" target="_blank" rel="noopener noreferrer" aria-label="View explainable AI project on GitHub">GitHub <span aria-hidden="true">↗</span></a></div>
+                </div>
+              </article>
+
+              <article class="project-card" data-category="data" data-search="user behaviour analytics user behavior data pandas statistics engagement visualization">
+                <div class="project-art art-data" aria-hidden="true">
+                  <span class="art-index">03 / DATA STORIES</span>
+                  <div class="data-dashboard"><div class="data-label"><span>user patterns</span><b>+24.8%</b></div><div class="chart-area"><span class="chart-gridline line-one"></span><span class="chart-gridline line-two"></span><span class="chart-gridline line-three"></span><span class="chart-bar bar-one"></span><span class="chart-bar bar-two"></span><span class="chart-bar bar-three"></span><span class="chart-bar bar-four"></span><span class="chart-bar bar-five"></span><span class="chart-bar bar-six"></span><span class="chart-trend"></span></div><div class="chart-legend"><span>MON</span><span>TUE</span><span>WED</span><span>THU</span><span>FRI</span><span>SAT</span></div></div>
+                  <span class="art-stamp stamp-data">data<br>with a<br>story</span>
+                </div>
+                <div class="project-card-body">
+                  <div class="project-meta"><span>Analytics</span><span>03</span></div>
+                  <h3>Finding the story in user behavior</h3>
+                  <p>An exploration of user behavior data, looking for the patterns behind engagement and turning raw numbers into useful insights.</p>
+                  <div class="tag-list"><span>Python</span><span>Pandas</span><span>Statistics</span></div>
+                  <div class="project-actions"><button class="notes-button" type="button" data-project="analytics">A closer look <span aria-hidden="true">↗</span></button><a class="repo-link" href="https://github.com/clickatanushka/User-behavior-Analytics" target="_blank" rel="noopener noreferrer" aria-label="View user behavior analytics project on GitHub">GitHub <span aria-hidden="true">↗</span></a></div>
+                </div>
+              </article>
+            </div>
+            <p class="no-results" id="no-results" hidden>No projects match that search just yet. Try another word?</p>
+            <p class="demo-note"><span aria-hidden="true">✳</span> No video demos yet, so I made these little project previews instead. The GitHub links have the real code.</p>
+          </div>
+        </section>
+
+        <section class="play-section" id="play" aria-labelledby="play-title">
+          <div class="content-width play-inner">
+            <div><p class="section-kicker">03 / A TINY DETOUR</p><h2 id="play-title">A little play<br><span>break?</span></h2><p>My portfolio comes with a tiny built-in game. Go on, pop a few. The bubbles are very poppable.</p><button class="button button-play" id="play-bubbles" type="button">Let's pop bubbles <span aria-hidden="true">↗</span></button></div>
+            <div class="play-decoration" aria-hidden="true"><span class="play-circle circle-big">pop!</span><span class="play-circle circle-small">✿</span><span class="play-star">✳</span><span class="play-squiggle">♡</span></div>
+          </div>
+        </section>
+
+        <section class="contact-section" id="contact" aria-labelledby="contact-title">
+          <div class="content-width contact-inner"><p class="section-kicker">04 / OVER TO YOU</p><h2 id="contact-title">Have a good<br><span>question?</span></h2><p>I'd love to hear about what you're building, learning, or figuring out.</p><a class="button button-dark" href="https://github.com/clickatanushka" target="_blank" rel="noopener noreferrer">Say hello on GitHub <span aria-hidden="true">↗</span></a></div>
+        </section>
+      </main>
+
+      <footer class="site-footer"><a class="footer-mark" href="#home">a.</a><span>Made with curiosity and a tiny bit of CSS magic.</span><a href="#home">Back to top ↑</a></footer>
+
+      <dialog class="project-dialog" id="project-dialog" aria-labelledby="dialog-title">
+        <form method="dialog"><button class="dialog-close" aria-label="Close project notes">×</button></form>
+        <p class="section-kicker" id="dialog-kicker"></p><h2 id="dialog-title"></h2><p id="dialog-description"></p><div class="dialog-detail" id="dialog-detail"></div><a class="button button-dark" id="dialog-repo" href="" target="_blank" rel="noopener noreferrer">Explore the code on GitHub <span aria-hidden="true">↗</span></a>
+      </dialog>
+
+      <aside class="bubble-game-widget" id="bubble-game-widget" aria-label="Bubble pop mini game">
+        <button type="button" class="bubble-game-widget__fab" id="bubble-game-toggle" aria-expanded="false" aria-controls="bubble-game-panel"><span class="bubble-game-widget__fab-icon" aria-hidden="true">🫧</span><span class="sr-only">Toggle bubble pop game</span></button>
+        <div class="bubble-game-widget__panel" id="bubble-game-panel" role="region" aria-labelledby="bubble-game-title" hidden>
+          <div class="bubble-game-widget__head"><h3 id="bubble-game-title" class="bubble-game-widget__title">Bubble Pop</h3><p class="bubble-game-widget__hint">Tap the bubbles before they fade ✨</p></div>
+          <div class="bubble-game__toolbar"><span class="bubble-game__score">Score <strong id="bubble-score">0</strong></span><button type="button" class="bubble-game__btn" id="bubble-restart">Restart</button></div>
+          <div class="bubble-game__playfield" id="bubble-playfield" aria-live="polite"></div>
         </div>
-      </div>
-    </section>
+      </aside>
 
-    <section id="games" class="section reveal">
-      <div class="container">
-        <h2>Mini Projects & Games 🎮</h2>
-        <p class="section-subtitle">Playful corner for lightweight experiments and interactive JS ideas.</p>
-
-        <div class="card-grid mini-grid">
-          <article class="mini-card">
-            <h3>Coming Soon: Reaction Clicker</h3>
-            <p>Perfect slot for a tap-speed challenge game.</p>
-            <a class="btn ghost-btn" href="games/" aria-label="Open games folder">Use `games/` folder</a>
-          </article>
-
-          <article class="mini-card">
-            <h3>Coming Soon: Memory Tiles</h3>
-            <p>Great place to plug in a tiny card-matching game.</p>
-            <a class="btn ghost-btn" href="games/" aria-label="Open games folder">Drop scripts here</a>
-          </article>
-
-          <article class="mini-card">
-            <h3>Coming Soon: Mini Typing Race</h3>
-            <p>Reusable component area for your next JS mini challenge.</p>
-            <a class="btn ghost-btn" href="games/" aria-label="Open games folder">Connect in `js/script.js`</a>
-          </article>
-        </div>
-      </div>
-    </section> <section id="contact" class="section reveal">
-      <div class="container split reverse">
-        <div>
-          <h2>One Last Thing 💗</h2>
-          <p class="card-text">
-            Thanks for stopping by 🫶 This site is a tiny reflection of my journey:
-            learning loudly, dreaming boldly, and enjoying the ride.
-            If you are here to collaborate, connect, or just vibe, welcome 🌸
-          </p>
-        </div>
-        <div>
-          <img class="rounded-media" src="https://media.giphy.com/media/3oriO0OEd9QIDdllqo/giphy.gif" alt="Celebration visual">
-        </div>
-      </div>
-    </section>
-  </main><aside class="bubble-game-widget" id="bubble-game-widget" aria-label="Bubble pop mini game">
-    <button type="button" class="bubble-game-widget__fab" id="bubble-game-toggle" aria-expanded="false" aria-controls="bubble-game-panel">
-      <span class="bubble-game-widget__fab-icon" aria-hidden="true">🫧</span>
-      <span class="sr-only">Toggle bubble pop game</span>
-    </button>
-    <div class="bubble-game-widget__panel" id="bubble-game-panel" role="region" aria-labelledby="bubble-game-title" hidden>
-      <div class="bubble-game-widget__head">
-        <h3 id="bubble-game-title" class="bubble-game-widget__title">Bubble Pop</h3>
-        <p class="bubble-game-widget__hint">Tap the bubbles before they fade ✨</p>
-      </div>
-      <div class="bubble-game__toolbar">
-        <span class="bubble-game__score">Score <strong id="bubble-score">0</strong></span>
-        <button type="button" class="bubble-game__btn" id="bubble-restart">Restart</button>
-      </div>
-      <div class="bubble-game__playfield" id="bubble-playfield" aria-live="polite"></div>
-    </div>
-  </aside>
-
-  <script src="js/script.js"></script>
-</body>
-</html>
+      <script src="js/script.js"></script>
+    </body>
+    </html>

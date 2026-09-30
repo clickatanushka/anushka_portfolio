@@ -35,6 +35,86 @@ setActiveNav();
 
 window.addEventListener("scroll", setActiveNav);
 
+const projectCards = [...document.querySelectorAll(".project-card")];
+const filterButtons = document.querySelectorAll(".filter-button");
+const projectSearch = document.getElementById("project-search");
+const noResults = document.getElementById("no-results");
+
+function filterProjects() {
+  const activeFilter = document.querySelector(".filter-button.is-selected")?.dataset.filter ?? "all";
+  const searchTerm = projectSearch.value.trim().toLowerCase();
+  let visibleCount = 0;
+
+  projectCards.forEach((card) => {
+    const matchesCategory = activeFilter === "all" || card.dataset.category === activeFilter;
+    const matchesSearch = card.dataset.search.includes(searchTerm);
+    const isVisible = matchesCategory && matchesSearch;
+    card.hidden = !isVisible;
+    if (isVisible) visibleCount += 1;
+  });
+
+  noResults.hidden = visibleCount !== 0;
+}
+
+filterButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    filterButtons.forEach((filterButton) => {
+      const isSelected = filterButton === button;
+      filterButton.classList.toggle("is-selected", isSelected);
+      filterButton.setAttribute("aria-pressed", String(isSelected));
+    });
+    filterProjects();
+  });
+});
+
+projectSearch.addEventListener("input", filterProjects);
+
+const projectDetails = {
+  kernel: {
+    category: "01 / SYSTEMS PROGRAMMING",
+    title: "Starting from the very first byte",
+    description: "A custom bootloader and kernel built to understand what happens between powering on a computer and getting to an operating system.",
+    detail: "The project explores low-level startup, memory, and interrupt concepts using C and Assembly, with QEMU for testing. Open the repository to see the code and setup details.",
+    repo: "https://github.com/clickatanushka/Coustum-bootloader-and-kernel-development"
+  },
+  xai: {
+    category: "02 / EXPLAINABLE AI",
+    title: "When the model shows its work",
+    description: "An X-ray diagnosis project focused on looking inside model predictions, not just reporting a result.",
+    detail: "Grad-CAM visual explanations help inspect which image regions influence a prediction. This is a learning project, not a diagnostic tool; see the repository for implementation and research context.",
+    repo: "https://github.com/clickatanushka/XAI"
+  },
+  analytics: {
+    category: "03 / DATA STORIES",
+    title: "Finding the story in user behavior",
+    description: "An exploration of user behavior data and the patterns that can reveal how people engage with a product.",
+    detail: "Using Python, Pandas, and statistical exploration to move from raw activity toward interpretable engagement insights. The repository has the project materials.",
+    repo: "https://github.com/clickatanushka/User-behavior-Analytics"
+  }
+};
+
+const projectDialog = document.getElementById("project-dialog");
+document.querySelectorAll(".notes-button").forEach((button) => {
+  button.addEventListener("click", () => {
+    const project = projectDetails[button.dataset.project];
+    if (!project) return;
+    document.getElementById("dialog-kicker").textContent = project.category;
+    document.getElementById("dialog-title").textContent = project.title;
+    document.getElementById("dialog-description").textContent = project.description;
+    document.getElementById("dialog-detail").textContent = project.detail;
+    document.getElementById("dialog-repo").href = project.repo;
+    projectDialog.showModal();
+  });
+});
+
+document.getElementById("play-bubbles").addEventListener("click", () => {
+  const toggle = document.getElementById("bubble-game-toggle");
+  if (!document.getElementById("bubble-game-widget").classList.contains("bubble-game-widget--open")) {
+    toggle.click();
+  }
+  toggle.focus();
+});
+
 /* --- Mini-game: Bubble Pop (floating widget) --- */
 (function initBubbleGame() {
   const widget = document.getElementById("bubble-game-widget");
