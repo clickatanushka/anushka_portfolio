@@ -1,6 +1,7 @@
 const navLinks = document.querySelectorAll(".nav-link");
 const sections = document.querySelectorAll("main section[id]");
 const revealItems = document.querySelectorAll(".reveal");
+const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
 function setActiveNav() {
   const offset = window.scrollY + 140;
@@ -17,43 +18,71 @@ function setActiveNav() {
   });
 }
 
-const revealObserver = new IntersectionObserver(
-  (entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("visible");
-      }
-    });
-  },
-  {
-    threshold: 0.2
-  }
-);
+if ("IntersectionObserver" in window) {
+  const revealObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    },
+    {
+      threshold: 0.12
+    }
+  );
 
-revealItems.forEach((item) => revealObserver.observe(item));
+  revealItems.forEach((item) => revealObserver.observe(item));
+} else {
+  revealItems.forEach((item) => item.classList.add("visible"));
+}
+
 setActiveNav();
 
-window.addEventListener("scroll", setActiveNav);
+window.addEventListener("scroll", setActiveNav, { passive: true });
 
+/* --- Projects: filters, search, show more --- */
 const projectCards = [...document.querySelectorAll(".project-card")];
 const filterButtons = document.querySelectorAll(".filter-button");
 const projectSearch = document.getElementById("project-search");
 const noResults = document.getElementById("no-results");
+const showMoreButton = document.getElementById("show-more");
+
+const INITIAL_PROJECTS = 6;
+let showAllProjects = false;
+
+const searchText = new Map(
+  projectCards.map((card) => {
+    const links = [...card.querySelectorAll("a")].map((link) => link.href).join(" ");
+    return [card, `${card.textContent} ${links}`.toLowerCase()];
+  })
+);
+
+filterButtons.forEach((button) => {
+  const filter = button.dataset.filter;
+  const count = filter === "all" ? projectCards.length : projectCards.filter((card) => card.dataset.category === filter).length;
+  button.querySelector(".filter-count").textContent = String(count);
+});
 
 function filterProjects() {
   const activeFilter = document.querySelector(".filter-button.is-selected")?.dataset.filter ?? "all";
   const searchTerm = projectSearch.value.trim().toLowerCase();
-  let visibleCount = 0;
+  const isBrowsing = activeFilter === "all" && searchTerm === "";
+  let matchCount = 0;
 
   projectCards.forEach((card) => {
     const matchesCategory = activeFilter === "all" || card.dataset.category === activeFilter;
-    const matchesSearch = card.dataset.search.includes(searchTerm);
-    const isVisible = matchesCategory && matchesSearch;
-    card.hidden = !isVisible;
-    if (isVisible) visibleCount += 1;
+    const matchesSearch = searchText.get(card).includes(searchTerm);
+    const isMatch = matchesCategory && matchesSearch;
+    if (isMatch) matchCount += 1;
+    card.hidden = !isMatch || (isBrowsing && !showAllProjects && matchCount > INITIAL_PROJECTS);
   });
 
-  noResults.hidden = visibleCount !== 0;
+  noResults.hidden = matchCount !== 0;
+  showMoreButton.hidden = !isBrowsing || matchCount <= INITIAL_PROJECTS;
+  showMoreButton.textContent = showAllProjects ? "Show fewer projects" : `Show all ${matchCount} projects ✨`;
+  showMoreButton.setAttribute("aria-expanded", String(showAllProjects));
 }
 
 filterButtons.forEach((button) => {
@@ -69,71 +98,111 @@ filterButtons.forEach((button) => {
 
 projectSearch.addEventListener("input", filterProjects);
 
-const projectDetails = {
-  kernel: {
-    category: "01 / SYSTEMS PROGRAMMING",
-    title: "Starting from the very first byte",
-    description: "A custom bootloader and kernel built to understand what happens between powering on a computer and getting to an operating system.",
-    detail: "The project explores low-level startup, memory, and interrupt concepts using C and Assembly, with QEMU for testing. Open the repository to see the code and setup details.",
-    repo: "https://github.com/clickatanushka/Coustum-bootloader-and-kernel-development"
-  },
-  xai: {
-    category: "02 / EXPLAINABLE AI",
-    title: "When the model shows its work",
-    description: "An X-ray diagnosis project focused on looking inside model predictions, not just reporting a result.",
-    detail: "Grad-CAM visual explanations help inspect which image regions influence a prediction. This is a learning project, not a diagnostic tool; see the repository for implementation and research context.",
-    repo: "https://github.com/clickatanushka/XAI"
-  },
-  analytics: {
-    category: "03 / DATA STORIES",
-    title: "Finding the story in user behavior",
-    description: "An exploration of user behavior data and the patterns that can reveal how people engage with a product.",
-    detail: "Using Python, Pandas, and statistical exploration to move from raw activity toward interpretable engagement insights. The repository has the project materials.",
-    repo: "https://github.com/clickatanushka/User-behavior-Analytics"
+showMoreButton.addEventListener("click", () => {
+  showAllProjects = !showAllProjects;
+  filterProjects();
+  if (!showAllProjects) {
+    document.getElementById("projects").scrollIntoView();
   }
-};
+});
 
+filterProjects();
+
+/* --- Project details dialog (content comes from the card itself) --- */
 const projectDialog = document.getElementById("project-dialog");
+const dialogLive = document.getElementById("dialog-live");
+
 document.querySelectorAll(".notes-button").forEach((button) => {
+  if (typeof projectDialog.showModal !== "function") {
+    button.hidden = true;
+    return;
+  }
+
   button.addEventListener("click", () => {
-    const project = projectDetails[button.dataset.project];
-    if (!project) return;
-    document.getElementById("dialog-kicker").textContent = project.category;
-    document.getElementById("dialog-title").textContent = project.title;
-    document.getElementById("dialog-description").textContent = project.description;
-    document.getElementById("dialog-detail").textContent = project.detail;
-    document.getElementById("dialog-repo").href = project.repo;
+    const card = button.closest(".project-card");
+    const liveLink = card.querySelector(".live-link");
+
+    document.getElementById("dialog-kicker").textContent = card.querySelector(".project-chip").textContent;
+    document.getElementById("dialog-title").textContent = card.querySelector("h3").textContent;
+    document.getElementById("dialog-description").textContent = card.querySelector(".project-summary").textContent;
+    document.getElementById("dialog-detail").textContent = card.querySelector(".project-detail").textContent;
+    document.getElementById("dialog-tags").innerHTML = card.querySelector(".tag-list").innerHTML;
+    document.getElementById("dialog-repo").href = card.querySelector(".gradient-btn").href;
+    dialogLive.hidden = !liveLink;
+    if (liveLink) dialogLive.href = liveLink.href;
+
     projectDialog.showModal();
   });
 });
 
-document.getElementById("play-bubbles").addEventListener("click", () => {
-  const toggle = document.getElementById("bubble-game-toggle");
-  if (!document.getElementById("bubble-game-widget").classList.contains("bubble-game-widget--open")) {
-    toggle.click();
-  }
-  toggle.focus();
+projectDialog.addEventListener("click", (e) => {
+  if (e.target === projectDialog) projectDialog.close();
 });
 
-/* --- Mini-game: Bubble Pop (floating widget) --- */
+/* --- Meme break --- */
+(function initMemes() {
+  const frame = document.getElementById("meme-frame");
+  const emojiEl = document.getElementById("meme-emoji");
+  const setupEl = document.getElementById("meme-setup");
+  const punchEl = document.getElementById("meme-punch");
+  const nextBtn = document.getElementById("meme-next");
+
+  if (!frame || !emojiEl || !setupEl || !punchEl || !nextBtn) return;
+
+  const memes = [
+    ["🐛", "99 little bugs in the code. Take one down, patch it around...", "127 little bugs in the code."],
+    ["💻", "\"But it works on my machine.\"", "Great, then we're shipping your machine."],
+    ["⏰", "Me: I'll fix this in five minutes.", "Me, three hours later: so anyway, I rewrote everything."],
+    ["🤔", "Code doesn't work: why?", "Code works: ...why?"],
+    ["📦", "git commit -m \"final\"", "git commit -m \"final_FINAL_pls_work\""],
+    ["🫠", "Kernel panic?", "No no, the kernel is fine. I'm the one panicking."],
+    ["🚰", "Data pipeline status:", "It's flowing. Nobody touch anything."],
+    ["🤖", "Trained the model for six hours.", "Forgot to save it. We don't talk about it."],
+    ["🏀", "Debugging is a lot like basketball:", "you miss 100% of the semicolons you don't check."],
+    ["✨", "It's not a bug.", "It's a surprise feature."]
+  ];
+
+  let index = 0;
+
+  nextBtn.addEventListener("click", () => {
+    index = (index + 1) % memes.length;
+    const [emoji, setup, punch] = memes[index];
+    emojiEl.textContent = emoji;
+    setupEl.textContent = setup;
+    punchEl.textContent = punch;
+    frame.classList.remove("is-swapping");
+    void frame.offsetWidth;
+    frame.classList.add("is-swapping");
+  });
+})();
+
+/* --- Mini-game: Bubble Pop (always open, runs while it is on screen) --- */
 (function initBubbleGame() {
-  const widget = document.getElementById("bubble-game-widget");
-  const toggle = document.getElementById("bubble-game-toggle");
-  const panel = document.getElementById("bubble-game-panel");
+  const section = document.getElementById("games");
   const playfield = document.getElementById("bubble-playfield");
   const scoreEl = document.getElementById("bubble-score");
+  const bestEl = document.getElementById("bubble-best");
+  const hintEl = document.getElementById("bubble-hint");
   const restartBtn = document.getElementById("bubble-restart");
+  const pauseBtn = document.getElementById("bubble-pause");
+  const fab = document.getElementById("game-fab");
 
-  if (!widget || !toggle || !panel || !playfield || !scoreEl || !restartBtn) return;
+  if (!section || !playfield || !scoreEl || !bestEl || !hintEl || !restartBtn || !pauseBtn) return;
 
   const MAX_BUBBLES = 6;
   const SPAWN_MIN = 750;
   const SPAWN_MAX = 1300;
   const BUBBLE_LIFETIME_MS = 5200;
+  const BEST_KEY = "bubble-pop-best";
+  const DEFAULT_HINT = hintEl.textContent;
 
   let score = 0;
+  let best = 0;
   let spawnTimer = null;
   let running = false;
+  // Visitors who prefer reduced motion start paused and can press Play.
+  let paused = reducedMotion;
+  let inView = !("IntersectionObserver" in window);
 
   const gradients = [
     "linear-gradient(145deg, #ff8fc9, #ff6eb4)",
@@ -143,9 +212,39 @@ document.getElementById("play-bubbles").addEventListener("click", () => {
     "linear-gradient(145deg, #ffb8e8, #b8d4ff)"
   ];
 
+  const cheers = {
+    5: "Nice popping! 🫧",
+    10: "You're on a roll ✨",
+    25: "Bubble boss 👑",
+    50: "Okay, certified pop star 🌟"
+  };
+
+  try {
+    best = Number(window.localStorage.getItem(BEST_KEY)) || 0;
+  } catch (e) {
+    best = 0;
+  }
+  bestEl.textContent = String(best);
+
   function setScore(next) {
     score = next;
     scoreEl.textContent = String(score);
+
+    if (score > best) {
+      best = score;
+      bestEl.textContent = String(best);
+      try {
+        window.localStorage.setItem(BEST_KEY, String(best));
+      } catch (e) {
+        /* best score just won't be remembered */
+      }
+    }
+
+    if (score === 0) {
+      hintEl.textContent = DEFAULT_HINT;
+    } else if (cheers[score]) {
+      hintEl.textContent = cheers[score];
+    }
   }
 
   function randomBetween(min, max) {
@@ -170,16 +269,16 @@ document.getElementById("play-bubbles").addEventListener("click", () => {
 
   function trySpawnBubble() {
     const bubbles = playfield.querySelectorAll(".bubble-game__bubble:not(.is-popping)");
-    if (bubbles.length >= MAX_BUBBLES) return;
+    if (bubbles.length >= MAX_BUBBLES || !playfield.clientWidth || !playfield.clientHeight) return;
 
     const bubble = document.createElement("button");
     bubble.type = "button";
     bubble.className = "bubble-game__bubble";
     bubble.setAttribute("aria-label", "Pop bubble");
 
-    const size = randomBetween(38, 58);
-    const leftPct = randomBetween(4, 92 - (size / playfield.clientWidth) * 100);
-    const topPct = randomBetween(4, 88 - (size / playfield.clientHeight) * 100);
+    const size = randomBetween(44, 62);
+    const leftPct = randomBetween(4, 96 - (size / playfield.clientWidth) * 100);
+    const topPct = randomBetween(4, 94 - (size / playfield.clientHeight) * 100);
 
     bubble.style.width = `${size}px`;
     bubble.style.height = `${size}px`;
@@ -201,7 +300,18 @@ document.getElementById("play-bubbles").addEventListener("click", () => {
       if (bubble.classList.contains("is-popping")) return;
       bubble.classList.add("is-popping");
       setScore(score + 1);
-      window.setTimeout(() => bubble.remove(), 320);
+
+      const spark = document.createElement("span");
+      spark.className = "bubble-game__spark";
+      spark.textContent = "+1 ✨";
+      spark.style.left = bubble.style.left;
+      spark.style.top = bubble.style.top;
+      playfield.appendChild(spark);
+
+      window.setTimeout(() => {
+        bubble.remove();
+        spark.remove();
+      }, 700);
     });
 
     playfield.appendChild(bubble);
@@ -216,42 +326,55 @@ document.getElementById("play-bubbles").addEventListener("click", () => {
     clearSpawnTimer();
     scheduleSpawn();
     for (let i = 0; i < 3; i += 1) {
-      window.setTimeout(() => trySpawnBubble(), i * 120);
+      window.setTimeout(() => {
+        if (running) trySpawnBubble();
+      }, i * 120);
     }
   }
 
   function stopGame() {
     running = false;
     clearSpawnTimer();
-    clearPlayfield();
   }
 
-  function setOpen(open) {
-    widget.classList.toggle("bubble-game-widget--open", open);
-    toggle.setAttribute("aria-expanded", open ? "true" : "false");
-    panel.hidden = !open;
-    if (open) {
-      setScore(0);
-      startGame();
-    } else {
-      stopGame();
-    }
+  function syncGame() {
+    const shouldRun = !paused && inView && !document.hidden;
+    if (shouldRun && !running) startGame();
+    if (!shouldRun && running) stopGame();
+
+    playfield.classList.toggle("is-paused", paused);
+    pauseBtn.textContent = paused ? "Play" : "Pause";
+    pauseBtn.setAttribute("aria-pressed", String(paused));
   }
 
-  toggle.addEventListener("click", () => {
-    setOpen(!widget.classList.contains("bubble-game-widget--open"));
+  pauseBtn.addEventListener("click", () => {
+    paused = !paused;
+    if (paused) clearPlayfield();
+    syncGame();
   });
 
   restartBtn.addEventListener("click", () => {
-    if (!widget.classList.contains("bubble-game-widget--open")) return;
     setScore(0);
     clearPlayfield();
-    startGame();
+    paused = false;
+    stopGame();
+    syncGame();
   });
 
-  document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape" && widget.classList.contains("bubble-game-widget--open")) {
-      setOpen(false);
+  document.addEventListener("visibilitychange", syncGame);
+
+  if ("IntersectionObserver" in window) {
+    new IntersectionObserver((entries) => {
+      inView = entries[0].isIntersecting;
+      syncGame();
+    }).observe(playfield);
+
+    if (fab) {
+      new IntersectionObserver((entries) => {
+        fab.classList.toggle("is-hidden", entries[0].isIntersecting);
+      }).observe(section);
     }
-  });
+  }
+
+  syncGame();
 })();

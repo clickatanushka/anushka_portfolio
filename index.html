@@ -1,175 +1,403 @@
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta name="theme-color" content="#fff8f4">
-      <meta name="description" content="Anushka is a BTech student, basketball captain, and curious builder. Explore her projects in systems, explainable AI, and data.">
-      <title>Anushka | Curious builder, joyful debugger</title>
-      <link rel="preconnect" href="https://fonts.googleapis.com">
-      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-      <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&display=swap" rel="stylesheet">
-      <link rel="stylesheet" href="css/styles.css">
-    </head>
-    <body>
-      <header class="topbar">
-        <nav class="topbar-inner" aria-label="Primary navigation">
-          <a class="wordmark" href="#home" aria-label="Anushka, home">a<span>.</span></a>
-          <ul class="nav-links">
-            <li><a href="#about" class="nav-link">A little about me</a></li>
-            <li><a href="#projects" class="nav-link">Things I've made</a></li>
-            <li><a href="#play" class="nav-link">Play</a></li>
-          </ul>
-          <a class="topbar-cta" href="https://github.com/clickatanushka" target="_blank" rel="noopener noreferrer">Find me on GitHub <span aria-hidden="true">↗</span></a>
-        </nav>
-      </header>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#ffe5f3">
+  <meta name="description" content="Anushka is a BTech student, basketball captain, and tech enthusiast. Explore her projects in AI, data pipelines, systems, and web.">
+  <title>Anushka | Cute Tech Portfolio</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8C%B8%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Pacifico&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <script>document.documentElement.classList.add("js");</script>
+</head>
+<body>
+  <div class="bg-decor" aria-hidden="true">
+    <span class="blob blob-1"></span>
+    <span class="blob blob-2"></span>
+    <span class="blob blob-3"></span>
+    <div class="bg-bubbles">
+      <span style="--x:4%;--s:34px;--d:19s;--delay:-2s;--sway:26px;--rest:18%"></span>
+      <span style="--x:11%;--s:18px;--d:14s;--delay:-9s;--sway:-18px;--rest:62%"></span>
+      <span style="--x:19%;--s:52px;--d:24s;--delay:-14s;--sway:30px;--rest:36%"></span>
+      <span style="--x:27%;--s:24px;--d:16s;--delay:-5s;--sway:-22px;--rest:80%"></span>
+      <span style="--x:36%;--s:40px;--d:21s;--delay:-17s;--sway:20px;--rest:10%"></span>
+      <span style="--x:44%;--s:16px;--d:13s;--delay:-1s;--sway:-14px;--rest:52%"></span>
+      <span style="--x:52%;--s:60px;--d:27s;--delay:-11s;--sway:34px;--rest:72%"></span>
+      <span style="--x:60%;--s:22px;--d:15s;--delay:-7s;--sway:-20px;--rest:28%"></span>
+      <span style="--x:68%;--s:44px;--d:22s;--delay:-19s;--sway:24px;--rest:88%"></span>
+      <span style="--x:75%;--s:20px;--d:17s;--delay:-3s;--sway:-16px;--rest:44%"></span>
+      <span style="--x:82%;--s:36px;--d:20s;--delay:-13s;--sway:28px;--rest:14%"></span>
+      <span style="--x:89%;--s:26px;--d:18s;--delay:-8s;--sway:-24px;--rest:66%"></span>
+      <span style="--x:94%;--s:48px;--d:25s;--delay:-16s;--sway:-30px;--rest:32%"></span>
+      <span style="--x:48%;--s:28px;--d:18s;--delay:-21s;--sway:18px;--rest:92%"></span>
+    </div>
+  </div>
 
-      <main>
-        <section class="hero" id="home" aria-labelledby="hero-title">
-          <div class="hero-inner">
-            <div class="hero-copy">
-              <p class="eyebrow"><span class="status-dot"></span> BTech student & curious builder</p>
-              <h1 id="hero-title">Soft heart.<br>Sharp <span class="hero-accent">ideas.</span></h1>
-              <p class="hero-intro">I'm Anushka: part-time basketball captain, full-time question asker. I like getting close to the way things work, then making something useful (and a little delightful) out of it.</p>
-              <div class="hero-actions">
-                <a class="button button-dark" href="#projects">Come see what I've made <span aria-hidden="true">↓</span></a>
-                <span class="hero-aside">Currently collecting<br>new things to learn <span aria-hidden="true">♡</span></span>
-              </div>
-            </div>
-            <div class="hero-art" aria-label="Decorative code editor illustration">
-              <div class="orbit orbit-one" aria-hidden="true">✳</div>
-              <div class="orbit orbit-two" aria-hidden="true">♡</div>
-              <div class="editor-card">
-                <div class="editor-top"><span></span><span></span><span></span><i>little-things.js</i></div>
-                <div class="editor-code" aria-hidden="true">
-                  <p><b>const</b> anushka = {</p>
-                  <p class="indent"><em>curiosity</em>: <strong>"always on"</strong>,</p>
-                  <p class="indent"><em>currently</em>: <strong>"building"</strong>,</p>
-                  <p class="indent"><em>debugFuel</em>: <strong>"chai + joy"</strong>,</p>
-                  <p class="indent"><em>superpower</em>: <strong>"keep going"</strong></p>
-                  <p>}; <span class="cursor">▍</span></p>
-                </div>
-                <div class="editor-sticker">made with curiosity <span aria-hidden="true">✿</span></div>
-              </div>
-              <span class="hero-sparkle sparkle-one" aria-hidden="true">✳</span>
-              <span class="hero-sparkle sparkle-two" aria-hidden="true">✦</span>
-            </div>
-          </div>
-          <div class="hero-bottom"><span>SCROLL A LITTLE</span><span class="hero-line"></span><span>PROJECTS, PEOPLE & PLAY</span></div>
-        </section>
+  <header class="site-header">
+    <nav class="navbar container" aria-label="Primary navigation">
+      <a href="#home" class="brand">Anushka</a>
+      <ul class="nav-links">
+        <li><a href="#home" class="nav-link active">Home</a></li>
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#projects" class="nav-link">Projects</a></li>
+        <li><a href="#games" class="nav-link">Games</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
 
-        <section id="about" class="about-section" aria-labelledby="about-title">
-          <div class="content-width about-inner">
-            <p class="section-kicker">01 / THE HUMAN BEHIND THE KEYBOARD</p>
-            <div class="about-copy">
-              <h2 id="about-title">I like my problems <span>interesting</span><br>and my playlists eclectic.</h2>
-              <div class="about-detail">
-                <p>I'm a third-year BTech undergraduate and captain of my girls' basketball team. Tech gives me the satisfying puzzle; sport gives me the team, the energy, and the reminder that the best things happen when you keep showing up.</p>
-                <div class="interest-list" aria-label="Interests"><span>systems</span><span>machine learning</span><span>good questions</span><span>outside time</span><span>teamwork</span></div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section id="projects" class="projects-section" aria-labelledby="projects-title">
-          <div class="content-width">
-            <div class="projects-heading">
-              <div>
-                <p class="section-kicker">02 / THE THINGS I'VE MADE</p>
-                <h2 id="projects-title">Curiosity, <span>shipped.</span></h2>
-              </div>
-              <p class="projects-note">Three projects, three rabbit holes.<br>Pick one and have a peek.</p>
-            </div>
-
-            <div class="project-tools">
-              <div class="filter-list" role="group" aria-label="Filter projects by topic">
-                <button class="filter-button is-selected" type="button" data-filter="all" aria-pressed="true">Everything <span>03</span></button>
-                <button class="filter-button" type="button" data-filter="systems" aria-pressed="false">Systems</button>
-                <button class="filter-button" type="button" data-filter="ai" aria-pressed="false">AI & health</button>
-                <button class="filter-button" type="button" data-filter="data" aria-pressed="false">Data</button>
-              </div>
-              <label class="search-box"><span aria-hidden="true">⌕</span><span class="sr-only">Search projects</span><input id="project-search" type="search" placeholder="Find a project..." autocomplete="off"></label>
-            </div>
-
-            <div class="project-grid" id="project-grid" aria-live="polite">
-              <article class="project-card" data-category="systems" data-search="custom bootloader kernel operating system c assembly gcc qemu systems">
-                <div class="project-art art-kernel" aria-hidden="true">
-                  <span class="art-index">01 / SYSTEMS</span>
-                  <div class="kernel-screen"><span class="kernel-prompt">$</span><span>booting curiosity<span class="kernel-cursor">_</span></span><span class="kernel-rule"></span><span class="kernel-ok">[ OK ] kernel loaded</span><span class="kernel-coords">0x7C00 &nbsp; 16-bit</span></div>
-                  <span class="art-stamp">low<br>level<br>love</span>
-                </div>
-                <div class="project-card-body">
-                  <div class="project-meta"><span>Systems programming</span><span>01</span></div>
-                  <h3>Starting from the very first byte</h3>
-                  <p>A custom bootloader and kernel: a hands-on trip through assembly, memory, and what happens before an operating system says hello.</p>
-                  <div class="tag-list"><span>C</span><span>Assembly</span><span>QEMU</span></div>
-                  <div class="project-actions"><button class="notes-button" type="button" data-project="kernel">A closer look <span aria-hidden="true">↗</span></button><a class="repo-link" href="https://github.com/clickatanushka/Coustum-bootloader-and-kernel-development" target="_blank" rel="noopener noreferrer" aria-label="View bootloader and kernel project on GitHub">GitHub <span aria-hidden="true">↗</span></a></div>
-                </div>
-              </article>
-
-              <article class="project-card" data-category="ai" data-search="xai explainable artificial intelligence lung x-ray diagnosis tensorflow grad-cam machine learning health">
-                <div class="project-art art-xai" aria-hidden="true">
-                  <span class="art-index">02 / EXPLAINABLE AI</span>
-                  <div class="xray-frame"><span class="xray-label">model attention</span><div class="lung-shape lung-left"></div><div class="lung-shape lung-right"></div><div class="xray-spine"></div><div class="xray-glow"></div><span class="xray-scale">0.92 confidence</span></div>
-                  <span class="art-stamp stamp-xai">look<br>closer<br>✳</span>
-                </div>
-                <div class="project-card-body">
-                  <div class="project-meta"><span>Machine learning</span><span>02</span></div>
-                  <h3>When the model shows its work</h3>
-                  <p>An X-ray diagnosis project exploring explainable AI, with visual attention maps to make model predictions easier to inspect.</p>
-                  <div class="tag-list"><span>Python</span><span>TensorFlow</span><span>Grad-CAM</span></div>
-                  <div class="project-actions"><button class="notes-button" type="button" data-project="xai">A closer look <span aria-hidden="true">↗</span></button><a class="repo-link" href="https://github.com/clickatanushka/XAI" target="_blank" rel="noopener noreferrer" aria-label="View explainable AI project on GitHub">GitHub <span aria-hidden="true">↗</span></a></div>
-                </div>
-              </article>
-
-              <article class="project-card" data-category="data" data-search="user behaviour analytics user behavior data pandas statistics engagement visualization">
-                <div class="project-art art-data" aria-hidden="true">
-                  <span class="art-index">03 / DATA STORIES</span>
-                  <div class="data-dashboard"><div class="data-label"><span>user patterns</span><b>+24.8%</b></div><div class="chart-area"><span class="chart-gridline line-one"></span><span class="chart-gridline line-two"></span><span class="chart-gridline line-three"></span><span class="chart-bar bar-one"></span><span class="chart-bar bar-two"></span><span class="chart-bar bar-three"></span><span class="chart-bar bar-four"></span><span class="chart-bar bar-five"></span><span class="chart-bar bar-six"></span><span class="chart-trend"></span></div><div class="chart-legend"><span>MON</span><span>TUE</span><span>WED</span><span>THU</span><span>FRI</span><span>SAT</span></div></div>
-                  <span class="art-stamp stamp-data">data<br>with a<br>story</span>
-                </div>
-                <div class="project-card-body">
-                  <div class="project-meta"><span>Analytics</span><span>03</span></div>
-                  <h3>Finding the story in user behavior</h3>
-                  <p>An exploration of user behavior data, looking for the patterns behind engagement and turning raw numbers into useful insights.</p>
-                  <div class="tag-list"><span>Python</span><span>Pandas</span><span>Statistics</span></div>
-                  <div class="project-actions"><button class="notes-button" type="button" data-project="analytics">A closer look <span aria-hidden="true">↗</span></button><a class="repo-link" href="https://github.com/clickatanushka/User-behavior-Analytics" target="_blank" rel="noopener noreferrer" aria-label="View user behavior analytics project on GitHub">GitHub <span aria-hidden="true">↗</span></a></div>
-                </div>
-              </article>
-            </div>
-            <p class="no-results" id="no-results" hidden>No projects match that search just yet. Try another word?</p>
-            <p class="demo-note"><span aria-hidden="true">✳</span> No video demos yet, so I made these little project previews instead. The GitHub links have the real code.</p>
-          </div>
-        </section>
-
-        <section class="play-section" id="play" aria-labelledby="play-title">
-          <div class="content-width play-inner">
-            <div><p class="section-kicker">03 / A TINY DETOUR</p><h2 id="play-title">A little play<br><span>break?</span></h2><p>My portfolio comes with a tiny built-in game. Go on, pop a few. The bubbles are very poppable.</p><button class="button button-play" id="play-bubbles" type="button">Let's pop bubbles <span aria-hidden="true">↗</span></button></div>
-            <div class="play-decoration" aria-hidden="true"><span class="play-circle circle-big">pop!</span><span class="play-circle circle-small">✿</span><span class="play-star">✳</span><span class="play-squiggle">♡</span></div>
-          </div>
-        </section>
-
-        <section class="contact-section" id="contact" aria-labelledby="contact-title">
-          <div class="content-width contact-inner"><p class="section-kicker">04 / OVER TO YOU</p><h2 id="contact-title">Have a good<br><span>question?</span></h2><p>I'd love to hear about what you're building, learning, or figuring out.</p><a class="button button-dark" href="https://github.com/clickatanushka" target="_blank" rel="noopener noreferrer">Say hello on GitHub <span aria-hidden="true">↗</span></a></div>
-        </section>
-      </main>
-
-      <footer class="site-footer"><a class="footer-mark" href="#home">a.</a><span>Made with curiosity and a tiny bit of CSS magic.</span><a href="#home">Back to top ↑</a></footer>
-
-      <dialog class="project-dialog" id="project-dialog" aria-labelledby="dialog-title">
-        <form method="dialog"><button class="dialog-close" aria-label="Close project notes">×</button></form>
-        <p class="section-kicker" id="dialog-kicker"></p><h2 id="dialog-title"></h2><p id="dialog-description"></p><div class="dialog-detail" id="dialog-detail"></div><a class="button button-dark" id="dialog-repo" href="" target="_blank" rel="noopener noreferrer">Explore the code on GitHub <span aria-hidden="true">↗</span></a>
-      </dialog>
-
-      <aside class="bubble-game-widget" id="bubble-game-widget" aria-label="Bubble pop mini game">
-        <button type="button" class="bubble-game-widget__fab" id="bubble-game-toggle" aria-expanded="false" aria-controls="bubble-game-panel"><span class="bubble-game-widget__fab-icon" aria-hidden="true">🫧</span><span class="sr-only">Toggle bubble pop game</span></button>
-        <div class="bubble-game-widget__panel" id="bubble-game-panel" role="region" aria-labelledby="bubble-game-title" hidden>
-          <div class="bubble-game-widget__head"><h3 id="bubble-game-title" class="bubble-game-widget__title">Bubble Pop</h3><p class="bubble-game-widget__hint">Tap the bubbles before they fade ✨</p></div>
-          <div class="bubble-game__toolbar"><span class="bubble-game__score">Score <strong id="bubble-score">0</strong></span><button type="button" class="bubble-game__btn" id="bubble-restart">Restart</button></div>
-          <div class="bubble-game__playfield" id="bubble-playfield" aria-live="polite"></div>
+  <main>
+    <section id="home" class="section hero reveal">
+      <div class="container split">
+        <div>
+          <p class="eyebrow">Cute + curious + coding</p>
+          <h1>Hello, I'm <span class="nowrap">Anushka <span class="emoji">🌸</span></span></h1>
+          <p class="card-text">
+            A <span>third-year BTech undergraduate</span>, <span>girls basketball team captain</span> 🏀,
+            tech enthusiast 💻 and someone who lives for <span>outdoor adventures</span>.
+            I love balancing discipline from sports with creativity in tech.
+          </p>
+          <p class="intro-note">I build with heart, hustle, and a lot of joyful debugging ✨</p>
+          <a class="btn gradient-btn" href="#projects">See my work</a>
         </div>
-      </aside>
+        <div class="profile-wrapper">
+          <span class="sticker sticker-1" aria-hidden="true">💻</span>
+          <span class="sticker sticker-2" aria-hidden="true">🏀</span>
+          <span class="sticker sticker-3" aria-hidden="true">✨</span>
+          <figure class="profile-card">
+            <img class="profile-image" src="https://media.giphy.com/media/l0MYt5jPR6QX5pnqM/giphy.gif" alt="An animated profile visual" width="370" height="208">
+          </figure>
+        </div>
+      </div>
+    </section>
 
-      <script src="js/script.js"></script>
-    </body>
-    </html>
+    <section id="about" class="section reveal">
+      <div class="container split reverse">
+        <div>
+          <h2>Who I Am 💕</h2>
+          <p class="card-text">
+            Equal parts <span>coder</span>, <span>athlete</span>, and <span>dreamer</span> 🌈.
+            I believe growth happens when you step outside your comfort zone
+            on the court, in code, and in life. I am always chasing progress, not perfection 🌱
+          </p>
+        </div>
+        <div>
+          <img class="rounded-media" src="https://media.giphy.com/media/26ufdipQqU2lhNA4g/giphy.gif" alt="Happy coding visual" width="200" height="200" loading="lazy">
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="section projects">
+      <div class="container">
+        <div class="reveal">
+          <h2>My Projects ✨</h2>
+          <p class="section-subtitle">Straight from my GitHub. Filter by topic, search for a tool, or open the details on any card.</p>
+        </div>
+
+        <div class="project-tools">
+          <div class="filter-list" role="group" aria-label="Filter projects by topic">
+            <button class="filter-button is-selected" type="button" data-filter="all" aria-pressed="true">Everything <span class="filter-count"></span></button>
+            <button class="filter-button" type="button" data-filter="ai" aria-pressed="false">AI &amp; ML <span class="filter-count"></span></button>
+            <button class="filter-button" type="button" data-filter="data" aria-pressed="false">Data pipelines <span class="filter-count"></span></button>
+            <button class="filter-button" type="button" data-filter="systems" aria-pressed="false">Systems &amp; security <span class="filter-count"></span></button>
+            <button class="filter-button" type="button" data-filter="web" aria-pressed="false">Web &amp; tools <span class="filter-count"></span></button>
+          </div>
+          <label class="search-box"><span aria-hidden="true">🔎</span><span class="sr-only">Search projects</span><input id="project-search" type="search" placeholder="Find a project..." autocomplete="off"></label>
+        </div>
+
+        <!-- To add a project: copy one <article>, set data-category (ai, data, systems or web), and edit the text and links. -->
+        <div class="card-grid project-grid" id="project-grid">
+          <article class="project-card" data-category="ai">
+            <div class="project-top"><span class="project-emoji" aria-hidden="true">🚨</span><span class="project-chip">AI &amp; ML</span></div>
+            <h3>Incident Investigation Lab</h3>
+            <p class="project-summary">A small production-like system you can break on purpose, plus an AI agent that investigates the alerts with read-only MCP tools and writes an incident report backed by evidence.</p>
+            <p class="project-detail" hidden>An order API (FastAPI + Postgres) sends traces, metrics and logs through OpenTelemetry to Prometheus, Loki and Tempo. Alertmanager hands alerts to an incident worker, which runs a Claude agent over narrow MCP tools for error rate, latency, logs, traces, database health and deploy history. Everything runs locally with Docker Compose, with Grafana dashboards included.</p>
+            <ul class="tag-list"><li>Python</li><li>MCP</li><li>FastAPI</li><li>OpenTelemetry</li><li>Grafana</li><li>Docker</li></ul>
+            <div class="project-links">
+              <a class="btn gradient-btn" href="https://github.com/clickatanushka/MCP" target="_blank" rel="noopener noreferrer">GitHub</a>
+              <button class="btn ghost-btn notes-button" type="button">Details</button>
+            </div>
+          </article>
+
+          <article class="project-card" data-category="ai">
+            <div class="project-top"><span class="project-emoji" aria-hidden="true">📚</span><span class="project-chip">AI &amp; ML</span></div>
+            <h3>DocuMind: Production RAG</h3>
+            <p class="project-summary">A document assistant built in four phases: a core RAG pipeline first, then async ingestion, guardrails, caching, evaluation, and cost and latency tracking.</p>
+            <p class="project-detail" hidden>A Streamlit app over a RAG pipeline: PDF ingestion and chunking, OpenAI embeddings, Pinecone vector search and gpt-4o-mini answers. Later phases add Celery + Redis background ingestion, input and output guardrails, caching, RAGAS evaluation runs, and a tracker that logs LLM calls and retrievals. This repository is the final phase; the earlier phases live in my RAG, Phase-2 and Phase-3 repositories.</p>
+            <ul class="tag-list"><li>Python</li><li>RAG</li><li>Pinecone</li><li>Celery</li><li>Redis</li><li>RAGAS</li><li>Streamlit</li></ul>
+            <div class="project-links">
+              <a class="btn gradient-btn" href="https://github.com/clickatanushka/Phase-4" target="_blank" rel="noopener noreferrer">GitHub</a>
+              <button class="btn ghost-btn notes-button" type="button">Details</button>
+            </div>
+          </article>
+
+          <article class="project-card" data-category="data">
+            <div class="project-top"><span class="project-emoji" aria-hidden="true">🛒</span><span class="project-chip">Data pipelines</span></div>
+            <h3>Real-Time E-Commerce Analytics Pipeline</h3>
+            <p class="project-summary">Live e-commerce transactions flow through Kafka into a Python stream processor that flags suspicious orders and scores anomalies, then lands them in Redis, PostgreSQL and Grafana.</p>
+            <p class="project-detail" hidden>A Faker-based producer publishes transactions to Kafka. The stream processor enriches them, flags transactions over $500, and scores each one with an Isolation Forest model trained on the first 50 transactions. Redis holds the real-time cache, PostgreSQL the permanent storage, and Grafana the dashboards. Deployed on AWS EC2 with Docker Compose.</p>
+            <ul class="tag-list"><li>Kafka</li><li>Python</li><li>scikit-learn</li><li>Redis</li><li>PostgreSQL</li><li>Grafana</li><li>AWS</li></ul>
+            <div class="project-links">
+              <a class="btn gradient-btn" href="https://github.com/clickatanushka/flink2" target="_blank" rel="noopener noreferrer">GitHub</a>
+              <button class="btn ghost-btn notes-button" type="button">Details</button>
+            </div>
+          </article>
+
+          <article class="project-card" data-category="ai">
+            <div class="project-top"><span class="project-emoji" aria-hidden="true">🫁</span><span class="project-chip">AI &amp; ML</span></div>
+            <h3>XAI-Powered Lung X-ray Diagnosis</h3>
+            <p class="project-summary">Classifies chest X-rays as healthy or pneumonia and shows why the model decided that, using Grad-CAM heatmaps and SHAP.</p>
+            <p class="project-detail" hidden>A pretrained CNN fine-tuned on chest X-ray images, with a Streamlit app: upload an X-ray and get a prediction together with Grad-CAM and SHAP explanations of the regions that influenced it. This is a learning project, not a diagnostic tool.</p>
+            <ul class="tag-list"><li>Python</li><li>TensorFlow</li><li>Grad-CAM</li><li>SHAP</li><li>Streamlit</li></ul>
+            <div class="project-links">
+              <a class="btn gradient-btn" href="https://github.com/clickatanushka/XAI" target="_blank" rel="noopener noreferrer">GitHub</a>
+              <button class="btn ghost-btn notes-button" type="button">Details</button>
+            </div>
+          </article>
+
+          <article class="project-card" data-category="systems">
+            <div class="project-top"><span class="project-emoji" aria-hidden="true">🖥️</span><span class="project-chip">Systems &amp; security</span></div>
+            <h3>Custom Bootloader and Kernel Operating System</h3>
+            <p class="project-summary">A from-scratch x86 bootloader and tiny kernel, built to understand how a computer gets from power-on to running its first code.</p>
+            <p class="project-detail" hidden>A BIOS boot sector written in NASM assembly loads a small kernel into memory and jumps to it, and the kernel prints to the screen. Built on Arch Linux and tested in QEMU. It is minimal and educational: the focus is the boot sequence, memory layout and kernel hand-off.</p>
+            <ul class="tag-list"><li>Assembly</li><li>NASM</li><li>C++</li><li>QEMU</li></ul>
+            <div class="project-links">
+              <a class="btn gradient-btn" href="https://github.com/clickatanushka/Coustum-bootloader-and-kernel-development" target="_blank" rel="noopener noreferrer">GitHub</a>
+              <button class="btn ghost-btn notes-button" type="button">Details</button>
+            </div>
+          </article>
+
+          <article class="project-card" data-category="ai">
+            <div class="project-top"><span class="project-emoji" aria-hidden="true">🔍</span><span class="project-chip">AI &amp; ML</span></div>
+            <h3>SMT Wrong-Polarity Detection Gate</h3>
+            <p class="project-summary">Checks from a phone photo whether a polarized PCB component is placed the right way round: fixture alignment, component crop, classifier, then PASS, CHECK or FAIL.</p>
+            <p class="project-detail" hidden>OpenCV ArUco markers flatten and align each photo, blur and exposure gates reject bad shots, and a fine-tuned ResNet18 classifies the cropped component. Whole boards stay in a single data split and thresholds are chosen on validation only. This is phase 1: the reports in the repository so far come from synthetic rehearsal boards and are labelled that way.</p>
+            <ul class="tag-list"><li>Python</li><li>PyTorch</li><li>OpenCV</li><li>ResNet18</li></ul>
+            <div class="project-links">
+              <a class="btn gradient-btn" href="https://github.com/clickatanushka/SMT" target="_blank" rel="noopener noreferrer">GitHub</a>
+              <button class="btn ghost-btn notes-button" type="button">Details</button>
+            </div>
+          </article>
+
+          <article class="project-card" data-category="data">
+            <div class="project-top"><span class="project-emoji" aria-hidden="true">📈</span><span class="project-chip">Data pipelines</span></div>
+            <h3>Financial Market Analytics Pipeline</h3>
+            <p class="project-summary">A batch pipeline where Airflow ingests daily stock data into PostgreSQL and dbt turns it into moving averages, returns, volatility and trend signals.</p>
+            <p class="project-detail" hidden>Airflow orchestrates three steps: ingest daily OHLCV data for 10 tickers from the Alpha Vantage API, run the dbt models, then run the dbt tests. The models go from staging to intermediate metrics to a final performance table. Containerized with Docker Compose, with Terraform files and a CI workflow in the repository.</p>
+            <ul class="tag-list"><li>Airflow</li><li>dbt</li><li>PostgreSQL</li><li>Docker</li><li>Terraform</li></ul>
+            <div class="project-links">
+              <a class="btn gradient-btn" href="https://github.com/clickatanushka/Apache-Airflow" target="_blank" rel="noopener noreferrer">GitHub</a>
+              <button class="btn ghost-btn notes-button" type="button">Details</button>
+            </div>
+          </article>
+
+          <article class="project-card" data-category="data">
+            <div class="project-top"><span class="project-emoji" aria-hidden="true">⚡</span><span class="project-chip">Data pipelines</span></div>
+            <h3>Real-Time Kafka Pipeline on AWS</h3>
+            <p class="project-summary">A streaming pipeline with Apache Kafka on AWS EC2: producers push stock market records, consumers store them in S3, and Athena queries them.</p>
+            <p class="project-detail" hidden>Kafka and Zookeeper run on an EC2 instance. A Python producer streams rows from a stock market dataset to a topic, a consumer writes them to Amazon S3, an AWS Glue crawler catalogs the data, and Amazon Athena runs SQL over it. The README has screenshots of each stage.</p>
+            <ul class="tag-list"><li>Kafka</li><li>Python</li><li>AWS EC2</li><li>S3</li><li>Glue</li><li>Athena</li></ul>
+            <div class="project-links">
+              <a class="btn gradient-btn" href="https://github.com/clickatanushka/KafkaStockMarketETL" target="_blank" rel="noopener noreferrer">GitHub</a>
+              <button class="btn ghost-btn notes-button" type="button">Details</button>
+            </div>
+          </article>
+
+          <article class="project-card" data-category="systems">
+            <div class="project-top"><span class="project-emoji" aria-hidden="true">🛡️</span><span class="project-chip">Systems &amp; security</span></div>
+            <h3>Adaptive IoT Intrusion Detection</h3>
+            <p class="project-summary">An OMNeT++ simulation of an IoT, edge, mist, fog and cloud network with a central controller that switches threat modes for DDoS, SQL injection and man-in-the-middle attacks.</p>
+            <p class="project-detail" hidden>The C++ simulation models each network layer and a controller that reads edge reports and broadcasts the current threat mode. A Python script trains a Random Forest classifier on the CIC-IDS2017 dataset and derives per-attack threshold profiles for the simulated controller.</p>
+            <ul class="tag-list"><li>C++</li><li>OMNeT++</li><li>Python</li><li>scikit-learn</li></ul>
+            <div class="project-links">
+              <a class="btn gradient-btn" href="https://github.com/clickatanushka/IDS" target="_blank" rel="noopener noreferrer">GitHub</a>
+              <button class="btn ghost-btn notes-button" type="button">Details</button>
+            </div>
+          </article>
+
+          <article class="project-card" data-category="ai">
+            <div class="project-top"><span class="project-emoji" aria-hidden="true">💬</span><span class="project-chip">AI &amp; ML</span></div>
+            <h3>SupportIQ: Caching for AI Systems</h3>
+            <p class="project-summary">A workshop-series app about making an AI support assistant fast and cheap without making it wrong, starting with exact and semantic caching.</p>
+            <p class="project-detail" hidden>The first two of five sessions are built: a multi-layer exact cache (in-process memory, then Redis) and a semantic cache with extra safety gates. On the repository's 600-request benchmark, cost per 1,000 requests drops from $10.58 to $4.86 at a 54% cache hit rate.</p>
+            <ul class="tag-list"><li>Python</li><li>FastAPI</li><li>Redis</li><li>Embeddings</li><li>pytest</li></ul>
+            <div class="project-links">
+              <a class="btn gradient-btn" href="https://github.com/clickatanushka/Caching" target="_blank" rel="noopener noreferrer">GitHub</a>
+              <button class="btn ghost-btn notes-button" type="button">Details</button>
+            </div>
+          </article>
+
+          <article class="project-card" data-category="ai">
+            <div class="project-top"><span class="project-emoji" aria-hidden="true">🤖</span><span class="project-chip">AI &amp; ML</span></div>
+            <h3>EMS AI Quotation Agent</h3>
+            <p class="project-summary">Upload a PCB bill of materials and one click runs the whole quote: live component pricing, an SMT feasibility check, cost calculation, and PDF and Excel exports.</p>
+            <p class="project-detail" hidden>A Flask app that detects the BOM columns automatically, looks up live DigiKey pricing per component, rates SMT risk per package, calculates costs with margin, exports PDF and Excel quotations, and uses Groq for an AI email draft and component explanations.</p>
+            <ul class="tag-list"><li>Python</li><li>Flask</li><li>Groq</li><li>DigiKey API</li><li>pandas</li></ul>
+            <div class="project-links">
+              <a class="btn gradient-btn" href="https://github.com/clickatanushka/BOM_Calculator" target="_blank" rel="noopener noreferrer">GitHub</a>
+              <button class="btn ghost-btn notes-button" type="button">Details</button>
+            </div>
+          </article>
+
+          <article class="project-card" data-category="web">
+            <div class="project-top"><span class="project-emoji" aria-hidden="true">🧾</span><span class="project-chip">Web &amp; tools</span></div>
+            <h3>BOM to Quotation Tool</h3>
+            <p class="project-summary">A web app that turns a PCB bill of materials into a PDF or Excel quotation, with cost calculation, margin, VAT and mismatch checking.</p>
+            <p class="project-detail" hidden>The FastAPI backend parses .xlsx, .xls and .csv BOMs, detects SMT and THT components, checks that reference counts match declared quantities, and calculates assembly costs. The React + Vite frontend shows the parsed table, editable cost settings and a live quote preview. PDFs are generated with ReportLab.</p>
+            <ul class="tag-list"><li>Python</li><li>FastAPI</li><li>React</li><li>Vite</li><li>ReportLab</li></ul>
+            <div class="project-links">
+              <a class="btn gradient-btn" href="https://github.com/clickatanushka/BOM" target="_blank" rel="noopener noreferrer">GitHub</a>
+              <button class="btn ghost-btn notes-button" type="button">Details</button>
+            </div>
+          </article>
+
+          <article class="project-card" data-category="ai">
+            <div class="project-top"><span class="project-emoji" aria-hidden="true">🕰️</span><span class="project-chip">AI &amp; ML</span></div>
+            <h3>Explainable Time-Series Dashboard</h3>
+            <p class="project-summary">An LSTM predicts daily order counts on the Olist e-commerce dataset and flags the days that stray too far from the prediction as anomalies.</p>
+            <p class="project-detail" hidden>Orders are aggregated per day along with delivery and approval delays. A PyTorch LSTM predicts the next day from a 14-day window, days with unusually large residuals are marked as anomalies, and a Streamlit + Plotly dashboard shows actual orders, predictions and the flagged days.</p>
+            <ul class="tag-list"><li>Python</li><li>PyTorch</li><li>LSTM</li><li>Streamlit</li><li>Plotly</li></ul>
+            <div class="project-links">
+              <a class="btn gradient-btn" href="https://github.com/clickatanushka/sales" target="_blank" rel="noopener noreferrer">GitHub</a>
+              <button class="btn ghost-btn notes-button" type="button">Details</button>
+            </div>
+          </article>
+
+          <article class="project-card" data-category="web">
+            <div class="project-top"><span class="project-emoji" aria-hidden="true">🫒</span><span class="project-chip">Web &amp; tools</span></div>
+            <h3>Olive &amp; Cardamom Restaurant Site</h3>
+            <p class="project-summary">A website for a Greek and Indian fusion kitchen, with a menu, courtyard and events sections, and a candlelit mode toggle.</p>
+            <p class="project-detail" hidden>A static site in plain HTML, CSS and JavaScript with sections for the story, the courtyard, the menu, upcoming events and visiting, plus a candlelit (dark) theme toggle. It is live on GitHub Pages.</p>
+            <ul class="tag-list"><li>HTML</li><li>CSS</li><li>JavaScript</li></ul>
+            <div class="project-links">
+              <a class="btn gradient-btn" href="https://github.com/clickatanushka/Greek" target="_blank" rel="noopener noreferrer">GitHub</a>
+              <a class="btn ghost-btn live-link" href="https://clickatanushka.github.io/Greek/" target="_blank" rel="noopener noreferrer">Live demo</a>
+              <button class="btn ghost-btn notes-button" type="button">Details</button>
+            </div>
+          </article>
+
+          <article class="project-card" data-category="data">
+            <div class="project-top"><span class="project-emoji" aria-hidden="true">📊</span><span class="project-chip">Data pipelines</span></div>
+            <h3>User Behaviour Analytics</h3>
+            <p class="project-summary">Generates sample user event data, stores it in MongoDB, and explores it with Pandas to look at engagement patterns.</p>
+            <p class="project-detail" hidden>Python scripts create a sample events file (page views and clicks by device and country), insert it into MongoDB, and load it back into Pandas for analysis. It is an early-stage project that I am still building out.</p>
+            <ul class="tag-list"><li>Python</li><li>Pandas</li><li>MongoDB</li></ul>
+            <div class="project-links">
+              <a class="btn gradient-btn" href="https://github.com/clickatanushka/User-behavior-Analytics" target="_blank" rel="noopener noreferrer">GitHub</a>
+              <button class="btn ghost-btn notes-button" type="button">Details</button>
+            </div>
+          </article>
+
+          <article class="project-card" data-category="web">
+            <div class="project-top"><span class="project-emoji" aria-hidden="true">🔧</span><span class="project-chip">Web &amp; tools</span></div>
+            <h3>Jenkins CI/CD Pipeline Demo</h3>
+            <p class="project-summary">A basic CI/CD pipeline where Jenkins, running in Docker, checks out the repository, sets up Python and runs the pytest suite.</p>
+            <p class="project-detail" hidden>The pipeline is defined in a Jenkinsfile and fails when the tests fail. The README also documents the problems I hit along the way, such as dependency installs and environment issues inside Docker. The goal was learning Jenkins and CI/CD basics, not application complexity.</p>
+            <ul class="tag-list"><li>Jenkins</li><li>Docker</li><li>Python</li><li>pytest</li></ul>
+            <div class="project-links">
+              <a class="btn gradient-btn" href="https://github.com/clickatanushka/Jenkins" target="_blank" rel="noopener noreferrer">GitHub</a>
+              <button class="btn ghost-btn notes-button" type="button">Details</button>
+            </div>
+          </article>
+
+          <article class="project-card" data-category="web">
+            <div class="project-top"><span class="project-emoji" aria-hidden="true">🏦</span><span class="project-chip">Web &amp; tools</span></div>
+            <h3>Online Banking API Testing</h3>
+            <p class="project-summary">Functional API tests for an online banking system using Postman and the Newman CLI, run against a mock API server.</p>
+            <p class="project-detail" hidden>A software testing course project covering authentication, fund transfer, account management and transaction history. The test cases use boundary value analysis, equivalence partitioning, decision tables and state transitions, and Newman automates the runs and generates HTML reports.</p>
+            <ul class="tag-list"><li>Postman</li><li>Newman</li><li>API testing</li></ul>
+            <div class="project-links">
+              <a class="btn gradient-btn" href="https://github.com/clickatanushka/Postman" target="_blank" rel="noopener noreferrer">GitHub</a>
+              <button class="btn ghost-btn notes-button" type="button">Details</button>
+            </div>
+          </article>
+        </div>
+
+        <p class="no-results" id="no-results" hidden>No projects match that search just yet. Try another word? 🌸</p>
+        <div class="project-more">
+          <button class="btn gradient-btn" id="show-more" type="button" aria-controls="project-grid" hidden>Show all projects ✨</button>
+          <a class="btn ghost-btn" href="https://github.com/clickatanushka" target="_blank" rel="noopener noreferrer">More on my GitHub</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="games" class="section">
+      <div class="container">
+        <div class="reveal">
+          <h2>Mini Games 🎮</h2>
+          <p class="section-subtitle">Bubble Pop is already running. Pop as many as you can before they fade, then grab a meme on the way out.</p>
+        </div>
+
+        <div class="play-grid">
+          <div class="bubble-game" id="bubble-game" role="region" aria-labelledby="bubble-game-title">
+            <div class="bubble-game__head">
+              <h3 id="bubble-game-title" class="bubble-game__title">Bubble Pop 🫧</h3>
+              <p class="bubble-game__hint" id="bubble-hint" aria-live="polite">Tap the bubbles before they fade ✨</p>
+            </div>
+            <div class="bubble-game__toolbar">
+              <span class="bubble-game__score">Score <strong id="bubble-score">0</strong></span>
+              <span class="bubble-game__score">Best <strong id="bubble-best">0</strong></span>
+              <span class="bubble-game__buttons">
+                <button type="button" class="bubble-game__btn" id="bubble-pause" aria-pressed="false">Pause</button>
+                <button type="button" class="bubble-game__btn" id="bubble-restart">Restart</button>
+              </span>
+            </div>
+            <div class="bubble-game__playfield" id="bubble-playfield"></div>
+          </div>
+
+          <aside class="meme-card" aria-labelledby="meme-title">
+            <h3 id="meme-title" class="meme-card__title">Meme Break 😂</h3>
+            <div class="meme-card__frame" id="meme-frame" aria-live="polite">
+              <span class="meme-card__emoji" id="meme-emoji" aria-hidden="true">🐛</span>
+              <p class="meme-card__setup" id="meme-setup">99 little bugs in the code. Take one down, patch it around...</p>
+              <p class="meme-card__punch" id="meme-punch">127 little bugs in the code.</p>
+            </div>
+            <button type="button" class="btn ghost-btn" id="meme-next">Another one 🎲</button>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section reveal">
+      <div class="container split reverse">
+        <div>
+          <h2>One Last Thing 💗</h2>
+          <p class="card-text">
+            Thanks for stopping by 🫶 This site is a tiny reflection of my journey:
+            learning loudly, dreaming boldly, and enjoying the ride.
+            If you are here to collaborate, connect, or just vibe, welcome 🌸
+          </p>
+        </div>
+        <div>
+          <img class="rounded-media" src="https://media.giphy.com/media/3oriO0OEd9QIDdllqo/giphy.gif" alt="Celebration visual" width="330" height="328" loading="lazy">
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    Made with 💖, hustle energy, and bright dreams by Anushka ·
+    <a href="https://github.com/clickatanushka" target="_blank" rel="noopener noreferrer">GitHub</a>
+  </footer>
+
+  <dialog class="project-dialog" id="project-dialog" aria-labelledby="dialog-title">
+    <form method="dialog"><button class="dialog-close" aria-label="Close project details">×</button></form>
+    <p class="project-chip" id="dialog-kicker"></p>
+    <h2 id="dialog-title"></h2>
+    <p class="dialog-description" id="dialog-description"></p>
+    <p class="dialog-detail" id="dialog-detail"></p>
+    <ul class="tag-list" id="dialog-tags"></ul>
+    <div class="project-links">
+      <a class="btn gradient-btn" id="dialog-repo" href="https://github.com/clickatanushka" target="_blank" rel="noopener noreferrer">See the code on GitHub</a>
+      <a class="btn ghost-btn live-link" id="dialog-live" href="https://github.com/clickatanushka" target="_blank" rel="noopener noreferrer" hidden>Live demo</a>
+    </div>
+  </dialog>
+
+  <a class="game-fab" id="game-fab" href="#games" aria-label="Jump to the Bubble Pop game"><span aria-hidden="true">🫧</span></a>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
