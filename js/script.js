@@ -127,7 +127,7 @@ document.querySelectorAll(".notes-button").forEach((button) => {
     document.getElementById("dialog-description").textContent = card.querySelector(".project-summary").textContent;
     document.getElementById("dialog-detail").textContent = card.querySelector(".project-detail").textContent;
     document.getElementById("dialog-tags").innerHTML = card.querySelector(".tag-list").innerHTML;
-    document.getElementById("dialog-repo").href = card.querySelector(".gradient-btn").href;
+    document.getElementById("dialog-repo").href = card.querySelector(".solid-btn").href;
     dialogLive.hidden = !liveLink;
     if (liveLink) dialogLive.href = liveLink.href;
 
@@ -204,13 +204,7 @@ projectDialog.addEventListener("click", (e) => {
   let paused = reducedMotion;
   let inView = !("IntersectionObserver" in window);
 
-  const gradients = [
-    "linear-gradient(145deg, #ff8fc9, #ff6eb4)",
-    "linear-gradient(145deg, #c4a8ff, #9b8cff)",
-    "linear-gradient(145deg, #ffd4a8, #ffb8c8)",
-    "linear-gradient(145deg, #a8e6ff, #c9b5ff)",
-    "linear-gradient(145deg, #ffb8e8, #b8d4ff)"
-  ];
+  const colors = ["#ff5aa5", "#ffd23f", "#4f8dff", "#35d68a", "#ff8a3d", "#a77bff"];
 
   const cheers = {
     5: "Nice popping! 🫧",
@@ -284,7 +278,7 @@ projectDialog.addEventListener("click", (e) => {
     bubble.style.height = `${size}px`;
     bubble.style.left = `${Math.max(0, leftPct)}%`;
     bubble.style.top = `${Math.max(0, topPct)}%`;
-    bubble.style.background = gradients[Math.floor(Math.random() * gradients.length)];
+    bubble.style.background = colors[Math.floor(Math.random() * colors.length)];
 
     const life = window.setTimeout(() => {
       if (bubble.isConnected && !bubble.classList.contains("is-popping")) {
@@ -377,4 +371,183 @@ projectDialog.addEventListener("click", (e) => {
   }
 
   syncGame();
+})();
+
+/* --- Draggable stickers --- */
+document.querySelectorAll(".drag").forEach((item) => {
+  let x = 0;
+  let y = 0;
+  let startX = 0;
+  let startY = 0;
+
+  item.addEventListener("pointerdown", (e) => {
+    item.setPointerCapture(e.pointerId);
+    startX = e.clientX - x;
+    startY = e.clientY - y;
+    item.classList.add("is-dragging");
+  });
+
+  item.addEventListener("pointermove", (e) => {
+    if (!item.hasPointerCapture(e.pointerId)) return;
+    x = e.clientX - startX;
+    y = e.clientY - startY;
+    item.style.setProperty("--dx", `${x}px`);
+    item.style.setProperty("--dy", `${y}px`);
+  });
+
+  ["pointerup", "pointercancel"].forEach((type) => {
+    item.addEventListener(type, () => item.classList.remove("is-dragging"));
+  });
+});
+
+/* --- Confetti pop wherever you click --- */
+(function initClickBurst() {
+  if (reducedMotion) return;
+
+  const colors = ["#ff5aa5", "#ffd23f", "#4f8dff", "#35d68a", "#ff8a3d", "#a77bff"];
+  const PIECES = 7;
+
+  document.addEventListener("pointerdown", (e) => {
+    if (e.target.closest("canvas, input, dialog, .drag, .bubble-game__playfield")) return;
+
+    const burst = document.createElement("span");
+    burst.className = "click-burst";
+    burst.style.left = `${e.clientX}px`;
+    burst.style.top = `${e.clientY}px`;
+
+    for (let i = 0; i < PIECES; i += 1) {
+      const piece = document.createElement("i");
+      piece.style.setProperty("--a", `${(360 / PIECES) * i + Math.random() * 24}deg`);
+      piece.style.setProperty("--c", colors[i % colors.length]);
+      if (i % 2) piece.style.setProperty("--br", "2px");
+      burst.appendChild(piece);
+    }
+
+    document.body.appendChild(burst);
+    window.setTimeout(() => burst.remove(), 600);
+  });
+})();
+
+/* --- Doodle pad (strokes are stored so the drawing survives a resize) --- */
+(function initDoodlePad() {
+  const canvas = document.getElementById("doodle-canvas");
+  const sizeInput = document.getElementById("doodle-size");
+  const undoBtn = document.getElementById("doodle-undo");
+  const clearBtn = document.getElementById("doodle-clear");
+  const saveBtn = document.getElementById("doodle-save");
+  const swatches = document.querySelectorAll(".swatch");
+
+  if (!canvas || !canvas.getContext || !sizeInput || !undoBtn || !clearBtn || !saveBtn) return;
+
+  const ctx = canvas.getContext("2d");
+  // Points and sizes are stored as fractions of the canvas width/height.
+  const strokes = [];
+  let current = null;
+  let color = "#17141f";
+  let width = 0;
+  let height = 0;
+
+  function drawStroke(stroke) {
+    const [first, ...rest] = stroke.points;
+    ctx.strokeStyle = stroke.color;
+    ctx.fillStyle = stroke.color;
+    ctx.lineWidth = stroke.size * width;
+    ctx.lineCap = "round";
+    ctx.lineJoin = "round";
+
+    if (rest.length === 0) {
+      ctx.beginPath();
+      ctx.arc(first.x * width, first.y * height, ctx.lineWidth / 2, 0, Math.PI * 2);
+      ctx.fill();
+      return;
+    }
+
+    ctx.beginPath();
+    ctx.moveTo(first.x * width, first.y * height);
+    rest.forEach((point) => ctx.lineTo(point.x * width, point.y * height));
+    ctx.stroke();
+  }
+
+  function redraw() {
+    ctx.fillStyle = "#ffffff";
+    ctx.fillRect(0, 0, width, height);
+    strokes.forEach(drawStroke);
+  }
+
+  function resize() {
+    const ratio = window.devicePixelRatio || 1;
+    width = canvas.clientWidth;
+    height = canvas.clientHeight;
+    if (!width || !height) return;
+    canvas.width = Math.round(width * ratio);
+    canvas.height = Math.round(height * ratio);
+    ctx.setTransform(ratio, 0, 0, ratio, 0, 0);
+    redraw();
+  }
+
+  function pointFrom(e) {
+    const rect = canvas.getBoundingClientRect();
+    return {
+      x: (e.clientX - rect.left - canvas.clientLeft) / width,
+      y: (e.clientY - rect.top - canvas.clientTop) / height
+    };
+  }
+
+  canvas.addEventListener("pointerdown", (e) => {
+    if (!width || !height) return;
+    canvas.setPointerCapture(e.pointerId);
+    current = { color, size: Number(sizeInput.value) / width, points: [pointFrom(e)] };
+    strokes.push(current);
+    redraw();
+  });
+
+  canvas.addEventListener("pointermove", (e) => {
+    if (!current) return;
+    const point = pointFrom(e);
+    const last = current.points[current.points.length - 1];
+    current.points.push(point);
+    drawStroke({ ...current, points: [last, point] });
+  });
+
+  ["pointerup", "pointercancel"].forEach((type) => {
+    canvas.addEventListener(type, () => {
+      current = null;
+    });
+  });
+
+  swatches.forEach((swatch) => {
+    swatch.addEventListener("click", () => {
+      color = swatch.dataset.color;
+      swatches.forEach((other) => {
+        const isSelected = other === swatch;
+        other.classList.toggle("is-selected", isSelected);
+        other.setAttribute("aria-pressed", String(isSelected));
+      });
+    });
+  });
+
+  undoBtn.addEventListener("click", () => {
+    strokes.pop();
+    redraw();
+  });
+
+  clearBtn.addEventListener("click", () => {
+    strokes.length = 0;
+    redraw();
+  });
+
+  saveBtn.addEventListener("click", () => {
+    const link = document.createElement("a");
+    link.download = "doodle.png";
+    link.href = canvas.toDataURL("image/png");
+    link.click();
+  });
+
+  if ("ResizeObserver" in window) {
+    new ResizeObserver(resize).observe(canvas);
+  } else {
+    window.addEventListener("resize", resize);
+  }
+
+  resize();
 })();

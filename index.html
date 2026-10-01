@@ -3,99 +3,271 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#ffe5f3">
-  <meta name="description" content="Anushka is a BTech student, basketball captain, and tech enthusiast. Explore her projects in AI, data pipelines, systems, and web.">
-  <title>Anushka | Cute Tech Portfolio</title>
+  <meta name="theme-color" content="#fff6e4">
+  <meta name="description" content="Anushka is a final-year BTech student, basketball captain, and tech enthusiast. Explore her projects in AI, data pipelines, systems, and web.">
+  <title>Anushka | Portfolio</title>
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8C%B8%3C/text%3E%3C/svg%3E">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Pacifico&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bagel+Fat+One&family=Caveat:wght@500;700&family=DM+Sans:wght@400;500;700&family=Silkscreen:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css">
   <script>document.documentElement.classList.add("js");</script>
 </head>
 <body>
-  <div class="bg-decor" aria-hidden="true">
-    <span class="blob blob-1"></span>
-    <span class="blob blob-2"></span>
-    <span class="blob blob-3"></span>
-    <div class="bg-bubbles">
-      <span style="--x:4%;--s:34px;--d:19s;--delay:-2s;--sway:26px;--rest:18%"></span>
-      <span style="--x:11%;--s:18px;--d:14s;--delay:-9s;--sway:-18px;--rest:62%"></span>
-      <span style="--x:19%;--s:52px;--d:24s;--delay:-14s;--sway:30px;--rest:36%"></span>
-      <span style="--x:27%;--s:24px;--d:16s;--delay:-5s;--sway:-22px;--rest:80%"></span>
-      <span style="--x:36%;--s:40px;--d:21s;--delay:-17s;--sway:20px;--rest:10%"></span>
-      <span style="--x:44%;--s:16px;--d:13s;--delay:-1s;--sway:-14px;--rest:52%"></span>
-      <span style="--x:52%;--s:60px;--d:27s;--delay:-11s;--sway:34px;--rest:72%"></span>
-      <span style="--x:60%;--s:22px;--d:15s;--delay:-7s;--sway:-20px;--rest:28%"></span>
-      <span style="--x:68%;--s:44px;--d:22s;--delay:-19s;--sway:24px;--rest:88%"></span>
-      <span style="--x:75%;--s:20px;--d:17s;--delay:-3s;--sway:-16px;--rest:44%"></span>
-      <span style="--x:82%;--s:36px;--d:20s;--delay:-13s;--sway:28px;--rest:14%"></span>
-      <span style="--x:89%;--s:26px;--d:18s;--delay:-8s;--sway:-24px;--rest:66%"></span>
-      <span style="--x:94%;--s:48px;--d:25s;--delay:-16s;--sway:-30px;--rest:32%"></span>
-      <span style="--x:48%;--s:28px;--d:18s;--delay:-21s;--sway:18px;--rest:92%"></span>
-    </div>
-  </div>
+  <!-- Doodle shapes, reused all over the page with <use href="#d-..."> -->
+  <svg class="doodle-sprite" aria-hidden="true" focusable="false">
+    <symbol id="d-sparkle" viewBox="0 0 100 100">
+      <path d="M50 4 C54 34 66 46 96 50 C66 54 54 66 50 96 C46 66 34 54 4 50 C34 46 46 34 50 4Z" fill="var(--fill)" stroke="var(--ink)" stroke-width="4" stroke-linejoin="round"/>
+    </symbol>
+    <symbol id="d-burst" viewBox="0 0 100 100">
+      <polygon points="50.0,2.0 59.1,16.2 74.0,8.4 74.7,25.3 91.6,26.0 83.8,40.9 98.0,50.0 83.8,59.1 91.6,74.0 74.7,74.7 74.0,91.6 59.1,83.8 50.0,98.0 40.9,83.8 26.0,91.6 25.3,74.7 8.4,74.0 16.2,59.1 2.0,50.0 16.2,40.9 8.4,26.0 25.3,25.3 26.0,8.4 40.9,16.2" fill="var(--fill)" stroke="var(--ink)" stroke-width="3.5" stroke-linejoin="round"/>
+    </symbol>
+    <symbol id="d-flower" viewBox="0 0 100 100">
+      <g fill="var(--fill)" stroke="var(--ink)" stroke-width="3.5">
+        <circle cx="50" cy="22" r="17"/><circle cx="74" cy="36" r="17"/><circle cx="74" cy="64" r="17"/>
+        <circle cx="50" cy="78" r="17"/><circle cx="26" cy="64" r="17"/><circle cx="26" cy="36" r="17"/>
+      </g>
+      <circle cx="50" cy="50" r="15" fill="#ffd23f" stroke="var(--ink)" stroke-width="3.5"/>
+    </symbol>
+    <symbol id="d-squiggle" viewBox="0 0 200 40">
+      <path d="M6 20 Q 21 0 36 20 T 66 20 T 96 20 T 126 20 T 156 20 T 186 20" fill="none" stroke="var(--fill)" stroke-width="8" stroke-linecap="round"/>
+    </symbol>
+    <symbol id="d-zigzag" viewBox="0 0 200 40">
+      <polyline points="6,32 30,8 54,32 78,8 102,32 126,8 150,32 174,8 194,26" fill="none" stroke="var(--fill)" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+    </symbol>
+    <symbol id="d-arrow" viewBox="0 0 120 80">
+      <g fill="none" stroke="var(--ink)" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M8 14 C 40 4 84 18 96 58"/><path d="M76 50 L97 62 L106 40"/>
+      </g>
+    </symbol>
+    <symbol id="d-heart" viewBox="0 0 100 100">
+      <path d="M50 86 C10 58 6 34 22 22 C36 12 48 22 50 32 C52 22 64 12 78 22 C94 34 90 58 50 86Z" fill="var(--fill)" stroke="var(--ink)" stroke-width="4" stroke-linejoin="round"/>
+    </symbol>
+    <symbol id="d-smiley" viewBox="0 0 100 100">
+      <circle cx="50" cy="50" r="44" fill="var(--fill)" stroke="var(--ink)" stroke-width="4"/>
+      <circle cx="36" cy="40" r="5" fill="var(--ink)"/><circle cx="64" cy="40" r="5" fill="var(--ink)"/>
+      <path d="M30 58 Q50 80 70 58" fill="none" stroke="var(--ink)" stroke-width="5" stroke-linecap="round"/>
+    </symbol>
+    <symbol id="d-bolt" viewBox="0 0 100 100">
+      <polygon points="58,4 18,56 46,56 38,96 82,40 54,40" fill="var(--fill)" stroke="var(--ink)" stroke-width="4" stroke-linejoin="round"/>
+    </symbol>
+    <symbol id="d-asterisk" viewBox="0 0 100 100">
+      <path d="M50 10 V90 M15 30 L85 70 M15 70 L85 30" fill="none" stroke="var(--fill)" stroke-width="15" stroke-linecap="round"/>
+    </symbol>
+    <symbol id="d-blob" viewBox="0 0 100 100">
+      <path d="M50 6 C74 2 96 22 94 48 C92 76 72 96 46 94 C20 92 4 72 8 46 C11 22 28 9 50 6Z" fill="var(--fill)" stroke="var(--ink)" stroke-width="3.5"/>
+    </symbol>
+  </svg>
 
   <header class="site-header">
     <nav class="navbar container" aria-label="Primary navigation">
-      <a href="#home" class="brand">Anushka</a>
+      <a href="#home" class="brand"><svg class="doodle doodle--pink" aria-hidden="true"><use href="#d-flower"/></svg>Anushka</a>
       <ul class="nav-links">
         <li><a href="#home" class="nav-link active">Home</a></li>
         <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#toolbox" class="nav-link">Toolbox</a></li>
         <li><a href="#projects" class="nav-link">Projects</a></li>
-        <li><a href="#games" class="nav-link">Games</a></li>
+        <li><a href="#games" class="nav-link">Play</a></li>
         <li><a href="#contact" class="nav-link">Contact</a></li>
       </ul>
     </nav>
   </header>
 
   <main>
-    <section id="home" class="section hero reveal">
-      <div class="container split">
-        <div>
-          <p class="eyebrow">Cute + curious + coding</p>
-          <h1>Hello, I'm <span class="nowrap">Anushka <span class="emoji">🌸</span></span></h1>
-          <p class="card-text">
-            A <span>third-year BTech undergraduate</span>, <span>girls basketball team captain</span> 🏀,
-            tech enthusiast 💻 and someone who lives for <span>outdoor adventures</span>.
+    <section id="home" class="section hero">
+      <svg class="doodle doodle--yellow hero__shape hero__shape--burst" aria-hidden="true"><use href="#d-burst"/></svg>
+      <svg class="doodle doodle--blue hero__shape hero__shape--squiggle" aria-hidden="true"><use href="#d-squiggle"/></svg>
+      <svg class="doodle doodle--green hero__shape hero__shape--blob" aria-hidden="true"><use href="#d-blob"/></svg>
+      <svg class="doodle doodle--orange hero__shape hero__shape--asterisk" aria-hidden="true"><use href="#d-asterisk"/></svg>
+
+      <div class="container hero__grid">
+        <div class="hero__copy reveal">
+          <p class="tag-sticker">✦ final year · BTech ✦</p>
+          <h1>Hi, I'm <span class="hero__name">Anushka<svg class="doodle doodle--yellow" aria-hidden="true"><use href="#d-sparkle"/></svg></span></h1>
+          <p class="hero__text">
+            A <span class="hl hl--yellow">final-year BTech undergraduate</span>, <span class="hl hl--pink">girls basketball team captain</span> 🏀,
+            tech enthusiast 💻 and someone who lives for <span class="hl hl--green">outdoor adventures</span>.
             I love balancing discipline from sports with creativity in tech.
           </p>
-          <p class="intro-note">I build with heart, hustle, and a lot of joyful debugging ✨</p>
-          <a class="btn gradient-btn" href="#projects">See my work</a>
+          <p class="hand hero__note">I build with heart, hustle, and a lot of joyful debugging ✨</p>
+          <div class="hero__actions">
+            <a class="btn solid-btn" href="#projects">See my work</a>
+            <a class="btn ghost-btn" href="#contact">Say hi 👋</a>
+          </div>
+          <ul class="desk-icons" aria-label="Shortcuts">
+            <li><a href="#projects"><span aria-hidden="true">📁</span>projects</a></li>
+            <li><a href="#toolbox"><span aria-hidden="true">🧰</span>toolbox</a></li>
+            <li><a href="#games"><span aria-hidden="true">🎮</span>play</a></li>
+            <li><a href="#contact"><span aria-hidden="true">💌</span>say hi</a></li>
+          </ul>
         </div>
-        <div class="profile-wrapper">
-          <span class="sticker sticker-1" aria-hidden="true">💻</span>
-          <span class="sticker sticker-2" aria-hidden="true">🏀</span>
-          <span class="sticker sticker-3" aria-hidden="true">✨</span>
-          <figure class="profile-card">
-            <img class="profile-image" src="https://media.giphy.com/media/l0MYt5jPR6QX5pnqM/giphy.gif" alt="An animated profile visual" width="370" height="208">
+
+        <div class="hero__collage reveal">
+          <div class="window hero__window">
+            <div class="window__bar"><span class="window__title">anushka.exe</span><span class="window__dots" aria-hidden="true"><i></i><i></i><i></i></span></div>
+            <dl class="status-list">
+              <div><dt>year</dt><dd>final year, BTech</dd></div>
+              <div><dt>building</dt><dd>AI agents + data pipelines</dd></div>
+              <div><dt>off-screen</dt><dd>on the basketball court 🏀</dd></div>
+              <div><dt>mood</dt><dd>joyfully debugging<span class="caret" aria-hidden="true"></span></dd></div>
+            </dl>
+          </div>
+
+          <figure class="polaroid hero__polaroid">
+            <svg viewBox="0 0 200 170" role="img" aria-label="Illustration of a basketball">
+              <rect width="200" height="170" fill="#4f8dff"/>
+              <circle cx="168" cy="26" r="40" fill="#ffd23f"/>
+              <rect y="138" width="200" height="32" fill="#35d68a"/>
+              <g stroke="#17141f" stroke-width="4" fill="none" stroke-linecap="round">
+                <circle cx="92" cy="92" r="46" fill="#ff8a3d"/>
+                <path d="M46 92 H138 M92 46 V138 M60 59 Q86 92 60 125 M124 59 Q98 92 124 125"/>
+                <path d="M0 138 H200"/>
+              </g>
+            </svg>
+            <figcaption>game day 🏀</figcaption>
           </figure>
+
+          <p class="sticky hero__sticky">psst... the stickers are draggable. go on, move them!</p>
+
+          <svg class="spin-badge" viewBox="0 0 200 200" aria-hidden="true">
+            <defs><path id="badge-circle" d="M100 100 m-70 0 a70 70 0 1 1 140 0 a70 70 0 1 1 -140 0"/></defs>
+            <circle cx="100" cy="100" r="96" fill="#ffd23f" stroke="#17141f" stroke-width="4"/>
+            <g class="spin-badge__ring">
+              <text font-size="14" font-weight="700"><textPath href="#badge-circle" textLength="428" lengthAdjust="spacing">FINAL YEAR ✦ BTECH ✦ BUILDER ✦ HOOPER ✦</textPath></text>
+            </g>
+            <use href="#d-smiley" x="66" y="66" width="68" height="68" style="--fill:#ff5aa5"/>
+          </svg>
+
+          <span class="sticker drag hero__sticker hero__sticker--1" aria-hidden="true">💻</span>
+          <span class="sticker drag hero__sticker hero__sticker--2" aria-hidden="true">🏀</span>
+          <span class="sticker drag hero__sticker hero__sticker--3" aria-hidden="true">✨</span>
+          <span class="sticker drag hero__sticker hero__sticker--4" aria-hidden="true">🌸</span>
+          <span class="sticker drag hero__sticker hero__sticker--5" aria-hidden="true">⚡</span>
         </div>
       </div>
     </section>
 
-    <section id="about" class="section reveal">
-      <div class="container split reverse">
-        <div>
-          <h2>Who I Am 💕</h2>
-          <p class="card-text">
-            Equal parts <span>coder</span>, <span>athlete</span>, and <span>dreamer</span> 🌈.
-            I believe growth happens when you step outside your comfort zone
-            on the court, in code, and in life. I am always chasing progress, not perfection 🌱
-          </p>
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee__track">
+        <span>AI &amp; ML</span><span>✦</span><span>Data pipelines</span><span>✦</span><span>Systems</span><span>✦</span><span>Web</span><span>✦</span><span>Basketball</span><span>✦</span><span>Outdoors</span><span>✦</span><span>Joyful debugging</span><span>✦</span>
+        <span>AI &amp; ML</span><span>✦</span><span>Data pipelines</span><span>✦</span><span>Systems</span><span>✦</span><span>Web</span><span>✦</span><span>Basketball</span><span>✦</span><span>Outdoors</span><span>✦</span><span>Joyful debugging</span><span>✦</span>
+      </div>
+    </div>
+
+    <section id="about" class="section about">
+      <svg class="doodle doodle--pink section-shape section-shape--tr" aria-hidden="true"><use href="#d-heart"/></svg>
+      <svg class="doodle doodle--purple section-shape section-shape--bl" aria-hidden="true"><use href="#d-zigzag"/></svg>
+
+      <div class="container">
+        <header class="section-head reveal">
+          <span class="section-num">01</span>
+          <h2>Who I <span class="pop-word pop-word--pink">am</span></h2>
+          <p class="hand section-scribble">the short version <svg class="doodle" aria-hidden="true"><use href="#d-arrow"/></svg></p>
+        </header>
+
+        <div class="about__grid">
+          <article class="paper-note reveal">
+            <div class="paper-note__sheet">
+              <p>
+                Equal parts <span class="hl hl--blue">coder</span>, <span class="hl hl--orange">athlete</span>, and <span class="hl hl--pink">dreamer</span> 🌈.
+                I believe growth happens when you step outside your comfort zone
+                on the court, in code, and in life.
+              </p>
+              <p>I am always chasing progress, not perfection 🌱</p>
+            </div>
+          </article>
+
+          <div class="about__pile reveal">
+            <figure class="polaroid about__polaroid about__polaroid--1">
+              <svg viewBox="0 0 200 170" role="img" aria-label="Illustration of mountains, a tent and the sun">
+                <rect width="200" height="170" fill="#ffc2dc"/>
+                <circle cx="150" cy="44" r="26" fill="#ffd23f" stroke="#17141f" stroke-width="4"/>
+                <g stroke="#17141f" stroke-width="4" stroke-linejoin="round">
+                  <polygon points="-10,150 62,44 134,150" fill="#a77bff"/>
+                  <polygon points="44,70 62,44 80,70 68,64 60,74 52,64" fill="#fffdf8"/>
+                  <polygon points="80,150 140,74 210,150" fill="#4f8dff"/>
+                  <rect x="-4" y="146" width="208" height="30" fill="#35d68a"/>
+                  <polygon points="92,148 112,116 132,148" fill="#ff8a3d"/>
+                  <path d="M112 116 V148" fill="none"/>
+                </g>
+              </svg>
+              <figcaption>outside &gt; inside</figcaption>
+            </figure>
+            <figure class="polaroid about__polaroid about__polaroid--2">
+              <svg viewBox="0 0 200 170" role="img" aria-label="Illustration of a laptop showing code">
+                <rect width="200" height="170" fill="#35d68a"/>
+                <g stroke="#17141f" stroke-width="4" stroke-linejoin="round" stroke-linecap="round">
+                  <rect x="42" y="34" width="116" height="80" rx="8" fill="#17141f"/>
+                  <rect x="52" y="44" width="96" height="60" rx="3" fill="#fffdf8"/>
+                  <path d="M84 62 L72 74 L84 86 M116 62 L128 74 L116 86 M106 58 L94 90" fill="none" stroke="#ff5aa5"/>
+                  <path d="M26 114 H174 L162 136 H38 Z" fill="#ffd23f"/>
+                </g>
+              </svg>
+              <figcaption>ship it! 💻</figcaption>
+            </figure>
+            <p class="stamp" aria-hidden="true"><span>progress</span><span>not</span><span>perfection</span></p>
+            <svg class="doodle doodle--yellow about__sparkle" aria-hidden="true"><use href="#d-sparkle"/></svg>
+          </div>
         </div>
-        <div>
-          <img class="rounded-media" src="https://media.giphy.com/media/26ufdipQqU2lhNA4g/giphy.gif" alt="Happy coding visual" width="200" height="200" loading="lazy">
+
+        <ul class="fact-strip reveal" aria-label="Quick facts">
+          <li>🎓 Final-year BTech</li>
+          <li>🏀 Girls basketball team captain</li>
+          <li>🏕️ Outdoor adventures</li>
+          <li>🤖 AI, data, systems &amp; web</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="toolbox" class="section toolbox">
+      <svg class="doodle doodle--orange section-shape section-shape--tl" aria-hidden="true"><use href="#d-bolt"/></svg>
+      <svg class="doodle doodle--blue section-shape section-shape--br" aria-hidden="true"><use href="#d-flower"/></svg>
+
+      <div class="container">
+        <header class="section-head reveal">
+          <span class="section-num">02</span>
+          <h2>My <span class="pop-word pop-word--yellow">toolbox</span></h2>
+          <p class="hand section-scribble">peel-off sticker sheet</p>
+          <p class="section-subtitle">Everything here shows up in at least one project below.</p>
+        </header>
+
+        <!-- To add a skill: add an <li> to the right group. Colours and tilts are automatic. -->
+        <div class="sticker-sheet reveal">
+          <div class="sticker-group">
+            <h3>Languages</h3>
+            <ul class="sticker-list"><li>Python</li><li>C++</li><li>JavaScript</li><li>Assembly</li><li>HTML &amp; CSS</li></ul>
+          </div>
+          <div class="sticker-group">
+            <h3>AI &amp; ML</h3>
+            <ul class="sticker-list"><li>PyTorch</li><li>TensorFlow</li><li>scikit-learn</li><li>OpenCV</li><li>RAG</li><li>MCP</li><li>Embeddings</li><li>Grad-CAM &amp; SHAP</li></ul>
+          </div>
+          <div class="sticker-group">
+            <h3>Data</h3>
+            <ul class="sticker-list"><li>Kafka</li><li>Airflow</li><li>dbt</li><li>PostgreSQL</li><li>Redis</li><li>MongoDB</li><li>Pinecone</li><li>Pandas</li></ul>
+          </div>
+          <div class="sticker-group">
+            <h3>Web &amp; APIs</h3>
+            <ul class="sticker-list"><li>FastAPI</li><li>Flask</li><li>React</li><li>Streamlit</li></ul>
+          </div>
+          <div class="sticker-group">
+            <h3>Infra &amp; tools</h3>
+            <ul class="sticker-list"><li>Docker</li><li>AWS</li><li>Terraform</li><li>Grafana</li><li>OpenTelemetry</li><li>Jenkins</li><li>pytest</li><li>Postman</li></ul>
+          </div>
         </div>
       </div>
     </section>
 
     <section id="projects" class="section projects">
+      <svg class="doodle doodle--green section-shape section-shape--tr" aria-hidden="true"><use href="#d-burst"/></svg>
+      <svg class="doodle doodle--pink section-shape section-shape--bl" aria-hidden="true"><use href="#d-squiggle"/></svg>
+
       <div class="container">
-        <div class="reveal">
-          <h2>My Projects ✨</h2>
-          <p class="section-subtitle">Straight from my GitHub. Filter by topic, search for a tool, or open the details on any card.</p>
-        </div>
+        <header class="section-head reveal">
+          <span class="section-num">03</span>
+          <h2>My <span class="pop-word pop-word--blue">projects</span></h2>
+          <p class="hand section-scribble">straight from my GitHub</p>
+          <p class="section-subtitle">Filter by topic, search for a tool, or open the details on any window.</p>
+        </header>
 
         <div class="project-tools">
           <div class="filter-list" role="group" aria-label="Filter projects by topic">
@@ -117,7 +289,7 @@
             <p class="project-detail" hidden>An order API (FastAPI + Postgres) sends traces, metrics and logs through OpenTelemetry to Prometheus, Loki and Tempo. Alertmanager hands alerts to an incident worker, which runs a Claude agent over narrow MCP tools for error rate, latency, logs, traces, database health and deploy history. Everything runs locally with Docker Compose, with Grafana dashboards included.</p>
             <ul class="tag-list"><li>Python</li><li>MCP</li><li>FastAPI</li><li>OpenTelemetry</li><li>Grafana</li><li>Docker</li></ul>
             <div class="project-links">
-              <a class="btn gradient-btn" href="https://github.com/clickatanushka/MCP" target="_blank" rel="noopener noreferrer">GitHub</a>
+              <a class="btn solid-btn" href="https://github.com/clickatanushka/MCP" target="_blank" rel="noopener noreferrer">GitHub</a>
               <button class="btn ghost-btn notes-button" type="button">Details</button>
             </div>
           </article>
@@ -129,7 +301,7 @@
             <p class="project-detail" hidden>A Streamlit app over a RAG pipeline: PDF ingestion and chunking, OpenAI embeddings, Pinecone vector search and gpt-4o-mini answers. Later phases add Celery + Redis background ingestion, input and output guardrails, caching, RAGAS evaluation runs, and a tracker that logs LLM calls and retrievals. This repository is the final phase; the earlier phases live in my RAG, Phase-2 and Phase-3 repositories.</p>
             <ul class="tag-list"><li>Python</li><li>RAG</li><li>Pinecone</li><li>Celery</li><li>Redis</li><li>RAGAS</li><li>Streamlit</li></ul>
             <div class="project-links">
-              <a class="btn gradient-btn" href="https://github.com/clickatanushka/Phase-4" target="_blank" rel="noopener noreferrer">GitHub</a>
+              <a class="btn solid-btn" href="https://github.com/clickatanushka/Phase-4" target="_blank" rel="noopener noreferrer">GitHub</a>
               <button class="btn ghost-btn notes-button" type="button">Details</button>
             </div>
           </article>
@@ -141,7 +313,7 @@
             <p class="project-detail" hidden>A Faker-based producer publishes transactions to Kafka. The stream processor enriches them, flags transactions over $500, and scores each one with an Isolation Forest model trained on the first 50 transactions. Redis holds the real-time cache, PostgreSQL the permanent storage, and Grafana the dashboards. Deployed on AWS EC2 with Docker Compose.</p>
             <ul class="tag-list"><li>Kafka</li><li>Python</li><li>scikit-learn</li><li>Redis</li><li>PostgreSQL</li><li>Grafana</li><li>AWS</li></ul>
             <div class="project-links">
-              <a class="btn gradient-btn" href="https://github.com/clickatanushka/flink2" target="_blank" rel="noopener noreferrer">GitHub</a>
+              <a class="btn solid-btn" href="https://github.com/clickatanushka/flink2" target="_blank" rel="noopener noreferrer">GitHub</a>
               <button class="btn ghost-btn notes-button" type="button">Details</button>
             </div>
           </article>
@@ -153,7 +325,7 @@
             <p class="project-detail" hidden>A pretrained CNN fine-tuned on chest X-ray images, with a Streamlit app: upload an X-ray and get a prediction together with Grad-CAM and SHAP explanations of the regions that influenced it. This is a learning project, not a diagnostic tool.</p>
             <ul class="tag-list"><li>Python</li><li>TensorFlow</li><li>Grad-CAM</li><li>SHAP</li><li>Streamlit</li></ul>
             <div class="project-links">
-              <a class="btn gradient-btn" href="https://github.com/clickatanushka/XAI" target="_blank" rel="noopener noreferrer">GitHub</a>
+              <a class="btn solid-btn" href="https://github.com/clickatanushka/XAI" target="_blank" rel="noopener noreferrer">GitHub</a>
               <button class="btn ghost-btn notes-button" type="button">Details</button>
             </div>
           </article>
@@ -165,7 +337,7 @@
             <p class="project-detail" hidden>A BIOS boot sector written in NASM assembly loads a small kernel into memory and jumps to it, and the kernel prints to the screen. Built on Arch Linux and tested in QEMU. It is minimal and educational: the focus is the boot sequence, memory layout and kernel hand-off.</p>
             <ul class="tag-list"><li>Assembly</li><li>NASM</li><li>C++</li><li>QEMU</li></ul>
             <div class="project-links">
-              <a class="btn gradient-btn" href="https://github.com/clickatanushka/Coustum-bootloader-and-kernel-development" target="_blank" rel="noopener noreferrer">GitHub</a>
+              <a class="btn solid-btn" href="https://github.com/clickatanushka/Coustum-bootloader-and-kernel-development" target="_blank" rel="noopener noreferrer">GitHub</a>
               <button class="btn ghost-btn notes-button" type="button">Details</button>
             </div>
           </article>
@@ -177,7 +349,7 @@
             <p class="project-detail" hidden>OpenCV ArUco markers flatten and align each photo, blur and exposure gates reject bad shots, and a fine-tuned ResNet18 classifies the cropped component. Whole boards stay in a single data split and thresholds are chosen on validation only. This is phase 1: the reports in the repository so far come from synthetic rehearsal boards and are labelled that way.</p>
             <ul class="tag-list"><li>Python</li><li>PyTorch</li><li>OpenCV</li><li>ResNet18</li></ul>
             <div class="project-links">
-              <a class="btn gradient-btn" href="https://github.com/clickatanushka/SMT" target="_blank" rel="noopener noreferrer">GitHub</a>
+              <a class="btn solid-btn" href="https://github.com/clickatanushka/SMT" target="_blank" rel="noopener noreferrer">GitHub</a>
               <button class="btn ghost-btn notes-button" type="button">Details</button>
             </div>
           </article>
@@ -189,7 +361,7 @@
             <p class="project-detail" hidden>Airflow orchestrates three steps: ingest daily OHLCV data for 10 tickers from the Alpha Vantage API, run the dbt models, then run the dbt tests. The models go from staging to intermediate metrics to a final performance table. Containerized with Docker Compose, with Terraform files and a CI workflow in the repository.</p>
             <ul class="tag-list"><li>Airflow</li><li>dbt</li><li>PostgreSQL</li><li>Docker</li><li>Terraform</li></ul>
             <div class="project-links">
-              <a class="btn gradient-btn" href="https://github.com/clickatanushka/Apache-Airflow" target="_blank" rel="noopener noreferrer">GitHub</a>
+              <a class="btn solid-btn" href="https://github.com/clickatanushka/Apache-Airflow" target="_blank" rel="noopener noreferrer">GitHub</a>
               <button class="btn ghost-btn notes-button" type="button">Details</button>
             </div>
           </article>
@@ -201,7 +373,7 @@
             <p class="project-detail" hidden>Kafka and Zookeeper run on an EC2 instance. A Python producer streams rows from a stock market dataset to a topic, a consumer writes them to Amazon S3, an AWS Glue crawler catalogs the data, and Amazon Athena runs SQL over it. The README has screenshots of each stage.</p>
             <ul class="tag-list"><li>Kafka</li><li>Python</li><li>AWS EC2</li><li>S3</li><li>Glue</li><li>Athena</li></ul>
             <div class="project-links">
-              <a class="btn gradient-btn" href="https://github.com/clickatanushka/KafkaStockMarketETL" target="_blank" rel="noopener noreferrer">GitHub</a>
+              <a class="btn solid-btn" href="https://github.com/clickatanushka/KafkaStockMarketETL" target="_blank" rel="noopener noreferrer">GitHub</a>
               <button class="btn ghost-btn notes-button" type="button">Details</button>
             </div>
           </article>
@@ -213,7 +385,7 @@
             <p class="project-detail" hidden>The C++ simulation models each network layer and a controller that reads edge reports and broadcasts the current threat mode. A Python script trains a Random Forest classifier on the CIC-IDS2017 dataset and derives per-attack threshold profiles for the simulated controller.</p>
             <ul class="tag-list"><li>C++</li><li>OMNeT++</li><li>Python</li><li>scikit-learn</li></ul>
             <div class="project-links">
-              <a class="btn gradient-btn" href="https://github.com/clickatanushka/IDS" target="_blank" rel="noopener noreferrer">GitHub</a>
+              <a class="btn solid-btn" href="https://github.com/clickatanushka/IDS" target="_blank" rel="noopener noreferrer">GitHub</a>
               <button class="btn ghost-btn notes-button" type="button">Details</button>
             </div>
           </article>
@@ -225,7 +397,7 @@
             <p class="project-detail" hidden>The first two of five sessions are built: a multi-layer exact cache (in-process memory, then Redis) and a semantic cache with extra safety gates. On the repository's 600-request benchmark, cost per 1,000 requests drops from $10.58 to $4.86 at a 54% cache hit rate.</p>
             <ul class="tag-list"><li>Python</li><li>FastAPI</li><li>Redis</li><li>Embeddings</li><li>pytest</li></ul>
             <div class="project-links">
-              <a class="btn gradient-btn" href="https://github.com/clickatanushka/Caching" target="_blank" rel="noopener noreferrer">GitHub</a>
+              <a class="btn solid-btn" href="https://github.com/clickatanushka/Caching" target="_blank" rel="noopener noreferrer">GitHub</a>
               <button class="btn ghost-btn notes-button" type="button">Details</button>
             </div>
           </article>
@@ -237,7 +409,7 @@
             <p class="project-detail" hidden>A Flask app that detects the BOM columns automatically, looks up live DigiKey pricing per component, rates SMT risk per package, calculates costs with margin, exports PDF and Excel quotations, and uses Groq for an AI email draft and component explanations.</p>
             <ul class="tag-list"><li>Python</li><li>Flask</li><li>Groq</li><li>DigiKey API</li><li>pandas</li></ul>
             <div class="project-links">
-              <a class="btn gradient-btn" href="https://github.com/clickatanushka/BOM_Calculator" target="_blank" rel="noopener noreferrer">GitHub</a>
+              <a class="btn solid-btn" href="https://github.com/clickatanushka/BOM_Calculator" target="_blank" rel="noopener noreferrer">GitHub</a>
               <button class="btn ghost-btn notes-button" type="button">Details</button>
             </div>
           </article>
@@ -249,7 +421,7 @@
             <p class="project-detail" hidden>The FastAPI backend parses .xlsx, .xls and .csv BOMs, detects SMT and THT components, checks that reference counts match declared quantities, and calculates assembly costs. The React + Vite frontend shows the parsed table, editable cost settings and a live quote preview. PDFs are generated with ReportLab.</p>
             <ul class="tag-list"><li>Python</li><li>FastAPI</li><li>React</li><li>Vite</li><li>ReportLab</li></ul>
             <div class="project-links">
-              <a class="btn gradient-btn" href="https://github.com/clickatanushka/BOM" target="_blank" rel="noopener noreferrer">GitHub</a>
+              <a class="btn solid-btn" href="https://github.com/clickatanushka/BOM" target="_blank" rel="noopener noreferrer">GitHub</a>
               <button class="btn ghost-btn notes-button" type="button">Details</button>
             </div>
           </article>
@@ -261,7 +433,7 @@
             <p class="project-detail" hidden>Orders are aggregated per day along with delivery and approval delays. A PyTorch LSTM predicts the next day from a 14-day window, days with unusually large residuals are marked as anomalies, and a Streamlit + Plotly dashboard shows actual orders, predictions and the flagged days.</p>
             <ul class="tag-list"><li>Python</li><li>PyTorch</li><li>LSTM</li><li>Streamlit</li><li>Plotly</li></ul>
             <div class="project-links">
-              <a class="btn gradient-btn" href="https://github.com/clickatanushka/sales" target="_blank" rel="noopener noreferrer">GitHub</a>
+              <a class="btn solid-btn" href="https://github.com/clickatanushka/sales" target="_blank" rel="noopener noreferrer">GitHub</a>
               <button class="btn ghost-btn notes-button" type="button">Details</button>
             </div>
           </article>
@@ -273,7 +445,7 @@
             <p class="project-detail" hidden>A static site in plain HTML, CSS and JavaScript with sections for the story, the courtyard, the menu, upcoming events and visiting, plus a candlelit (dark) theme toggle. It is live on GitHub Pages.</p>
             <ul class="tag-list"><li>HTML</li><li>CSS</li><li>JavaScript</li></ul>
             <div class="project-links">
-              <a class="btn gradient-btn" href="https://github.com/clickatanushka/Greek" target="_blank" rel="noopener noreferrer">GitHub</a>
+              <a class="btn solid-btn" href="https://github.com/clickatanushka/Greek" target="_blank" rel="noopener noreferrer">GitHub</a>
               <a class="btn ghost-btn live-link" href="https://clickatanushka.github.io/Greek/" target="_blank" rel="noopener noreferrer">Live demo</a>
               <button class="btn ghost-btn notes-button" type="button">Details</button>
             </div>
@@ -286,7 +458,7 @@
             <p class="project-detail" hidden>Python scripts create a sample events file (page views and clicks by device and country), insert it into MongoDB, and load it back into Pandas for analysis. It is an early-stage project that I am still building out.</p>
             <ul class="tag-list"><li>Python</li><li>Pandas</li><li>MongoDB</li></ul>
             <div class="project-links">
-              <a class="btn gradient-btn" href="https://github.com/clickatanushka/User-behavior-Analytics" target="_blank" rel="noopener noreferrer">GitHub</a>
+              <a class="btn solid-btn" href="https://github.com/clickatanushka/User-behavior-Analytics" target="_blank" rel="noopener noreferrer">GitHub</a>
               <button class="btn ghost-btn notes-button" type="button">Details</button>
             </div>
           </article>
@@ -298,7 +470,7 @@
             <p class="project-detail" hidden>The pipeline is defined in a Jenkinsfile and fails when the tests fail. The README also documents the problems I hit along the way, such as dependency installs and environment issues inside Docker. The goal was learning Jenkins and CI/CD basics, not application complexity.</p>
             <ul class="tag-list"><li>Jenkins</li><li>Docker</li><li>Python</li><li>pytest</li></ul>
             <div class="project-links">
-              <a class="btn gradient-btn" href="https://github.com/clickatanushka/Jenkins" target="_blank" rel="noopener noreferrer">GitHub</a>
+              <a class="btn solid-btn" href="https://github.com/clickatanushka/Jenkins" target="_blank" rel="noopener noreferrer">GitHub</a>
               <button class="btn ghost-btn notes-button" type="button">Details</button>
             </div>
           </article>
@@ -310,7 +482,7 @@
             <p class="project-detail" hidden>A software testing course project covering authentication, fund transfer, account management and transaction history. The test cases use boundary value analysis, equivalence partitioning, decision tables and state transitions, and Newman automates the runs and generates HTML reports.</p>
             <ul class="tag-list"><li>Postman</li><li>Newman</li><li>API testing</li></ul>
             <div class="project-links">
-              <a class="btn gradient-btn" href="https://github.com/clickatanushka/Postman" target="_blank" rel="noopener noreferrer">GitHub</a>
+              <a class="btn solid-btn" href="https://github.com/clickatanushka/Postman" target="_blank" rel="noopener noreferrer">GitHub</a>
               <button class="btn ghost-btn notes-button" type="button">Details</button>
             </div>
           </article>
@@ -318,21 +490,27 @@
 
         <p class="no-results" id="no-results" hidden>No projects match that search just yet. Try another word? 🌸</p>
         <div class="project-more">
-          <button class="btn gradient-btn" id="show-more" type="button" aria-controls="project-grid" hidden>Show all projects ✨</button>
+          <button class="btn solid-btn" id="show-more" type="button" aria-controls="project-grid" hidden>Show all projects ✨</button>
           <a class="btn ghost-btn" href="https://github.com/clickatanushka" target="_blank" rel="noopener noreferrer">More on my GitHub</a>
         </div>
       </div>
     </section>
 
-    <section id="games" class="section">
+    <section id="games" class="section play">
+      <svg class="doodle doodle--purple section-shape section-shape--tl" aria-hidden="true"><use href="#d-asterisk"/></svg>
+      <svg class="doodle doodle--yellow section-shape section-shape--br" aria-hidden="true"><use href="#d-smiley"/></svg>
+
       <div class="container">
-        <div class="reveal">
-          <h2>Mini Games 🎮</h2>
-          <p class="section-subtitle">Bubble Pop is already running. Pop as many as you can before they fade, then grab a meme on the way out.</p>
-        </div>
+        <header class="section-head reveal">
+          <span class="section-num">04</span>
+          <h2>Play <span class="pop-word pop-word--green">time</span></h2>
+          <p class="hand section-scribble">break time, you earned it</p>
+          <p class="section-subtitle">Bubble Pop is already running. Pop as many as you can before they fade, grab a meme, then leave a doodle.</p>
+        </header>
 
         <div class="play-grid">
-          <div class="bubble-game" id="bubble-game" role="region" aria-labelledby="bubble-game-title">
+          <div class="window bubble-game" id="bubble-game" role="region" aria-labelledby="bubble-game-title">
+            <div class="window__bar"><span class="window__title">bubble_pop.exe</span><span class="window__dots" aria-hidden="true"><i></i><i></i><i></i></span></div>
             <div class="bubble-game__head">
               <h3 id="bubble-game-title" class="bubble-game__title">Bubble Pop 🫧</h3>
               <p class="bubble-game__hint" id="bubble-hint" aria-live="polite">Tap the bubbles before they fade ✨</p>
@@ -341,15 +519,15 @@
               <span class="bubble-game__score">Score <strong id="bubble-score">0</strong></span>
               <span class="bubble-game__score">Best <strong id="bubble-best">0</strong></span>
               <span class="bubble-game__buttons">
-                <button type="button" class="bubble-game__btn" id="bubble-pause" aria-pressed="false">Pause</button>
-                <button type="button" class="bubble-game__btn" id="bubble-restart">Restart</button>
+                <button type="button" class="mini-btn" id="bubble-pause" aria-pressed="false">Pause</button>
+                <button type="button" class="mini-btn" id="bubble-restart">Restart</button>
               </span>
             </div>
             <div class="bubble-game__playfield" id="bubble-playfield"></div>
           </div>
 
           <aside class="meme-card" aria-labelledby="meme-title">
-            <h3 id="meme-title" class="meme-card__title">Meme Break 😂</h3>
+            <h3 id="meme-title" class="meme-card__title">Meme break 😂</h3>
             <div class="meme-card__frame" id="meme-frame" aria-live="polite">
               <span class="meme-card__emoji" id="meme-emoji" aria-hidden="true">🐛</span>
               <p class="meme-card__setup" id="meme-setup">99 little bugs in the code. Take one down, patch it around...</p>
@@ -357,29 +535,60 @@
             </div>
             <button type="button" class="btn ghost-btn" id="meme-next">Another one 🎲</button>
           </aside>
+
+          <div class="window doodle-pad" id="doodle-pad" role="region" aria-labelledby="doodle-title">
+            <div class="window__bar"><span class="window__title">doodle_pad.exe</span><span class="window__dots" aria-hidden="true"><i></i><i></i><i></i></span></div>
+            <div class="doodle-pad__head">
+              <h3 id="doodle-title" class="doodle-pad__title">Doodle pad 🖍️</h3>
+              <p class="hand doodle-pad__hint">draw me something!</p>
+            </div>
+            <div class="doodle-pad__toolbar">
+              <div class="doodle-pad__swatches" role="group" aria-label="Marker colour">
+                <button type="button" class="swatch is-selected" data-color="#17141f" style="--c:#17141f" aria-label="Black" aria-pressed="true"></button>
+                <button type="button" class="swatch" data-color="#ff5aa5" style="--c:#ff5aa5" aria-label="Pink" aria-pressed="false"></button>
+                <button type="button" class="swatch" data-color="#ff8a3d" style="--c:#ff8a3d" aria-label="Orange" aria-pressed="false"></button>
+                <button type="button" class="swatch" data-color="#ffd23f" style="--c:#ffd23f" aria-label="Yellow" aria-pressed="false"></button>
+                <button type="button" class="swatch" data-color="#35d68a" style="--c:#35d68a" aria-label="Green" aria-pressed="false"></button>
+                <button type="button" class="swatch" data-color="#4f8dff" style="--c:#4f8dff" aria-label="Blue" aria-pressed="false"></button>
+                <button type="button" class="swatch" data-color="#a77bff" style="--c:#a77bff" aria-label="Purple" aria-pressed="false"></button>
+              </div>
+              <label class="doodle-pad__size">Size <input type="range" id="doodle-size" min="2" max="26" value="7"></label>
+              <span class="doodle-pad__buttons">
+                <button type="button" class="mini-btn" id="doodle-undo">Undo</button>
+                <button type="button" class="mini-btn" id="doodle-clear">Clear</button>
+                <button type="button" class="mini-btn" id="doodle-save">Save PNG</button>
+              </span>
+            </div>
+            <canvas class="doodle-pad__canvas" id="doodle-canvas" aria-label="Drawing canvas. Draw with your mouse, pen or finger."></canvas>
+          </div>
         </div>
       </div>
     </section>
 
-    <section id="contact" class="section reveal">
-      <div class="container split reverse">
-        <div>
-          <h2>One Last Thing 💗</h2>
-          <p class="card-text">
+    <section id="contact" class="section contact">
+      <div class="container">
+        <div class="contact__card reveal">
+          <svg class="doodle doodle--yellow contact__shape contact__shape--1" aria-hidden="true"><use href="#d-burst"/></svg>
+          <svg class="doodle doodle--blue contact__shape contact__shape--2" aria-hidden="true"><use href="#d-sparkle"/></svg>
+          <svg class="doodle doodle--white contact__shape contact__shape--3" aria-hidden="true"><use href="#d-squiggle"/></svg>
+          <span class="section-num">05</span>
+          <h2>One last thing</h2>
+          <p class="contact__text">
             Thanks for stopping by 🫶 This site is a tiny reflection of my journey:
             learning loudly, dreaming boldly, and enjoying the ride.
             If you are here to collaborate, connect, or just vibe, welcome 🌸
           </p>
-        </div>
-        <div>
-          <img class="rounded-media" src="https://media.giphy.com/media/3oriO0OEd9QIDdllqo/giphy.gif" alt="Celebration visual" width="330" height="328" loading="lazy">
+          <div class="contact__links">
+            <a class="btn ghost-btn" href="https://github.com/clickatanushka" target="_blank" rel="noopener noreferrer">Find me on GitHub</a>
+          </div>
+          <p class="hand contact__note"><svg class="doodle" aria-hidden="true"><use href="#d-arrow"/></svg> come say hi</p>
         </div>
       </div>
     </section>
   </main>
 
   <footer class="site-footer">
-    Made with 💖, hustle energy, and bright dreams by Anushka ·
+    Made with 💖, hustle energy, and way too many stickers by Anushka ·
     <a href="https://github.com/clickatanushka" target="_blank" rel="noopener noreferrer">GitHub</a>
   </footer>
 
@@ -391,7 +600,7 @@
     <p class="dialog-detail" id="dialog-detail"></p>
     <ul class="tag-list" id="dialog-tags"></ul>
     <div class="project-links">
-      <a class="btn gradient-btn" id="dialog-repo" href="https://github.com/clickatanushka" target="_blank" rel="noopener noreferrer">See the code on GitHub</a>
+      <a class="btn solid-btn" id="dialog-repo" href="https://github.com/clickatanushka" target="_blank" rel="noopener noreferrer">See the code on GitHub</a>
       <a class="btn ghost-btn live-link" id="dialog-live" href="https://github.com/clickatanushka" target="_blank" rel="noopener noreferrer" hidden>Live demo</a>
     </div>
   </dialog>
