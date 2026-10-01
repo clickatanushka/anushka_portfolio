@@ -54,6 +54,24 @@
     <symbol id="d-asterisk" viewBox="0 0 100 100">
       <path d="M50 10 V90 M15 30 L85 70 M15 70 L85 30" fill="none" stroke="var(--fill)" stroke-width="15" stroke-linecap="round"/>
     </symbol>
+    <symbol id="d-curl" viewBox="0 0 220 90">
+      <g fill="none" stroke="var(--ink)" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M6 70 C 40 70 30 16 70 22 C 110 28 90 76 130 60 C 160 48 150 18 205 26"/><path d="M186 12 L206 26 L188 42"/>
+      </g>
+    </symbol>
+    <symbol id="d-loop" viewBox="0 0 160 110">
+      <g fill="none" stroke="var(--ink)" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M10 20 C 50 -6 120 14 110 46 C 102 72 48 70 56 48 C 62 30 110 44 126 98"/><path d="M110 86 L128 100 L138 80"/>
+      </g>
+    </symbol>
+    <symbol id="d-string" viewBox="0 0 300 60">
+      <path class="string-path" d="M4 40 C 60 6 90 60 150 30 S 240 10 296 40" fill="none" stroke="var(--ink)" stroke-width="3.5" stroke-linecap="round" stroke-dasharray="9 9"/>
+    </symbol>
+    <symbol id="d-plane" viewBox="0 0 100 70">
+      <g stroke="var(--ink)" stroke-width="4" stroke-linejoin="round">
+        <polygon points="4,34 96,6 60,66 48,42" fill="var(--fill)"/><polygon points="4,34 48,42 60,66 46,50 24,54" fill="var(--white, #fffdf8)"/><path d="M48 42 L96 6" fill="none"/>
+      </g>
+    </symbol>
     <symbol id="d-blob" viewBox="0 0 100 100">
       <path d="M50 6 C74 2 96 22 94 48 C92 76 72 96 46 94 C20 92 4 72 8 46 C11 22 28 9 50 6Z" fill="var(--fill)" stroke="var(--ink)" stroke-width="3.5"/>
     </symbol>
@@ -69,6 +87,7 @@
         <li><a href="#toolbox" class="nav-link">Toolbox</a></li>
         <li><a href="#projects" class="nav-link">Projects</a></li>
         <li><a href="#crew" class="nav-link">Crew</a></li>
+        <li><a href="#cat" class="nav-link">Cat tax</a></li>
         <li><a href="#games" class="nav-link">Play</a></li>
         <li><a href="#contact" class="nav-link">Contact</a></li>
       </ul>
@@ -150,6 +169,9 @@
     <section id="about" class="section about">
       <svg class="doodle doodle--pink section-shape section-shape--tr" aria-hidden="true"><use href="#d-heart"/></svg>
       <svg class="doodle doodle--purple section-shape section-shape--bl" aria-hidden="true"><use href="#d-zigzag"/></svg>
+      <svg class="doodle doodle--orange margin-doodle margin-doodle--l" aria-hidden="true"><use href="#d-burst"/></svg>
+      <svg class="doodle doodle--blue margin-doodle margin-doodle--r" aria-hidden="true"><use href="#d-sparkle"/></svg>
+      <svg class="doodle doodle--pink margin-doodle margin-doodle--l2 margin-doodle--string" aria-hidden="true"><use href="#d-string"/></svg>
 
       <div class="container">
         <header class="section-head reveal">
@@ -171,6 +193,7 @@
           </article>
 
           <div class="about__pile reveal">
+            <p class="string-arrow string-arrow--pile hand" aria-hidden="true">real ones, no illustrations <svg class="doodle" aria-hidden="true"><use href="#d-loop"/></svg></p>
             <figure class="polaroid about__polaroid about__polaroid--1">
               <img src="assets/images/snow.jpg" alt="Anushka with her arms stretched wide on an icy road, snowy mountains and pine trees behind her" width="675" height="900" loading="lazy" decoding="async">
               <figcaption>outside &gt; inside</figcaption>
@@ -205,9 +228,9 @@
               <p>There is always a book half-finished somewhere near me. A few I would hand to anyone:</p>
               <!-- Add a book: copy one <li>, set --c to a palette colour and edit the title/author. -->
               <ul class="shelf" aria-label="Reading recommendations">
-                <li class="book" style="--c:#ffd23f"><span class="book__title">Shelf being stocked</span><span class="book__author">soon</span></li>
+                <li class="book" style="--c:#ff5aa5"><span class="book__title">A Thousand Splendid Suns</span><span class="book__author">Khaled Hosseini</span></li>
               </ul>
-              <p class="hand hobby__note">recs coming soon 📦</p>
+              <p class="hand hobby__note">more spines on the way 📦</p>
             </div>
           </article>
 
@@ -236,49 +259,11 @@
           </article>
         </div>
 
-        <div class="desk-row">
-          <div class="window desk-window reveal" style="--bar:#a77bff">
-            <div class="window__bar"><span class="window__title">💻 my_desk.exe</span><span class="window__dots" aria-hidden="true"><i></i><i></i><i></i></span></div>
-            <img src="assets/images/desk.png" alt="A screenshot of Anushka's terminal: Arch Linux with kitty, a pink colour scheme and a Hello Kitty picture beside the system info" width="900" height="419" loading="lazy" decoding="async">
-            <p class="hand desk-window__caption">yes, it is Arch. yes, I will tell you about it. 🍓</p>
-          </div>
-
-          <div class="window cat-window reveal" style="--bar:#ff5aa5">
-            <div class="window__bar"><span class="window__title">🐾 cat_tax.exe</span><span class="window__dots" aria-hidden="true"><i></i><i></i><i></i></span></div>
-            <figure class="cat-window__main">
-              <img src="assets/images/kitten-laptop.jpg" alt="A fluffy grey kitten lying across a laptop keyboard on a bed while a video plays on the screen" width="900" height="560" loading="lazy" decoding="async">
-              <figcaption class="hand">pair programming, allegedly</figcaption>
-            </figure>
-            <div class="cat-window__body">
-              <dl class="status-list">
-                <div><dt>role</dt><dd>chief distraction officer</dd></div>
-                <div><dt>skill</dt><dd>sitting on keyboards</dd></div>
-                <div><dt>reviews</dt><dd>harsh, mostly silent</dd></div>
-                <div><dt>status</dt><dd>unbothered<span class="caret" aria-hidden="true"></span></dd></div>
-              </dl>
-              <p class="hand cat-window__note">more evidence below ↓</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Cat tax strip: copy a <figure> to add another photo -->
-        <div class="cat-strip reveal" aria-label="More kitten photos">
-          <figure class="polaroid cat-strip__shot">
-            <img src="assets/images/kitten-keys.jpg" alt="The grey kitten standing on a laptop with a blue backlit keyboard" width="700" height="700" loading="lazy" decoding="async">
-            <figcaption>deploying 🐈‍⬛</figcaption>
-          </figure>
-          <figure class="polaroid cat-strip__shot">
-            <img src="assets/images/kitten-bucket.jpg" alt="The kitten peeking out of a blue bucket lying on its side" width="675" height="900" loading="lazy" decoding="async">
-            <figcaption>containerised 🪣</figcaption>
-          </figure>
-          <figure class="polaroid cat-strip__shot">
-            <img src="assets/images/kitten-mirror.jpg" alt="The kitten sitting in front of a mirror, looking at its own reflection" width="675" height="900" loading="lazy" decoding="async">
-            <figcaption>code review 🪞</figcaption>
-          </figure>
-          <figure class="polaroid cat-strip__shot">
-            <img src="assets/images/kitten-nap.jpg" alt="The kitten asleep beside a closed laptop, surrounded by plush toys" width="700" height="700" loading="lazy" decoding="async">
-            <figcaption>after standup 😴</figcaption>
-          </figure>
+        <p class="string-arrow string-arrow--desk hand reveal"><svg class="doodle" aria-hidden="true"><use href="#d-curl"/></svg> my actual desk, screenshotted mid-chaos</p>
+        <div class="window desk-window reveal" style="--bar:#a77bff">
+          <div class="window__bar"><span class="window__title">💻 my_desk.exe</span><span class="window__dots" aria-hidden="true"><i></i><i></i><i></i></span></div>
+          <img src="assets/images/desk.png" alt="A screenshot of Anushka's terminal: Arch Linux with kitty, a pink colour scheme and a Hello Kitty picture beside the system info" width="900" height="419" loading="lazy" decoding="async">
+          <p class="hand desk-window__caption">yes, it is Arch. yes, I will tell you about it. 🍓</p>
         </div>
       </div>
     </section>
@@ -286,6 +271,9 @@
     <section id="journey" class="section journey">
       <svg class="doodle doodle--green section-shape section-shape--tr" aria-hidden="true"><use href="#d-sparkle"/></svg>
       <svg class="doodle doodle--orange section-shape section-shape--bl" aria-hidden="true"><use href="#d-blob"/></svg>
+      <svg class="doodle doodle--yellow margin-doodle margin-doodle--l" aria-hidden="true"><use href="#d-smiley"/></svg>
+      <svg class="doodle doodle--purple margin-doodle margin-doodle--r" aria-hidden="true"><use href="#d-asterisk"/></svg>
+      <svg class="doodle doodle--blue margin-doodle margin-doodle--r2 margin-doodle--string" aria-hidden="true"><use href="#d-string"/></svg>
 
       <div class="container">
         <header class="section-head reveal">
@@ -345,6 +333,21 @@
             </li>
 
             <li class="timeline__item">
+              <article class="window ticket" style="--bar:#4f8dff">
+                <div class="window__bar"><span class="window__title">May – Jun 2026</span><span class="ticket__pin">🧾 freelance</span></div>
+                <div class="ticket__body">
+                  <p class="ticket__role">Freelance Developer</p>
+                  <h3 class="ticket__org">Electronics manufacturing client <span>· solo</span></h3>
+                  <ul class="ticket__points">
+                    <li>Built the whole PCB and BOM toolkit for one client: the <a href="#projects">BOM to Quotation Tool</a>, the EMS AI Quotation Agent and the SMT wrong-polarity detection gate.</li>
+                    <li>Scoped the work, shipped it end to end and handed it over, which is where the Product Engineering role started.</li>
+                  </ul>
+                  <ul class="tag-list"><li>Python</li><li>FastAPI</li><li>Flask</li><li>React</li><li>PyTorch</li><li>OpenCV</li><li>DigiKey API</li></ul>
+                </div>
+              </article>
+            </li>
+
+            <li class="timeline__item">
               <article class="window ticket" style="--bar:#a77bff">
                 <div class="window__bar"><span class="window__title">Feb 2026 – now</span><span class="ticket__pin">🔬 research</span></div>
                 <div class="ticket__body">
@@ -396,6 +399,8 @@
     <section id="toolbox" class="section toolbox">
       <svg class="doodle doodle--orange section-shape section-shape--tl" aria-hidden="true"><use href="#d-bolt"/></svg>
       <svg class="doodle doodle--blue section-shape section-shape--br" aria-hidden="true"><use href="#d-flower"/></svg>
+      <svg class="doodle doodle--pink margin-doodle margin-doodle--l" aria-hidden="true"><use href="#d-heart"/></svg>
+      <svg class="doodle doodle--green margin-doodle margin-doodle--r" aria-hidden="true"><use href="#d-sparkle"/></svg>
 
       <div class="container">
         <header class="section-head reveal">
@@ -434,6 +439,10 @@
     <section id="projects" class="section projects">
       <svg class="doodle doodle--green section-shape section-shape--tr" aria-hidden="true"><use href="#d-burst"/></svg>
       <svg class="doodle doodle--pink section-shape section-shape--bl" aria-hidden="true"><use href="#d-squiggle"/></svg>
+      <svg class="doodle doodle--purple margin-doodle margin-doodle--l" aria-hidden="true"><use href="#d-flower"/></svg>
+      <svg class="doodle doodle--yellow margin-doodle margin-doodle--r" aria-hidden="true"><use href="#d-bolt"/></svg>
+      <svg class="doodle doodle--orange margin-doodle margin-doodle--l2 margin-doodle--string" aria-hidden="true"><use href="#d-string"/></svg>
+      <svg class="doodle doodle--blue margin-doodle margin-doodle--r2" aria-hidden="true"><use href="#d-smiley"/></svg>
 
       <div class="container">
         <header class="section-head reveal">
@@ -442,6 +451,7 @@
           <p class="hand section-scribble">straight from my GitHub</p>
           <p class="section-subtitle">Filter by topic, search for a tool, or open the details on any window.</p>
         </header>
+        <p class="string-arrow string-arrow--projects hand reveal" aria-hidden="true">every window opens, click Details <svg class="doodle" aria-hidden="true"><use href="#d-curl"/></svg></p>
 
         <div class="project-tools">
           <div class="filter-list" role="group" aria-label="Filter projects by topic">
@@ -673,6 +683,8 @@
     <section id="crew" class="section crew">
       <svg class="doodle doodle--yellow section-shape section-shape--tl" aria-hidden="true"><use href="#d-smiley"/></svg>
       <svg class="doodle doodle--pink section-shape section-shape--br" aria-hidden="true"><use href="#d-heart"/></svg>
+      <svg class="doodle doodle--green margin-doodle margin-doodle--l" aria-hidden="true"><use href="#d-sparkle"/></svg>
+      <svg class="doodle doodle--orange margin-doodle margin-doodle--r" aria-hidden="true"><use href="#d-blob"/></svg>
 
       <div class="container">
         <header class="section-head reveal">
@@ -683,20 +695,30 @@
         </header>
 
         <div class="crew__grid">
-          <article class="window crew__college reveal" style="--bar:#4f8dff">
-            <div class="window__bar"><span class="window__title">🏫 college.exe</span><span class="window__dots" aria-hidden="true"><i></i><i></i><i></i></span></div>
-            <div class="crew__college-body">
-              <h3>Bennett University</h3>
-              <p class="crew__meta">Greater Noida · batch of 2027 · CSE (Data Science)</p>
-              <dl class="status-list">
-                <div><dt>found</dt><dd>the basketball court, first week</dd></div>
-                <div><dt>captained</dt><dd>girls basketball, 2nd &amp; 3rd year</dd></div>
-                <div><dt>research</dt><dd>IST Computing lab, IoT security</dd></div>
-                <div><dt>learnt</dt><dd>how to ship, how to lose, how to show up</dd></div>
-              </dl>
-              <p class="hand crew__note">campus is where the "athlete" and "coder" stopped being separate people.</p>
-            </div>
-          </article>
+          <div class="id-card-wrap reveal">
+            <div class="lanyard" aria-hidden="true"><span></span></div>
+            <article class="id-card" aria-label="Student ID card">
+              <div class="id-card__head">
+                <span class="id-card__uni">🏫 Bennett University</span>
+                <span class="id-card__chip">STUDENT</span>
+              </div>
+              <div class="id-card__body">
+                <img class="id-card__photo" src="assets/images/id-photo.jpg" alt="Anushka holding a scarf over her head in the sun, used as an ID photo" width="300" height="360" loading="lazy" decoding="async">
+                <dl class="id-card__fields">
+                  <div><dt>name</dt><dd>Anushka Joshi</dd></div>
+                  <div><dt>course</dt><dd>B.Tech CSE (Data Science)</dd></div>
+                  <div><dt>batch</dt><dd>2023 – 2027</dd></div>
+                  <div><dt>campus</dt><dd>Greater Noida</dd></div>
+                  <div><dt>found in</dt><dd>court, lab, or the gym at 6am</dd></div>
+                </dl>
+              </div>
+              <div class="id-card__foot">
+                <span class="id-card__barcode" aria-hidden="true"></span>
+                <span class="id-card__stamp">captain · 2nd &amp; 3rd yr</span>
+              </div>
+            </article>
+            <p class="hand id-card__note">campus is where the "athlete" and the "coder" stopped being separate people.</p>
+          </div>
 
           <!-- Friends: to add a frame, copy one <figure> and point it at a photo in assets/images -->
           <div class="film-strip reveal" aria-label="Friends and campus life">
@@ -718,19 +740,85 @@
       </div>
     </section>
 
+    <section id="cat" class="section cat">
+      <svg class="doodle doodle--pink section-shape section-shape--tl" aria-hidden="true"><use href="#d-heart"/></svg>
+      <svg class="doodle doodle--blue section-shape section-shape--br" aria-hidden="true"><use href="#d-sparkle"/></svg>
+      <svg class="doodle doodle--yellow margin-doodle margin-doodle--l" aria-hidden="true"><use href="#d-flower"/></svg>
+      <svg class="doodle doodle--green margin-doodle margin-doodle--r" aria-hidden="true"><use href="#d-blob"/></svg>
+
+      <div class="container">
+        <div class="cat__head">
+          <header class="section-head reveal">
+            <span class="section-num">06</span>
+            <h2>Cat <span class="pop-word pop-word--pink">tax</span></h2>
+            <p class="hand section-scribble">mandatory, non-negotiable</p>
+            <p class="section-subtitle">Every portfolio needs a cat. Mine is Churros. She sits on the keyboard while I type, so technically every project is a collaboration.</p>
+          </header>
+
+          <div class="window cat-window reveal" style="--bar:#ff5aa5">
+            <div class="window__bar"><span class="window__title">🐾 cat_tax.exe</span><span class="window__dots" aria-hidden="true"><i></i><i></i><i></i></span></div>
+            <div class="cat-window__body">
+              <dl class="status-list">
+                <div><dt>name</dt><dd>Churros 🐾</dd></div>
+                <div><dt>role</dt><dd>chief distraction officer</dd></div>
+                <div><dt>skill</dt><dd>sitting on keyboards</dd></div>
+                <div><dt>reviews</dt><dd>harsh, mostly silent</dd></div>
+                <div><dt>status</dt><dd>unbothered<span class="caret" aria-hidden="true"></span></dd></div>
+              </dl>
+            </div>
+          </div>
+        </div>
+
+        <p class="string-arrow string-arrow--cat hand reveal">the evidence <svg class="doodle" aria-hidden="true"><use href="#d-loop"/></svg></p>
+
+        <!-- Clothesline: copy a <figure> to hang another photo -->
+        <ul class="clothesline reveal" aria-label="Kitten photos">
+          <li><figure class="polaroid peg-shot">
+            <img src="assets/images/kitten-bag.jpg" alt="Churros, a grey kitten, peeking out of a pink striped tote bag with her tongue out" width="506" height="900" loading="lazy" decoding="async">
+            <figcaption>commute buddy 👅</figcaption>
+          </figure></li>
+          <li><figure class="polaroid peg-shot">
+            <img src="assets/images/kitten-laptop.jpg" alt="The kitten lying across a laptop keyboard while a video plays" width="900" height="560" loading="lazy" decoding="async">
+            <figcaption>pair programming</figcaption>
+          </figure></li>
+          <li><figure class="polaroid peg-shot">
+            <img src="assets/images/kitten-keys.jpg" alt="The kitten standing on a laptop with a blue backlit keyboard" width="700" height="700" loading="lazy" decoding="async">
+            <figcaption>deploying 🐈‍⬛</figcaption>
+          </figure></li>
+          <li><figure class="polaroid peg-shot">
+            <img src="assets/images/kitten-bucket.jpg" alt="The kitten peeking out of a blue bucket lying on its side" width="675" height="900" loading="lazy" decoding="async">
+            <figcaption>containerised 🪣</figcaption>
+          </figure></li>
+          <li><figure class="polaroid peg-shot">
+            <img src="assets/images/kitten-mirror.jpg" alt="The kitten sitting in front of a mirror, looking at its reflection" width="675" height="900" loading="lazy" decoding="async">
+            <figcaption>code review 🪞</figcaption>
+          </figure></li>
+          <li><figure class="polaroid peg-shot">
+            <img src="assets/images/kitten-nap.jpg" alt="The kitten asleep beside a closed laptop, surrounded by plush toys" width="700" height="700" loading="lazy" decoding="async">
+            <figcaption>after standup 😴</figcaption>
+          </figure></li>
+        </ul>
+      </div>
+    </section>
+
     <section id="games" class="section play">
       <svg class="doodle doodle--purple section-shape section-shape--tl" aria-hidden="true"><use href="#d-asterisk"/></svg>
       <svg class="doodle doodle--yellow section-shape section-shape--br" aria-hidden="true"><use href="#d-smiley"/></svg>
+      <svg class="doodle doodle--pink margin-doodle margin-doodle--l" aria-hidden="true"><use href="#d-burst"/></svg>
+      <svg class="doodle doodle--blue margin-doodle margin-doodle--r" aria-hidden="true"><use href="#d-bolt"/></svg>
+      <svg class="doodle doodle--white paper-plane" aria-hidden="true"><use href="#d-plane"/></svg>
 
       <div class="container">
         <header class="section-head reveal">
-          <span class="section-num">06</span>
+          <span class="section-num">07</span>
           <h2>Play <span class="pop-word pop-word--green">time</span></h2>
           <p class="hand section-scribble">break time, you earned it</p>
           <p class="section-subtitle">Bubble Pop is already running. Pop as many as you can before they fade, grab a meme, then leave a doodle.</p>
         </header>
 
         <div class="play-grid">
+          <p class="string-arrow string-arrow--pop hand" aria-hidden="true">pop these! <svg class="doodle" aria-hidden="true"><use href="#d-curl"/></svg></p>
+
           <div class="window bubble-game" id="bubble-game" role="region" aria-labelledby="bubble-game-title">
             <div class="window__bar"><span class="window__title">bubble_pop.exe</span><span class="window__dots" aria-hidden="true"><i></i><i></i><i></i></span></div>
             <div class="bubble-game__head">
@@ -758,6 +846,10 @@
             <button type="button" class="btn ghost-btn" id="meme-next">Another one 🎲</button>
           </aside>
 
+          <p class="sticky play__sticky drag">beat my best? screenshot it and send it to me 😤</p>
+
+          <p class="string-arrow string-arrow--draw hand" aria-hidden="true"><svg class="doodle" aria-hidden="true"><use href="#d-loop"/></svg> leave me a doodle</p>
+
           <div class="window doodle-pad" id="doodle-pad" role="region" aria-labelledby="doodle-title">
             <div class="window__bar"><span class="window__title">doodle_pad.exe</span><span class="window__dots" aria-hidden="true"><i></i><i></i><i></i></span></div>
             <div class="doodle-pad__head">
@@ -765,7 +857,7 @@
               <p class="hand doodle-pad__hint">draw me something!</p>
             </div>
             <div class="doodle-pad__toolbar">
-              <div class="doodle-pad__swatches" role="group" aria-label="Marker colour">
+              <div class="doodle-pad__swatches crayon-box" role="group" aria-label="Marker colour">
                 <button type="button" class="swatch is-selected" data-color="#17141f" style="--c:#17141f" aria-label="Black" aria-pressed="true"></button>
                 <button type="button" class="swatch" data-color="#ff5aa5" style="--c:#ff5aa5" aria-label="Pink" aria-pressed="false"></button>
                 <button type="button" class="swatch" data-color="#ff8a3d" style="--c:#ff8a3d" aria-label="Orange" aria-pressed="false"></button>
@@ -783,6 +875,11 @@
             </div>
             <canvas class="doodle-pad__canvas" id="doodle-canvas" aria-label="Drawing canvas. Draw with your mouse, pen or finger."></canvas>
           </div>
+
+          <span class="sticker drag play__sticker play__sticker--1" aria-hidden="true">🎮</span>
+          <span class="sticker drag play__sticker play__sticker--2" aria-hidden="true">🖍️</span>
+          <span class="sticker drag play__sticker play__sticker--3" aria-hidden="true">🫧</span>
+          <span class="sticker drag play__sticker play__sticker--4" aria-hidden="true">😹</span>
         </div>
       </div>
     </section>
@@ -793,7 +890,7 @@
           <svg class="doodle doodle--yellow contact__shape contact__shape--1" aria-hidden="true"><use href="#d-burst"/></svg>
           <svg class="doodle doodle--blue contact__shape contact__shape--2" aria-hidden="true"><use href="#d-sparkle"/></svg>
           <svg class="doodle doodle--white contact__shape contact__shape--3" aria-hidden="true"><use href="#d-squiggle"/></svg>
-          <span class="section-num">07</span>
+          <span class="section-num">08</span>
           <h2>One last thing</h2>
           <p class="contact__text">
             Thanks for stopping by 🫶 This site is a tiny reflection of my journey:

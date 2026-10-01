@@ -469,8 +469,8 @@ document.querySelectorAll(".drag").forEach((item) => {
   }
 
   function redraw() {
-    ctx.fillStyle = "#ffffff";
-    ctx.fillRect(0, 0, width, height);
+    // Transparent so the dotted paper from the CSS shows through; the PNG export adds its own paper.
+    ctx.clearRect(0, 0, width, height);
     strokes.forEach(drawStroke);
   }
 
@@ -539,7 +539,15 @@ document.querySelectorAll(".drag").forEach((item) => {
   saveBtn.addEventListener("click", () => {
     const link = document.createElement("a");
     link.download = "doodle.png";
-    link.href = canvas.toDataURL("image/png");
+    // Composite onto cream paper so the download is not transparent
+    const paper = document.createElement("canvas");
+    paper.width = canvas.width;
+    paper.height = canvas.height;
+    const paperCtx = paper.getContext("2d");
+    paperCtx.fillStyle = "#fffdf8";
+    paperCtx.fillRect(0, 0, paper.width, paper.height);
+    paperCtx.drawImage(canvas, 0, 0);
+    link.href = paper.toDataURL("image/png");
     link.click();
   });
 
