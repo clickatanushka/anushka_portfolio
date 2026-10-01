@@ -65,8 +65,10 @@
       <ul class="nav-links">
         <li><a href="#home" class="nav-link active">Home</a></li>
         <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#journey" class="nav-link">Journey</a></li>
         <li><a href="#toolbox" class="nav-link">Toolbox</a></li>
         <li><a href="#projects" class="nav-link">Projects</a></li>
+        <li><a href="#crew" class="nav-link">Crew</a></li>
         <li><a href="#games" class="nav-link">Play</a></li>
         <li><a href="#contact" class="nav-link">Contact</a></li>
       </ul>
@@ -234,10 +236,159 @@
           </article>
         </div>
 
-        <div class="window desk-window reveal" style="--bar:#a77bff">
-          <div class="window__bar"><span class="window__title">💻 my_desk.exe</span><span class="window__dots" aria-hidden="true"><i></i><i></i><i></i></span></div>
-          <img src="assets/images/desk.png" alt="A screenshot of Anushka's terminal: Arch Linux with kitty, a pink colour scheme and a Hello Kitty picture beside the system info" width="900" height="419" loading="lazy" decoding="async">
-          <p class="hand desk-window__caption">yes, it is Arch. yes, I will tell you about it. 🍓</p>
+        <div class="desk-row">
+          <div class="window desk-window reveal" style="--bar:#a77bff">
+            <div class="window__bar"><span class="window__title">💻 my_desk.exe</span><span class="window__dots" aria-hidden="true"><i></i><i></i><i></i></span></div>
+            <img src="assets/images/desk.png" alt="A screenshot of Anushka's terminal: Arch Linux with kitty, a pink colour scheme and a Hello Kitty picture beside the system info" width="900" height="419" loading="lazy" decoding="async">
+            <p class="hand desk-window__caption">yes, it is Arch. yes, I will tell you about it. 🍓</p>
+          </div>
+
+          <div class="window cat-window reveal" style="--bar:#ff5aa5">
+            <div class="window__bar"><span class="window__title">🐾 cat_tax.exe</span><span class="window__dots" aria-hidden="true"><i></i><i></i><i></i></span></div>
+            <figure class="cat-window__main">
+              <img src="assets/images/kitten-laptop.jpg" alt="A fluffy grey kitten lying across a laptop keyboard on a bed while a video plays on the screen" width="900" height="560" loading="lazy" decoding="async">
+              <figcaption class="hand">pair programming, allegedly</figcaption>
+            </figure>
+            <div class="cat-window__body">
+              <dl class="status-list">
+                <div><dt>role</dt><dd>chief distraction officer</dd></div>
+                <div><dt>skill</dt><dd>sitting on keyboards</dd></div>
+                <div><dt>reviews</dt><dd>harsh, mostly silent</dd></div>
+                <div><dt>status</dt><dd>unbothered<span class="caret" aria-hidden="true"></span></dd></div>
+              </dl>
+              <p class="hand cat-window__note">more evidence below ↓</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Cat tax strip: copy a <figure> to add another photo -->
+        <div class="cat-strip reveal" aria-label="More kitten photos">
+          <figure class="polaroid cat-strip__shot">
+            <img src="assets/images/kitten-keys.jpg" alt="The grey kitten standing on a laptop with a blue backlit keyboard" width="700" height="700" loading="lazy" decoding="async">
+            <figcaption>deploying 🐈‍⬛</figcaption>
+          </figure>
+          <figure class="polaroid cat-strip__shot">
+            <img src="assets/images/kitten-bucket.jpg" alt="The kitten peeking out of a blue bucket lying on its side" width="675" height="900" loading="lazy" decoding="async">
+            <figcaption>containerised 🪣</figcaption>
+          </figure>
+          <figure class="polaroid cat-strip__shot">
+            <img src="assets/images/kitten-mirror.jpg" alt="The kitten sitting in front of a mirror, looking at its own reflection" width="675" height="900" loading="lazy" decoding="async">
+            <figcaption>code review 🪞</figcaption>
+          </figure>
+          <figure class="polaroid cat-strip__shot">
+            <img src="assets/images/kitten-nap.jpg" alt="The kitten asleep beside a closed laptop, surrounded by plush toys" width="700" height="700" loading="lazy" decoding="async">
+            <figcaption>after standup 😴</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section id="journey" class="section journey">
+      <svg class="doodle doodle--green section-shape section-shape--tr" aria-hidden="true"><use href="#d-sparkle"/></svg>
+      <svg class="doodle doodle--orange section-shape section-shape--bl" aria-hidden="true"><use href="#d-blob"/></svg>
+
+      <div class="container">
+        <header class="section-head reveal">
+          <span class="section-num">02</span>
+          <h2>The <span class="pop-word pop-word--blue">journey</span> so far</h2>
+          <p class="hand section-scribble">school → college → real work</p>
+          <p class="section-subtitle">Where I studied, where I have interned, and what each stop taught me.</p>
+        </header>
+
+        <div class="journey__grid">
+          <!-- Education: report card -->
+          <div class="report-card reveal">
+            <div class="report-card__head">
+              <span class="report-card__label">🎓 Report card</span>
+              <span class="report-card__stamp" aria-hidden="true">PCMB</span>
+            </div>
+
+            <article class="report-card__row report-card__row--main">
+              <p class="report-card__when">2023 – 2027</p>
+              <h3>Bennett University, Greater Noida</h3>
+              <p>B.Tech in Computer Science and Engineering (Data Science)</p>
+              <p class="report-card__score"><span>CGPA</span> 8.5</p>
+            </article>
+
+            <article class="report-card__row">
+              <p class="report-card__when">Class 12</p>
+              <h3>PCMB stream</h3>
+              <p>Physics, Chemistry, Maths and Biology, because choosing was never my thing.</p>
+              <p class="report-card__score"><span>Score</span> 93%</p>
+            </article>
+
+            <article class="report-card__row">
+              <p class="report-card__when">Class 10</p>
+              <h3>Board exams</h3>
+              <p>The first time I learned that discipline compounds.</p>
+              <p class="report-card__score"><span>Score</span> 95%</p>
+            </article>
+
+            <p class="hand report-card__note">grades are the boring part. scroll for the fun part ↓</p>
+          </div>
+
+          <!-- Internships: timeline -->
+          <ol class="timeline reveal" aria-label="Internships and research">
+            <li class="timeline__item">
+              <article class="window ticket" style="--bar:#ff5aa5">
+                <div class="window__bar"><span class="window__title">Jun 2026 – now</span><span class="ticket__pin">📌 current</span></div>
+                <div class="ticket__body">
+                  <p class="ticket__role">Product Engineering Intern</p>
+                  <h3 class="ticket__org">Techknowledgehub <span>· Gurgaon</span></h3>
+                  <ul class="ticket__points">
+                    <li>Driving end-to-end product work across web and mobile: designing features and user flows, then building them.</li>
+                    <li>Debugging across services before rollout by tracing logs, errors and API responses to the root cause.</li>
+                  </ul>
+                  <ul class="tag-list"><li>Next.js</li><li>React Native</li><li>FastAPI</li><li>PostgreSQL</li><li>Redis</li><li>Docker</li></ul>
+                </div>
+              </article>
+            </li>
+
+            <li class="timeline__item">
+              <article class="window ticket" style="--bar:#a77bff">
+                <div class="window__bar"><span class="window__title">Feb 2026 – now</span><span class="ticket__pin">🔬 research</span></div>
+                <div class="ticket__body">
+                  <p class="ticket__role">Research Work · IST Computing</p>
+                  <h3 class="ticket__org">Bennett University</h3>
+                  <ul class="ticket__points">
+                    <li>Simulating a multi-layer adaptive intrusion detection system from IoT to cloud in OMNeT++.</li>
+                    <li>Measuring latency, throughput and packet loss across 4 tiers to find the best detection thresholds.</li>
+                  </ul>
+                  <ul class="tag-list"><li>OMNeT++</li><li>C++</li><li>IoT security</li></ul>
+                </div>
+              </article>
+            </li>
+
+            <li class="timeline__item">
+              <article class="window ticket" style="--bar:#35d68a">
+                <div class="window__bar"><span class="window__title">Oct – Dec 2025</span><span class="ticket__pin">📊 remote</span></div>
+                <div class="ticket__body">
+                  <p class="ticket__role">Data Analytics Intern</p>
+                  <h3 class="ticket__org">Abhiyan</h3>
+                  <ul class="ticket__points">
+                    <li>Analysed sales across 6 product categories with SQL and Pandas for monthly stakeholder reports.</li>
+                    <li>Cleaned raw datasets, cutting null records by about 30% and making downstream reporting more accurate.</li>
+                  </ul>
+                  <ul class="tag-list"><li>SQL</li><li>Pandas</li><li>Reporting</li></ul>
+                </div>
+              </article>
+            </li>
+
+            <li class="timeline__item">
+              <article class="window ticket" style="--bar:#ffd23f">
+                <div class="window__bar"><span class="window__title">Jan – Feb 2025</span><span class="ticket__pin">📈 remote</span></div>
+                <div class="ticket__body">
+                  <p class="ticket__role">Business Development Intern</p>
+                  <h3 class="ticket__org">Valentino Tech</h3>
+                  <ul class="ticket__points">
+                    <li>Built 3 executive dashboards in Power BI and Tableau tracking revenue, lead conversion and retention.</li>
+                    <li>Merged data from 5 sources, reducing reporting discrepancies by about 25%.</li>
+                  </ul>
+                  <ul class="tag-list"><li>Power BI</li><li>Tableau</li><li>Data cleaning</li></ul>
+                </div>
+              </article>
+            </li>
+          </ol>
         </div>
       </div>
     </section>
@@ -248,7 +399,7 @@
 
       <div class="container">
         <header class="section-head reveal">
-          <span class="section-num">02</span>
+          <span class="section-num">03</span>
           <h2>My <span class="pop-word pop-word--yellow">toolbox</span></h2>
           <p class="hand section-scribble">peel-off sticker sheet</p>
           <p class="section-subtitle">Everything here shows up in at least one project below.</p>
@@ -286,7 +437,7 @@
 
       <div class="container">
         <header class="section-head reveal">
-          <span class="section-num">03</span>
+          <span class="section-num">04</span>
           <h2>My <span class="pop-word pop-word--blue">projects</span></h2>
           <p class="hand section-scribble">straight from my GitHub</p>
           <p class="section-subtitle">Filter by topic, search for a tool, or open the details on any window.</p>
@@ -519,13 +670,61 @@
       </div>
     </section>
 
+    <section id="crew" class="section crew">
+      <svg class="doodle doodle--yellow section-shape section-shape--tl" aria-hidden="true"><use href="#d-smiley"/></svg>
+      <svg class="doodle doodle--pink section-shape section-shape--br" aria-hidden="true"><use href="#d-heart"/></svg>
+
+      <div class="container">
+        <header class="section-head reveal">
+          <span class="section-num">05</span>
+          <h2>College <span class="pop-word pop-word--yellow">&amp;</span> the crew</h2>
+          <p class="hand section-scribble">the people part <svg class="doodle" aria-hidden="true"><use href="#d-arrow"/></svg></p>
+          <p class="section-subtitle">Four years at Bennett and the people who made them worth it.</p>
+        </header>
+
+        <div class="crew__grid">
+          <article class="window crew__college reveal" style="--bar:#4f8dff">
+            <div class="window__bar"><span class="window__title">🏫 college.exe</span><span class="window__dots" aria-hidden="true"><i></i><i></i><i></i></span></div>
+            <div class="crew__college-body">
+              <h3>Bennett University</h3>
+              <p class="crew__meta">Greater Noida · batch of 2027 · CSE (Data Science)</p>
+              <dl class="status-list">
+                <div><dt>found</dt><dd>the basketball court, first week</dd></div>
+                <div><dt>captained</dt><dd>girls basketball, 2nd &amp; 3rd year</dd></div>
+                <div><dt>research</dt><dd>IST Computing lab, IoT security</dd></div>
+                <div><dt>learnt</dt><dd>how to ship, how to lose, how to show up</dd></div>
+              </dl>
+              <p class="hand crew__note">campus is where the "athlete" and "coder" stopped being separate people.</p>
+            </div>
+          </article>
+
+          <!-- Friends: to add a frame, copy one <figure> and point it at a photo in assets/images -->
+          <div class="film-strip reveal" aria-label="Friends and campus life">
+            <figure class="polaroid film-strip__shot">
+              <img src="assets/images/crew.jpg" alt="Anushka and three friends dressed up in sarees, taking a mirror selfie in a Bennett University hallway" width="675" height="900" loading="lazy" decoding="async">
+              <figcaption>the crew, saree day 💃</figcaption>
+            </figure>
+            <figure class="polaroid film-strip__shot">
+              <img src="assets/images/gym.jpg" alt="Anushka taking a mirror selfie in the campus gym under a poster that reads your mind doesn't push it" width="675" height="900" loading="lazy" decoding="async">
+              <figcaption>6am gym crew 🏋️</figcaption>
+            </figure>
+            <figure class="polaroid film-strip__shot">
+              <img src="assets/images/lawn.jpg" alt="Anushka doing a wheelbarrow race with a friend on the campus lawn" width="675" height="900" loading="lazy" decoding="async">
+              <figcaption>campus days 🎒</figcaption>
+            </figure>
+            <p class="sticky film-strip__sticky">found my people in week one 🫶</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section id="games" class="section play">
       <svg class="doodle doodle--purple section-shape section-shape--tl" aria-hidden="true"><use href="#d-asterisk"/></svg>
       <svg class="doodle doodle--yellow section-shape section-shape--br" aria-hidden="true"><use href="#d-smiley"/></svg>
 
       <div class="container">
         <header class="section-head reveal">
-          <span class="section-num">04</span>
+          <span class="section-num">06</span>
           <h2>Play <span class="pop-word pop-word--green">time</span></h2>
           <p class="hand section-scribble">break time, you earned it</p>
           <p class="section-subtitle">Bubble Pop is already running. Pop as many as you can before they fade, grab a meme, then leave a doodle.</p>
@@ -594,7 +793,7 @@
           <svg class="doodle doodle--yellow contact__shape contact__shape--1" aria-hidden="true"><use href="#d-burst"/></svg>
           <svg class="doodle doodle--blue contact__shape contact__shape--2" aria-hidden="true"><use href="#d-sparkle"/></svg>
           <svg class="doodle doodle--white contact__shape contact__shape--3" aria-hidden="true"><use href="#d-squiggle"/></svg>
-          <span class="section-num">05</span>
+          <span class="section-num">07</span>
           <h2>One last thing</h2>
           <p class="contact__text">
             Thanks for stopping by 🫶 This site is a tiny reflection of my journey:
@@ -603,8 +802,20 @@
           </p>
           <div class="contact__links">
             <a class="btn ghost-btn" href="https://github.com/clickatanushka" target="_blank" rel="noopener noreferrer">Find me on GitHub</a>
+            <a class="btn ghost-btn" href="mailto:anushka14joshi@gmail.com">Email me 💌</a>
           </div>
           <p class="hand contact__note"><svg class="doodle" aria-hidden="true"><use href="#d-arrow"/></svg> come say hi</p>
+
+          <div class="contact__gifs" aria-hidden="true">
+            <figure class="polaroid contact__gif contact__gif--1">
+              <img src="https://media.giphy.com/media/3oriO0OEd9QIDdllqo/giphy.gif" alt="" width="330" height="328" loading="lazy">
+              <figcaption>the real boss 🐾</figcaption>
+            </figure>
+            <figure class="polaroid contact__gif contact__gif--2">
+              <img src="https://media.giphy.com/media/l0MYt5jPR6QX5pnqM/giphy.gif" alt="" width="370" height="208" loading="lazy">
+              <figcaption>me when the build passes</figcaption>
+            </figure>
+          </div>
         </div>
       </div>
     </section>

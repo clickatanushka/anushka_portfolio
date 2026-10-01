@@ -1007,10 +1007,53 @@ h1 {
   text-shadow: 0 2px 0 var(--ink);
 }
 
+.desk-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+  gap: 2.2rem;
+  align-items: center;
+  margin-top: 2.6rem;
+}
+
 .desk-window {
-  width: min(100%, 52rem);
-  margin: 2.6rem auto 0;
   rotate: 0.8deg;
+}
+
+.cat-window {
+  rotate: -1.2deg;
+}
+
+.cat-window__main {
+  margin: 0;
+}
+
+.cat-window__main img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-bottom: var(--line);
+}
+
+.cat-window__main figcaption {
+  padding: 0.4rem 1rem 0;
+  font-size: 1.3rem;
+  text-align: center;
+  color: var(--muted);
+}
+
+.cat-window__body {
+  padding: 0.5rem 1.2rem 1rem;
+}
+
+.cat-window__body .status-list div {
+  grid-template-columns: 5.2rem 1fr;
+}
+
+.cat-window__note {
+  margin-top: 0.4rem;
+  font-size: 1.25rem;
+  color: var(--muted);
+  text-align: right;
 }
 
 .desk-window img {
@@ -1025,6 +1068,376 @@ h1 {
   text-align: center;
   border-top: var(--line);
   background: var(--white);
+}
+
+/* Cat tax strip: four mini polaroids scattered under the desk row */
+.cat-strip {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1.4rem;
+  width: min(100%, 56rem);
+  margin: 3rem auto 0;
+  padding: 0 1rem;
+}
+
+.cat-strip__shot {
+  rotate: var(--r, -4deg);
+  translate: 0 var(--y, 0);
+  transition: rotate 0.2s ease, translate 0.2s ease;
+}
+
+.cat-strip__shot:nth-child(2) { --r: 3deg; --y: 1.2rem; }
+.cat-strip__shot:nth-child(3) { --r: -2deg; --y: -0.4rem; }
+.cat-strip__shot:nth-child(4) { --r: 5deg; --y: 0.8rem; }
+
+.cat-strip__shot:hover {
+  rotate: 0deg;
+  translate: 0 -6px;
+  z-index: 2;
+}
+
+.cat-strip__shot:nth-child(2)::before {
+  background: repeating-linear-gradient(45deg, rgba(79, 141, 255, 0.85) 0 9px, rgba(255, 253, 248, 0.85) 9px 18px);
+}
+
+.cat-strip__shot:nth-child(3)::before {
+  background: repeating-linear-gradient(45deg, rgba(255, 210, 63, 0.9) 0 9px, rgba(255, 253, 248, 0.85) 9px 18px);
+}
+
+.cat-strip__shot:nth-child(4)::before {
+  background: repeating-linear-gradient(45deg, rgba(53, 214, 138, 0.85) 0 9px, rgba(255, 253, 248, 0.85) 9px 18px);
+}
+
+.cat-strip__shot:nth-child(2) img { object-position: center 30%; }
+.cat-strip__shot:nth-child(3) img { object-position: center 55%; }
+
+.cat-strip__shot figcaption {
+  font-size: 1.2rem;
+  padding-bottom: 0.4rem;
+}
+
+/* --- Journey: report card + internship timeline --- */
+.journey__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+  gap: clamp(2rem, 5vw, 4rem);
+  align-items: start;
+}
+
+.report-card {
+  position: sticky;
+  top: 6rem;
+  padding: 1.4rem 1.5rem 1.2rem;
+  background: var(--white);
+  border: var(--line);
+  border-radius: 6px;
+  box-shadow: var(--pop);
+  rotate: -1.2deg;
+  /* ruled paper */
+  background-image: repeating-linear-gradient(transparent 0 calc(1.6rem - 1px), #d9e4ff calc(1.6rem - 1px) 1.6rem);
+}
+
+.report-card__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-bottom: 0.8rem;
+  border-bottom: var(--line);
+}
+
+.report-card__label {
+  font-family: var(--font-pixel);
+  font-size: 0.9rem;
+  text-transform: uppercase;
+}
+
+.report-card__stamp {
+  padding: 0.2rem 0.7rem;
+  font-family: var(--font-pixel);
+  font-size: 0.8rem;
+  color: #e0267a;
+  border: 3px double #e0267a;
+  border-radius: 8px;
+  rotate: 8deg;
+}
+
+.report-card__row {
+  position: relative;
+  padding: 1rem 0 1rem 0.2rem;
+  border-bottom: 2px dashed var(--ink);
+}
+
+.report-card__row:last-of-type {
+  border-bottom: 0;
+}
+
+.report-card__row h3 {
+  font-size: 1.1rem;
+  line-height: 1.3;
+}
+
+.report-card__row p {
+  font-size: 0.95rem;
+}
+
+.report-card__row--main h3 {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+}
+
+.report-card__when {
+  display: inline-block;
+  margin-bottom: 0.3rem;
+  padding: 0.05rem 0.5rem;
+  font-family: var(--font-pixel);
+  font-size: 0.72rem;
+  background: var(--yellow);
+  border: 2px solid var(--ink);
+  border-radius: 6px;
+}
+
+.report-card__score {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.4rem;
+  margin-top: 0.5rem;
+  padding: 0.1rem 0.7rem;
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  color: var(--white);
+  background: var(--ink);
+  border-radius: 999px;
+  rotate: -2deg;
+}
+
+.report-card__score span {
+  font-family: var(--font-pixel);
+  font-size: 0.65rem;
+  color: var(--yellow);
+  text-transform: uppercase;
+}
+
+.report-card__note {
+  margin-top: 0.6rem;
+  font-size: 1.3rem;
+  color: var(--muted);
+  text-align: right;
+}
+
+.timeline {
+  position: relative;
+  display: grid;
+  gap: 1.8rem;
+  padding-left: 2.4rem;
+  list-style: none;
+}
+
+/* dashed spine */
+.timeline::before {
+  content: "";
+  position: absolute;
+  top: 1rem;
+  bottom: 1rem;
+  left: 0.65rem;
+  border-left: 4px dashed var(--ink);
+}
+
+.timeline__item {
+  position: relative;
+}
+
+/* the dot on the spine */
+.timeline__item::before {
+  content: "";
+  position: absolute;
+  top: 0.9rem;
+  left: -2.4rem;
+  width: 1.1rem;
+  height: 1.1rem;
+  background: var(--dot, var(--pink));
+  border: var(--line);
+  border-radius: 50%;
+  box-shadow: 3px 3px 0 var(--ink);
+}
+
+.timeline__item:nth-child(2)::before { --dot: var(--purple); }
+.timeline__item:nth-child(3)::before { --dot: var(--green); }
+.timeline__item:nth-child(4)::before { --dot: var(--yellow); }
+
+.ticket {
+  rotate: 0.6deg;
+  transition: rotate 0.2s ease, translate 0.2s ease;
+}
+
+.timeline__item:nth-child(even) .ticket {
+  rotate: -0.7deg;
+}
+
+.ticket:hover {
+  rotate: 0deg;
+  translate: 0 -4px;
+}
+
+.ticket__pin {
+  font-family: var(--font-pixel);
+  font-size: 0.72rem;
+  padding: 0.05rem 0.5rem;
+  background: var(--white);
+  border: 2px solid var(--ink);
+  border-radius: 6px;
+}
+
+.ticket__body {
+  padding: 1rem 1.2rem 1.2rem;
+}
+
+.ticket__role {
+  font-family: var(--font-pixel);
+  font-size: 0.74rem;
+  color: var(--muted);
+  text-transform: uppercase;
+}
+
+.ticket__org {
+  margin: 0.15rem 0 0.6rem;
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  line-height: 1.2;
+}
+
+.ticket__org span {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--muted);
+}
+
+.ticket__points {
+  display: grid;
+  gap: 0.35rem;
+  margin-bottom: 0.9rem;
+  padding-left: 1.2rem;
+  font-size: 0.95rem;
+}
+
+.ticket__points li::marker {
+  content: "✦ ";
+  color: var(--pink);
+}
+
+/* --- Crew: college + friends --- */
+.crew__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: clamp(2rem, 5vw, 4rem);
+  align-items: center;
+}
+
+.crew__college {
+  rotate: -1deg;
+}
+
+.crew__college-body {
+  padding: 1.2rem 1.4rem 1.4rem;
+}
+
+.crew__college-body h3 {
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+}
+
+.crew__meta {
+  margin: 0.2rem 0 1rem;
+  font-family: var(--font-pixel);
+  font-size: 0.74rem;
+  color: var(--muted);
+}
+
+.crew__note {
+  margin-top: 1rem;
+  font-size: 1.35rem;
+}
+
+.film-strip {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.4rem 1.2rem;
+  padding: 1rem 0.6rem 1.6rem;
+}
+
+.film-strip__shot {
+  rotate: var(--r, -4deg);
+  transition: rotate 0.2s ease;
+}
+
+.film-strip__shot:nth-child(2) { --r: 5deg; translate: 0 1.6rem; }
+.film-strip__shot:nth-child(3) { --r: -2deg; }
+
+.film-strip__shot:hover {
+  rotate: 0deg;
+  z-index: 2;
+}
+
+.film-strip__shot:nth-child(2)::before {
+  background: repeating-linear-gradient(45deg, rgba(255, 210, 63, 0.9) 0 9px, rgba(255, 253, 248, 0.85) 9px 18px);
+}
+
+.film-strip__shot:nth-child(3)::before {
+  background: repeating-linear-gradient(45deg, rgba(79, 141, 255, 0.85) 0 9px, rgba(255, 253, 248, 0.85) 9px 18px);
+}
+
+/* the crew shot is a mirror selfie, people sit low in the frame */
+.film-strip__shot:nth-child(1) img { object-position: center 60%; }
+.film-strip__shot:nth-child(3) img { object-position: center 70%; }
+
+.film-strip__sticky {
+  align-self: center;
+  justify-self: center;
+  width: 11rem;
+  margin-top: 1.2rem;
+  rotate: -5deg;
+}
+
+/* --- Contact: gifs --- */
+.contact .contact__card > .contact__gifs {
+  position: absolute;
+  z-index: 1;
+  top: 5rem;
+  right: 4%;
+  width: 17rem;
+  pointer-events: none;
+}
+
+.contact__gif {
+  position: absolute;
+  width: 12.5rem;
+}
+
+.contact__gif img {
+  aspect-ratio: auto;
+}
+
+.contact__gif--1 {
+  top: 0;
+  left: 0;
+  rotate: -7deg;
+}
+
+.contact__gif--2 {
+  top: 15.5rem;
+  right: -1rem;
+  width: 13.5rem;
+  rotate: 6deg;
+}
+
+.contact__gif--2::before {
+  background: repeating-linear-gradient(45deg, rgba(255, 210, 63, 0.9) 0 9px, rgba(255, 253, 248, 0.85) 9px 18px);
+}
+
+.contact__card {
+  min-height: 36rem;
 }
 
 /* --- Toolbox: sticker sheet --- */
@@ -1822,6 +2235,54 @@ h1 {
 
   .hobby:nth-child(3) {
     grid-column: 1 / -1;
+  }
+
+  .journey__grid,
+  .crew__grid,
+  .desk-row {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .desk-window,
+  .cat-window {
+    width: min(100%, 34rem);
+    margin-inline: auto;
+  }
+
+  .cat-strip {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    width: min(100%, 30rem);
+    gap: 1.6rem 1.4rem;
+  }
+
+  .report-card {
+    position: static;
+    width: min(100%, 34rem);
+    margin-inline: auto;
+  }
+
+  .film-strip {
+    width: min(100%, 30rem);
+    margin-inline: auto;
+  }
+
+  .contact__card {
+    min-height: 0;
+  }
+
+  .contact .contact__card > .contact__gifs {
+    position: relative;
+    top: auto;
+    right: auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.6rem 1.4rem;
+    width: auto;
+    margin-top: 2.4rem;
+  }
+
+  .contact__gif {
+    position: static;
   }
 
   .hero__shape--asterisk {
