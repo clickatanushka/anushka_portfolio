@@ -316,6 +316,14 @@ h2 {
   border: 2.5px solid var(--ink);
 }
 
+/* Real photos get a square crop so the pile keeps its proportions */
+.polaroid img {
+  aspect-ratio: 1;
+  object-fit: cover;
+  object-position: center 35%;
+  background: #e3ecff;
+}
+
 .polaroid figcaption {
   padding: 0.3rem 0 0.5rem;
   font-family: var(--font-hand);
@@ -851,11 +859,172 @@ h1 {
 
 .fact-strip li:nth-child(2) { --c: var(--orange); --r: 2deg; }
 .fact-strip li:nth-child(3) { --c: var(--green); --r: -1deg; }
-.fact-strip li:nth-child(4) { --c: var(--blue); --r: 3deg; }
+.fact-strip li:nth-child(4) { --c: var(--purple); --r: 2.5deg; }
+.fact-strip li:nth-child(5) { --c: var(--blue); --r: -3deg; }
 
 .fact-strip li:hover {
   rotate: 0deg;
   translate: 0 -4px;
+}
+
+/* --- About: hobbies --- */
+.hobby-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.6rem 1.4rem;
+  margin-top: 4.5rem;
+}
+
+.hobby-head__title {
+  font-family: var(--font-display);
+  font-size: clamp(1.9rem, 4vw, 2.6rem);
+  line-height: 1.1;
+}
+
+.hobby-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.8rem;
+  margin-top: 1.8rem;
+}
+
+.hobby {
+  display: flex;
+  flex-direction: column;
+  rotate: -1.2deg;
+  transition: rotate 0.2s ease, translate 0.2s ease;
+}
+
+.hobby:nth-child(2) { rotate: 1.4deg; }
+.hobby:nth-child(3) { rotate: -0.8deg; }
+
+.hobby:hover {
+  rotate: 0deg;
+  translate: 0 -5px;
+}
+
+.hobby__body {
+  padding: 1.1rem 1.25rem 1.3rem;
+}
+
+.hobby__title {
+  margin-bottom: 0.45rem;
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+}
+
+.hobby__note {
+  margin-top: 0.8rem;
+  font-size: 1.3rem;
+  color: var(--muted);
+}
+
+.hobby__stats {
+  margin-top: 1rem;
+}
+
+/* Bookshelf: each li is a spine standing on the shelf */
+.shelf {
+  display: flex;
+  align-items: flex-end;
+  gap: 0.35rem;
+  min-height: 9.5rem;
+  margin-top: 1rem;
+  padding: 0 0.5rem;
+  list-style: none;
+  border-bottom: 6px solid var(--ink);
+  overflow-x: auto;
+}
+
+.book {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex: 0 0 auto;
+  width: 2.3rem;
+  height: calc(7.4rem + var(--h, 0rem));
+  padding: 0.45rem 0;
+  font-family: var(--font-pixel);
+  font-size: 0.62rem;
+  line-height: 1.15;
+  text-align: center;
+  background: var(--c, var(--yellow));
+  border: 2.5px solid var(--ink);
+  border-radius: 3px 3px 0 0;
+  box-shadow: inset 0 0 0 3px rgba(255, 253, 248, 0.45);
+  writing-mode: vertical-rl;
+  rotate: var(--r, 0deg);
+  transform-origin: bottom center;
+  transition: translate 0.2s ease;
+}
+
+.book:nth-child(2n) { --h: 0.8rem; }
+.book:nth-child(3n) { --h: -0.5rem; }
+.book:last-child { --r: -7deg; margin-left: 0.4rem; }
+
+.book:hover {
+  translate: 0 -8px;
+}
+
+.book__title {
+  font-weight: 700;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.book__author {
+  margin-top: 0.4rem;
+  opacity: 0.75;
+}
+
+/* Outdoors card: photo with the text sitting on top */
+.hobby__photo {
+  position: relative;
+  flex: 1;
+  margin: 0;
+  min-height: 19rem;
+}
+
+.hobby__photo img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hobby__photo figcaption {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  height: 100%;
+  padding: 1.1rem 1.25rem 1.3rem;
+  color: var(--white);
+  background: linear-gradient(180deg, rgba(23, 20, 31, 0) 48%, rgba(23, 20, 31, 0.82) 100%);
+  text-shadow: 0 2px 0 var(--ink);
+}
+
+.desk-window {
+  width: min(100%, 52rem);
+  margin: 2.6rem auto 0;
+  rotate: 0.8deg;
+}
+
+.desk-window img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.desk-window__caption {
+  padding: 0.55rem 1rem 0.7rem;
+  font-size: 1.35rem;
+  text-align: center;
+  border-top: var(--line);
+  background: var(--white);
 }
 
 /* --- Toolbox: sticker sheet --- */
@@ -1647,6 +1816,14 @@ h1 {
     margin-inline: auto;
   }
 
+  .hobby-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .hobby:nth-child(3) {
+    grid-column: 1 / -1;
+  }
+
   .hero__shape--asterisk {
     left: auto;
     right: 8%;
@@ -1710,6 +1887,10 @@ h1 {
 
   .section-shape {
     opacity: 0.55;
+  }
+
+  .hobby-grid {
+    grid-template-columns: minmax(0, 1fr);
   }
 
   .section-shape--tl,

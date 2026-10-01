@@ -49,7 +49,7 @@ const projectSearch = document.getElementById("project-search");
 const noResults = document.getElementById("no-results");
 const showMoreButton = document.getElementById("show-more");
 
-const INITIAL_PROJECTS = 6;
+const INITIAL_PROJECTS = 9;
 let showAllProjects = false;
 
 const searchText = new Map(
