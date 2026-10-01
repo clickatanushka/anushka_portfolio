@@ -521,8 +521,11 @@ h2 {
 .hero__grid {
   display: grid;
   grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
-  gap: clamp(2rem, 5vw, 4rem);
+  gap: clamp(2rem, 4vw, 3rem);
   align-items: center;
+  /* keep the two halves close on very wide screens */
+  width: min(100%, 1120px);
+  margin-inline: auto;
 }
 
 .tag-sticker {
