@@ -42,6 +42,42 @@ setActiveNav();
 
 window.addEventListener("scroll", setActiveNav, { passive: true });
 
+/* --- Section connectors draw themselves when they scroll into view --- */
+const sectionLinks = document.querySelectorAll(".section-link");
+if ("IntersectionObserver" in window && !reducedMotion) {
+  const linkObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("is-drawn");
+          linkObserver.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.6 }
+  );
+  sectionLinks.forEach((link) => linkObserver.observe(link));
+} else {
+  sectionLinks.forEach((link) => link.classList.add("is-drawn"));
+}
+
+/* --- Local time in the contact card --- */
+(function initLocalTime() {
+  const timeEl = document.getElementById("local-time");
+  const moodEl = document.getElementById("local-mood");
+  if (!timeEl) return;
+
+  function tick() {
+    const now = new Date();
+    timeEl.textContent = now.toLocaleTimeString("en-IN", { hour: "numeric", minute: "2-digit", timeZone: "Asia/Kolkata" });
+    const hour = Number(now.toLocaleString("en-IN", { hour: "numeric", hour12: false, timeZone: "Asia/Kolkata" }));
+    moodEl.textContent = hour < 7 || hour >= 24 ? "· probably asleep 😴" : hour < 10 ? "· probably at the gym 🏋️" : hour >= 22 ? "· probably still coding 🌙" : "· probably awake ☕";
+  }
+
+  tick();
+  setInterval(tick, 30000);
+})();
+
 /* --- Projects: filters, search, show more --- */
 const projectCards = [...document.querySelectorAll(".project-card")];
 const filterButtons = document.querySelectorAll(".filter-button");

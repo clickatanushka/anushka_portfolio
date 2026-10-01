@@ -14,6 +14,7 @@
   <script>document.documentElement.classList.add("js");</script>
 </head>
 <body>
+  <div class="bubbles" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
   <!-- Doodle shapes, reused all over the page with <use href="#d-..."> -->
   <svg class="doodle-sprite" aria-hidden="true" focusable="false">
     <symbol id="d-sparkle" viewBox="0 0 100 100">
@@ -71,6 +72,15 @@
       <g stroke="var(--ink)" stroke-width="4" stroke-linejoin="round">
         <polygon points="4,34 96,6 60,66 48,42" fill="var(--fill)"/><polygon points="4,34 48,42 60,66 46,50 24,54" fill="var(--white, #fffdf8)"/><path d="M48 42 L96 6" fill="none"/>
       </g>
+    </symbol>
+    <symbol id="d-link-loop" viewBox="0 0 240 200">
+      <path pathLength="1" d="M20 14 C 60 10 110 30 118 70 C 126 110 70 130 58 96 C 48 66 100 56 128 84 C 160 116 170 150 186 182 M160 160 L188 186 L198 150" fill="none" stroke="var(--ink)" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+    </symbol>
+    <symbol id="d-link-swoop" viewBox="0 0 240 200">
+      <path pathLength="1" d="M222 12 C 190 40 130 30 110 70 C 90 110 140 140 100 160 C 80 170 60 172 36 180 M66 164 L34 182 L58 200" fill="none" stroke="var(--ink)" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+    </symbol>
+    <symbol id="d-link-spiral" viewBox="0 0 240 200">
+      <path pathLength="1" d="M30 30 C 90 -10 190 30 180 90 C 172 136 100 140 100 100 C 100 70 150 70 154 100 C 158 126 130 150 128 184 M106 160 L128 188 L152 160" fill="none" stroke="var(--ink)" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
     </symbol>
     <symbol id="d-blob" viewBox="0 0 100 100">
       <path d="M50 6 C74 2 96 22 94 48 C92 76 72 96 46 94 C20 92 4 72 8 46 C11 22 28 9 50 6Z" fill="var(--fill)" stroke="var(--ink)" stroke-width="3.5"/>
@@ -150,6 +160,7 @@
             <use href="#d-smiley" x="66" y="66" width="68" height="68" style="--fill:#ff5aa5"/>
           </svg>
 
+          <img class="drag hero__cutout" src="assets/images/hoops-sticker.png" alt="Die-cut sticker of Anushka with a basketball and bananas on her head" width="672" height="1030" decoding="async">
           <span class="sticker drag hero__sticker hero__sticker--1" aria-hidden="true">💻</span>
           <span class="sticker drag hero__sticker hero__sticker--2" aria-hidden="true">🏀</span>
           <span class="sticker drag hero__sticker hero__sticker--3" aria-hidden="true">✨</span>
@@ -265,6 +276,8 @@
           <img src="assets/images/desk.png" alt="A screenshot of Anushka's terminal: Arch Linux with kitty, a pink colour scheme and a Hello Kitty picture beside the system info" width="900" height="419" loading="lazy" decoding="async">
           <p class="hand desk-window__caption">yes, it is Arch. yes, I will tell you about it. 🍓</p>
         </div>
+
+        <p class="section-link section-link--r" aria-hidden="true"><svg class="doodle"><use href="#d-link-loop"/></svg><span class="hand">next: where I have been</span></p>
       </div>
     </section>
 
@@ -393,6 +406,8 @@
             </li>
           </ol>
         </div>
+
+        <p class="section-link section-link--l" aria-hidden="true"><svg class="doodle"><use href="#d-link-swoop"/></svg><span class="hand">what I build with</span></p>
       </div>
     </section>
 
@@ -433,6 +448,8 @@
             <ul class="sticker-list"><li>Docker</li><li>AWS</li><li>Terraform</li><li>Grafana</li><li>OpenTelemetry</li><li>Jenkins</li><li>pytest</li><li>Postman</li></ul>
           </div>
         </div>
+
+        <p class="section-link section-link--r" aria-hidden="true"><svg class="doodle"><use href="#d-link-spiral"/></svg><span class="hand">the actual work</span></p>
       </div>
     </section>
 
@@ -677,6 +694,8 @@
           <button class="btn solid-btn" id="show-more" type="button" aria-controls="project-grid" hidden>Show all projects ✨</button>
           <a class="btn ghost-btn" href="https://github.com/clickatanushka" target="_blank" rel="noopener noreferrer">More on my GitHub</a>
         </div>
+
+        <p class="section-link section-link--l" aria-hidden="true"><svg class="doodle"><use href="#d-link-loop"/></svg><span class="hand">the people</span></p>
       </div>
     </section>
 
@@ -718,6 +737,17 @@
               </div>
             </article>
             <p class="hand id-card__note">campus is where the "athlete" and the "coder" stopped being separate people.</p>
+
+            <div class="window crew-log reveal" style="--bar:#35d68a">
+              <div class="window__bar"><span class="window__title">📒 campus_log.exe</span><span class="window__dots" aria-hidden="true"><i></i><i></i><i></i></span></div>
+              <dl class="status-list crew-log__list">
+                <div><dt>fun</dt><dd>a lot. that was the main course</dd></div>
+                <div><dt>sports</dt><dd>basketball, every season, every fest</dd></div>
+                <div><dt>fests</dt><dd>never missed one</dd></div>
+                <div><dt>travel</dt><dd>any long weekend, gone</dd></div>
+                <div><dt>studies</dt><dd>a lil bit. enough.<span class="caret" aria-hidden="true"></span></dd></div>
+              </dl>
+            </div>
           </div>
 
           <!-- Friends: to add a frame, copy one <figure> and point it at a photo in assets/images -->
@@ -734,9 +764,11 @@
               <img src="assets/images/lawn.jpg" alt="Anushka doing a wheelbarrow race with a friend on the campus lawn" width="675" height="900" loading="lazy" decoding="async">
               <figcaption>campus days 🎒</figcaption>
             </figure>
-            <p class="sticky film-strip__sticky">found my people in week one 🫶</p>
+            <p class="sticky film-strip__sticky">found my people in week one. still stuck with them 🫶</p>
           </div>
         </div>
+
+        <p class="section-link section-link--r" aria-hidden="true"><svg class="doodle"><use href="#d-link-swoop"/></svg><span class="hand">the cat</span></p>
       </div>
     </section>
 
@@ -798,6 +830,8 @@
             <figcaption>after standup 😴</figcaption>
           </figure></li>
         </ul>
+
+        <p class="section-link section-link--l" aria-hidden="true"><svg class="doodle"><use href="#d-link-spiral"/></svg><span class="hand">break time</span></p>
       </div>
     </section>
 
@@ -881,6 +915,8 @@
           <span class="sticker drag play__sticker play__sticker--3" aria-hidden="true">🫧</span>
           <span class="sticker drag play__sticker play__sticker--4" aria-hidden="true">😹</span>
         </div>
+
+        <p class="section-link section-link--r" aria-hidden="true"><svg class="doodle"><use href="#d-link-loop"/></svg><span class="hand">one last thing</span></p>
       </div>
     </section>
 
@@ -899,9 +935,24 @@
           </p>
           <div class="contact__links">
             <a class="btn ghost-btn" href="https://github.com/clickatanushka" target="_blank" rel="noopener noreferrer">Find me on GitHub</a>
+            <a class="btn ghost-btn" href="https://www.linkedin.com/in/anushka-joshi-8955aa28a" target="_blank" rel="noopener noreferrer">LinkedIn</a>
             <a class="btn ghost-btn" href="mailto:anushka14joshi@gmail.com">Email me 💌</a>
+            <a class="btn ghost-btn" href="https://wa.me/918791556369" target="_blank" rel="noopener noreferrer">WhatsApp 💬</a>
           </div>
           <p class="hand contact__note"><svg class="doodle" aria-hidden="true"><use href="#d-arrow"/></svg> come say hi</p>
+
+          <div class="window contact__status" style="--bar:#ffd23f">
+            <div class="window__bar"><span class="window__title">status.exe</span><span class="window__dots" aria-hidden="true"><i></i><i></i><i></i></span></div>
+            <dl class="status-list">
+              <div><dt>where</dt><dd>Greater Noida, India · <span id="local-time">--:--</span> <span id="local-mood">here</span></dd></div>
+              <div><dt>open to</dt><dd>internships and grad roles, class of 2027</dd></div>
+              <div><dt>reply time</dt><dd>faster than my build pipeline ⚡</dd></div>
+              <div><dt>right now</dt><dd>shipping, hooping, petting Churros<span class="caret" aria-hidden="true"></span></dd></div>
+            </dl>
+            <span class="contact__stamp" aria-hidden="true">open to work</span>
+          </div>
+
+          <p class="hand contact__bye">bye for now, go pet a cat 🐾<small>— Anushka (and Churros, who approved this page by sitting on it)</small></p>
 
           <div class="contact__gifs" aria-hidden="true">
             <figure class="polaroid contact__gif contact__gif--1">
@@ -919,8 +970,23 @@
   </main>
 
   <footer class="site-footer">
-    Made with 💖, hustle energy, and way too many stickers by Anushka ·
-    <a href="https://github.com/clickatanushka" target="_blank" rel="noopener noreferrer">GitHub</a>
+    <!-- three stacked waves in the palette, the front one animates -->
+    <svg class="footer-waves" viewBox="0 0 1440 140" preserveAspectRatio="none" aria-hidden="true">
+      <path class="footer-waves__back" fill="#ffd23f" d="M-60 70 C 120 20 300 120 480 70 S 840 20 1020 70 S 1380 120 1500 70 V140 H-60 Z"/>
+      <path class="footer-waves__mid" fill="#ff5aa5" d="M-60 92 C 100 40 260 134 420 92 S 740 40 900 92 S 1340 134 1500 92 V140 H-60 Z"/>
+      <path class="footer-waves__front" fill="#17141f" d="M-60 112 C 120 70 300 150 480 112 S 840 70 1020 112 S 1380 150 1500 112 V140 H-60 Z"/>
+    </svg>
+
+    <div class="container site-footer__row">
+      <p class="site-footer__made">Made with 💖, hustle energy, and way too many stickers by Anushka</p>
+      <p class="site-footer__links">
+        <a href="https://github.com/clickatanushka" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="https://www.linkedin.com/in/anushka-joshi-8955aa28a" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="mailto:anushka14joshi@gmail.com">Email</a>
+      </p>
+      <a class="site-footer__top" href="#home"><span aria-hidden="true">🚀</span> beam me up</a>
+    </div>
+    <p class="hand site-footer__fine">you scrolled all the way down. that is commitment 🏁 · no cookies here, only Churros · © 2026</p>
   </footer>
 
   <dialog class="project-dialog" id="project-dialog" aria-labelledby="dialog-title">
